@@ -5,6 +5,7 @@ IST-412 Court Case Management System
 <ol>
 <li>You must have maven install (because the project uses this structure)</li>
 <li>You must change directory into the IST412-M04-A03-CCMS-Dove.</li>
+<li>The following command must be run: mvn clean install</li>
 <li>You must the "src" directory as Sources Root and the "test" directory marked as "Test Sources Root"</li>
 <li>The source code was compiled in Java 19.</li>
 </ol>
@@ -27,6 +28,8 @@ If 'aaaaa; is entered, an error message will be displayed.
 <li>If you click on Judge, the Judge page will show.</li>
 <li>If you click on Judge, this will eventually allow the judge to "Search Specific Case"
 or View Case Details.</li>
+<li>Each one of the buttons (Clerk Main Menu, Civilian Main Menu (worked on this week), Judge Main Menu (previous
+exercise, and Lawyer are functional.
 </ol>
 
 
