@@ -18,11 +18,11 @@ If this information is not entered, then you will receive an error of "Authentic
 <p>
 In this week's M04-A03 exercise, the Civilian Use Case was developed.  
 1.) To test the modules, enter '11111' for valid input for Case Number for "Search Specific Case".
-Because "1111" is a valid case number, it will display a message that "11111" was found. 
+Because "11111" is a valid case number, it will display a message that "11111" was found. 
 </P>
 <p>
 If 'aaaaa; is entered, an error message will be displayed that "aaaaa was not found".
-2.) For View Case Details, if you once again enter '1111', the Party Name field will be populated with the 
+2.) For View Case Details, if you once again enter '11111', the Party Name field will be populated with the 
 Party Name that is associated with that case Number. If you enter 'aaaaa', the party name field will not 
 be populated because there the input is invalid. 
 </p>
