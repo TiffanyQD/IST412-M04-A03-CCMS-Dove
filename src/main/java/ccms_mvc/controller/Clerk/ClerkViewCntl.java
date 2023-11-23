@@ -33,8 +33,8 @@ public class ClerkViewCntl implements ActionListener {
 
     public void addActionListenersButtons() {
         clerkViewUI.btnQuit.addActionListener(this);
-        clerkViewUI.btnMainMenu.addActionListener(this);
-        clerkViewUI.btnSearch.addActionListener(this);
+        clerkViewUI.btnClerkMainMenu.addActionListener(this);
+        clerkViewUI.btnView.addActionListener(this);
 
     }
 
@@ -57,7 +57,7 @@ public class ClerkViewCntl implements ActionListener {
         }
 
         //The ADD button was pressed
-        if (obj.equals(clerkViewUI.btnSearch)) {
+        if (obj.equals(clerkViewUI.btnView)) {
             //Enable all of the buttons except for Save button
             clerkViewUI.enableButtons(true);
 
@@ -80,7 +80,7 @@ public class ClerkViewCntl implements ActionListener {
 
         }
         
-        if (obj.equals(clerkViewUI.btnMainMenu)){
+        if (obj.equals(clerkViewUI.btnClerkMainMenu)){
             ClerkMainMenuCntl clerkMainMenuCntl = new ClerkMainMenuCntl();
         }
 

@@ -78,8 +78,8 @@ public class CivilianViewUI extends javax.swing.JFrame {
     }
 
     public void enableButtons(boolean enabled){
-        this.btnMainMenu.setEnabled(enabled);
-        this.btnSearch.setEnabled(enabled);
+        this.btnCivilianMainMenu.setEnabled(enabled);
+        this.btnView.setEnabled(enabled);
         this.btnQuit.setEnabled(enabled);
     }
 
@@ -97,8 +97,8 @@ public class CivilianViewUI extends javax.swing.JFrame {
         ccmsLabel = new javax.swing.JLabel();
         caseNumberLabel = new javax.swing.JLabel();
         caseNumberTextField = new javax.swing.JTextField();
-        btnSearch = new javax.swing.JButton();
-        btnMainMenu = new javax.swing.JButton();
+        btnView = new javax.swing.JButton();
+        btnCivilianMainMenu = new javax.swing.JButton();
         btnQuit = new javax.swing.JButton();
         civilianViewCaseDetailsLabel = new javax.swing.JLabel();
         errorMessage = new javax.swing.JLabel();
@@ -107,30 +107,31 @@ public class CivilianViewUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        civilianViewCaseDetailsPanel.setToolTipText("Person Panel");
+        civilianViewCaseDetailsPanel.setToolTipText("Civilian View Case Details Panel");
 
         ccmsLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ccmsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ccmsLabel.setText("Court Case Managment System");
-        ccmsLabel.setToolTipText("");
+        ccmsLabel.setToolTipText("Court Case Managment System");
 
         caseNumberLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         caseNumberLabel.setText("Case Number:");
+        caseNumberLabel.setToolTipText("Case Number:");
 
-        caseNumberTextField.setToolTipText("Please enter ID num.");
+        caseNumberTextField.setToolTipText("Please Enter a Case Number (i.e.. 11111)");
         caseNumberTextField.setName("caseNumberTextField"); // NOI18N
 
-        btnSearch.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        btnSearch.setText("Search");
-        btnSearch.setToolTipText("Search Judge for Specifiic Case");
+        btnView.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        btnView.setText("View");
+        btnView.setToolTipText("View Case Details for Specifiic Case - Civilian ");
 
-        btnMainMenu.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        btnMainMenu.setText("Civilian Main Menu");
-        btnMainMenu.setToolTipText("Return to Civilan Main Menu");
+        btnCivilianMainMenu.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        btnCivilianMainMenu.setText("Civilian Main Menu");
+        btnCivilianMainMenu.setToolTipText("Return to Civilan Main Menu");
 
         btnQuit.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnQuit.setText("Quit");
-        btnQuit.setToolTipText("exit the application");
+        btnQuit.setToolTipText("Exit the Application");
 
         civilianViewCaseDetailsLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         civilianViewCaseDetailsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -142,6 +143,9 @@ public class CivilianViewUI extends javax.swing.JFrame {
 
         partyNameLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         partyNameLabel.setText("Party Name:");
+        partyNameLabel.setToolTipText("Party Name:");
+
+        partyNameTextField.setToolTipText("Party Name Field");
 
         javax.swing.GroupLayout civilianViewCaseDetailsPanelLayout = new javax.swing.GroupLayout(civilianViewCaseDetailsPanel);
         civilianViewCaseDetailsPanel.setLayout(civilianViewCaseDetailsPanelLayout);
@@ -157,9 +161,9 @@ public class CivilianViewUI extends javax.swing.JFrame {
                 .addGap(67, 67, 67)
                 .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                        .addComponent(btnSearch)
-                        .addGap(68, 68, 68)
-                        .addComponent(btnMainMenu)
+                        .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addComponent(btnCivilianMainMenu)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnQuit))
                     .addComponent(errorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -193,8 +197,8 @@ public class CivilianViewUI extends javax.swing.JFrame {
                 .addGap(126, 126, 126)
                 .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnSearch)
-                        .addComponent(btnMainMenu))
+                        .addComponent(btnView)
+                        .addComponent(btnCivilianMainMenu))
                     .addComponent(btnQuit, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(61, Short.MAX_VALUE))
         );
@@ -216,9 +220,9 @@ public class CivilianViewUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnMainMenu;
+    public javax.swing.JButton btnCivilianMainMenu;
     public javax.swing.JButton btnQuit;
-    public javax.swing.JButton btnSearch;
+    public javax.swing.JButton btnView;
     private javax.swing.JLabel caseNumberLabel;
     private javax.swing.JTextField caseNumberTextField;
     private javax.swing.JLabel ccmsLabel;

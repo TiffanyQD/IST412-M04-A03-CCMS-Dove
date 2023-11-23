@@ -33,7 +33,7 @@ public class ClerkSearchCntl implements ActionListener {
 
     public void addActionListenersButtons() {
         clerkSearchUI.btnQuit.addActionListener(this);
-        clerkSearchUI.btnMainMenu.addActionListener(this);
+        clerkSearchUI.btnClerkMainMenu.addActionListener(this);
         clerkSearchUI.btnSearch.addActionListener(this);
 
     }
@@ -77,7 +77,7 @@ public class ClerkSearchCntl implements ActionListener {
 
         }
         
-        if (obj.equals(clerkSearchUI.btnMainMenu)){
+        if (obj.equals(clerkSearchUI.btnClerkMainMenu)){
             ClerkMainMenuCntl clerkMainMenuCntl = new ClerkMainMenuCntl();
         }
 

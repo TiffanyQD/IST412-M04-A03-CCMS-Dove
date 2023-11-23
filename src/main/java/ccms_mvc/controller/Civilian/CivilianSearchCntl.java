@@ -33,7 +33,7 @@ public class CivilianSearchCntl implements ActionListener {
 
     public void addActionListenersButtons() {
         civilianSearchUI.btnQuit.addActionListener(this);
-        civilianSearchUI.btnMainMenu.addActionListener(this);
+        civilianSearchUI.btnCivilianMainMenu.addActionListener(this);
         civilianSearchUI.btnSearch.addActionListener(this);
 
     }
@@ -77,7 +77,7 @@ public class CivilianSearchCntl implements ActionListener {
 
         }
         
-        if (obj.equals(civilianSearchUI.btnMainMenu)){
+        if (obj.equals(civilianSearchUI.btnCivilianMainMenu)){
             CivilianMainMenuCntl civilianMainMenuCntl = new CivilianMainMenuCntl();
         }
 

@@ -59,7 +59,7 @@ public class MainMenuUI extends javax.swing.JFrame {
         ccmsMainMenuLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ccmsMainMenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ccmsMainMenuLabel.setText("Court Case Management System");
-        ccmsMainMenuLabel.setToolTipText("");
+        ccmsMainMenuLabel.setToolTipText("Court Case Management System");
 
         btnQuit.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnQuit.setText("Quit");
@@ -94,7 +94,7 @@ public class MainMenuUI extends javax.swing.JFrame {
 
         btnLawyerMainMenu.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnLawyerMainMenu.setText("Lawyer Main Menu");
-        btnLawyerMainMenu.setToolTipText("to move backwards");
+        btnLawyerMainMenu.setToolTipText("Lawyer Main Menu");
         btnLawyerMainMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLawyerMainMenuActionPerformed(evt);
@@ -104,7 +104,7 @@ public class MainMenuUI extends javax.swing.JFrame {
         mainMenuLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         mainMenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         mainMenuLabel.setText("Main Menu");
-        mainMenuLabel.setToolTipText("");
+        mainMenuLabel.setToolTipText("Main Menu");
 
         javax.swing.GroupLayout ccmsMainMenuPanelLayout = new javax.swing.GroupLayout(ccmsMainMenuPanel);
         ccmsMainMenuPanel.setLayout(ccmsMainMenuPanelLayout);
@@ -115,21 +115,24 @@ public class MainMenuUI extends javax.swing.JFrame {
                 .addGroup(ccmsMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ccmsMainMenuPanelLayout.createSequentialGroup()
                         .addGroup(ccmsMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ccmsMainMenuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
-                            .addGroup(ccmsMainMenuPanelLayout.createSequentialGroup()
-                                .addComponent(btnQuit)
-                                .addGap(0, 507, Short.MAX_VALUE))
-                            .addComponent(mainMenuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE))
+                            .addComponent(ccmsMainMenuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
+                            .addComponent(mainMenuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(ccmsMainMenuPanelLayout.createSequentialGroup()
                         .addGroup(ccmsMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCivilianMainMenu)
-                            .addComponent(btnClerkMainMenu)
-                            .addGroup(ccmsMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(btnLawyerMainMenu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(bntJudgeMainMenu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(errorMessageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addComponent(errorMessageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ccmsMainMenuPanelLayout.createSequentialGroup()
+                                .addGroup(ccmsMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btnLawyerMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(bntJudgeMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnClerkMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnCivilianMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(36, 36, 36)))
+                        .addGap(0, 178, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ccmsMainMenuPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnQuit)
+                .addGap(120, 120, 120))
         );
         ccmsMainMenuPanelLayout.setVerticalGroup(
             ccmsMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,19 +141,19 @@ public class MainMenuUI extends javax.swing.JFrame {
                 .addComponent(ccmsMainMenuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addComponent(mainMenuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
-                .addComponent(btnCivilianMainMenu)
-                .addGap(28, 28, 28)
-                .addComponent(btnClerkMainMenu)
+                .addGap(44, 44, 44)
+                .addComponent(btnCivilianMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(bntJudgeMainMenu)
+                .addComponent(btnClerkMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(bntJudgeMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(19, 19, 19)
-                .addComponent(btnLawyerMainMenu)
-                .addGap(26, 26, 26)
+                .addComponent(btnLawyerMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(53, 53, 53)
+                .addComponent(btnQuit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(errorMessageLabel)
-                .addGap(77, 77, 77)
-                .addComponent(btnQuit)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addGap(149, 149, 149))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

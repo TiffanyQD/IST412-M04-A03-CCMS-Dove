@@ -102,7 +102,7 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Court Case Management System"/>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="toolTipText" type="java.lang.String" value="Court Case Management System"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnQuit">
@@ -111,7 +111,7 @@
               <Font name="Tahoma" size="13" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Quit"/>
-            <Property name="toolTipText" type="java.lang.String" value="exit the application"/>
+            <Property name="toolTipText" type="java.lang.String" value="Exit the Application"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -135,7 +135,7 @@
               <Font name="Tahoma" size="13" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="View Case Details"/>
-            <Property name="toolTipText" type="java.lang.String" value="Clerk Main Menu"/>
+            <Property name="toolTipText" type="java.lang.String" value="View Case Details ofr Clerk"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -149,7 +149,7 @@
               <Font name="Tahoma" size="13" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Main Menu"/>
-            <Property name="toolTipText" type="java.lang.String" value="exit the application"/>
+            <Property name="toolTipText" type="java.lang.String" value="Return to the Main Menu"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -162,7 +162,7 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Civilian Main Menu"/>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="toolTipText" type="java.lang.String" value="Civilian Main Menu"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>

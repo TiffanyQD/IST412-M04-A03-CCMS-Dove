@@ -79,7 +79,7 @@ public class LawyerViewUI extends javax.swing.JFrame {
 
     public void enableButtons(boolean enabled){
         this.btnMainMenu.setEnabled(enabled);
-        this.btnSearch.setEnabled(enabled);
+        this.btnView.setEnabled(enabled);
         this.btnQuit.setEnabled(enabled);
     }
 
@@ -97,7 +97,7 @@ public class LawyerViewUI extends javax.swing.JFrame {
         ccmsLabel = new javax.swing.JLabel();
         caseNumberLabel = new javax.swing.JLabel();
         caseNumberTextField = new javax.swing.JTextField();
-        btnSearch = new javax.swing.JButton();
+        btnView = new javax.swing.JButton();
         btnMainMenu = new javax.swing.JButton();
         btnQuit = new javax.swing.JButton();
         lawyerViewCaseDetailsLabel = new javax.swing.JLabel();
@@ -112,36 +112,40 @@ public class LawyerViewUI extends javax.swing.JFrame {
         ccmsLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ccmsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ccmsLabel.setText("Court Case Managment System");
-        ccmsLabel.setToolTipText("");
+        ccmsLabel.setToolTipText("Court Case Managment System");
 
         caseNumberLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         caseNumberLabel.setText("Case Number:");
+        caseNumberLabel.setToolTipText("Case Number:");
 
-        caseNumberTextField.setToolTipText("Please enter ID num.");
+        caseNumberTextField.setToolTipText("Please Enter a Case Number (i.e. 11111)");
         caseNumberTextField.setName("caseNumberTextField"); // NOI18N
 
-        btnSearch.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        btnSearch.setText("Search");
-        btnSearch.setToolTipText("Search Judge for Specifiic Case");
+        btnView.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        btnView.setText("View");
+        btnView.setToolTipText("View Case Details for Lawyer");
 
         btnMainMenu.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        btnMainMenu.setText("Judge Main Menu");
-        btnMainMenu.setToolTipText("Return to Judge Main Menu");
+        btnMainMenu.setText("Lawyer Main Menu");
+        btnMainMenu.setToolTipText("Return to Lawyer Main Menu");
 
         btnQuit.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnQuit.setText("Quit");
-        btnQuit.setToolTipText("exit the application");
+        btnQuit.setToolTipText("Exit the Application");
 
         lawyerViewCaseDetailsLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lawyerViewCaseDetailsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lawyerViewCaseDetailsLabel.setText("Lawyer - View Case Details");
-        lawyerViewCaseDetailsLabel.setToolTipText("");
+        lawyerViewCaseDetailsLabel.setToolTipText("Lawyer - View Case Details");
 
         errorMessage.setForeground(new java.awt.Color(255, 0, 0));
         errorMessage.setToolTipText("");
 
         partyNameLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         partyNameLabel.setText("Party Name:");
+        partyNameLabel.setToolTipText("Party Name:");
+
+        partyNameTextField.setToolTipText("Party Name Field");
 
         javax.swing.GroupLayout lawyerViewCaseDetailsPanelLayout = new javax.swing.GroupLayout(lawyerViewCaseDetailsPanel);
         lawyerViewCaseDetailsPanel.setLayout(lawyerViewCaseDetailsPanelLayout);
@@ -157,7 +161,7 @@ public class LawyerViewUI extends javax.swing.JFrame {
                 .addGap(67, 67, 67)
                 .addGroup(lawyerViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(lawyerViewCaseDetailsPanelLayout.createSequentialGroup()
-                        .addComponent(btnSearch)
+                        .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(72, 72, 72)
                         .addComponent(btnMainMenu)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -193,7 +197,7 @@ public class LawyerViewUI extends javax.swing.JFrame {
                 .addGap(126, 126, 126)
                 .addGroup(lawyerViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lawyerViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnSearch)
+                        .addComponent(btnView)
                         .addComponent(btnMainMenu))
                     .addComponent(btnQuit, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(61, Short.MAX_VALUE))
@@ -218,7 +222,7 @@ public class LawyerViewUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnMainMenu;
     public javax.swing.JButton btnQuit;
-    public javax.swing.JButton btnSearch;
+    public javax.swing.JButton btnView;
     private javax.swing.JLabel caseNumberLabel;
     private javax.swing.JTextField caseNumberTextField;
     private javax.swing.JLabel ccmsLabel;

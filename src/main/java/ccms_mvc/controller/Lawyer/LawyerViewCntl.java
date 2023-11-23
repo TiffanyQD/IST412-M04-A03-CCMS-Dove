@@ -34,7 +34,7 @@ public class LawyerViewCntl implements ActionListener {
     public void addActionListenersButtons() {
         lawyerViewUI.btnQuit.addActionListener(this);
         lawyerViewUI.btnMainMenu.addActionListener(this);
-        lawyerViewUI.btnSearch.addActionListener(this);
+        lawyerViewUI.btnView.addActionListener(this);
 
     }
 
@@ -57,7 +57,7 @@ public class LawyerViewCntl implements ActionListener {
         }
 
         //The ADD button was pressed
-        if (obj.equals(lawyerViewUI.btnSearch)) {
+        if (obj.equals(lawyerViewUI.btnView)) {
             //Enable all of the buttons except for Save button
             lawyerViewUI.enableButtons(true);
 

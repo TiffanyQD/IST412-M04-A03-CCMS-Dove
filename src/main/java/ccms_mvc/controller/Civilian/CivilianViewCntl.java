@@ -33,8 +33,8 @@ public class CivilianViewCntl implements ActionListener {
 
     public void addActionListenersButtons() {
         civilianViewUI.btnQuit.addActionListener(this);
-        civilianViewUI.btnMainMenu.addActionListener(this);
-        civilianViewUI.btnSearch.addActionListener(this);
+        civilianViewUI.btnCivilianMainMenu.addActionListener(this);
+        civilianViewUI.btnView.addActionListener(this);
 
     }
 
@@ -57,7 +57,7 @@ public class CivilianViewCntl implements ActionListener {
         }
 
         //The ADD button was pressed
-        if (obj.equals(civilianViewUI.btnSearch)) {
+        if (obj.equals(civilianViewUI.btnView)) {
             //Enable all of the buttons except for Save button
             civilianViewUI.enableButtons(true);
 
@@ -80,7 +80,7 @@ public class CivilianViewCntl implements ActionListener {
 
         }
         
-        if (obj.equals(civilianViewUI.btnMainMenu)){
+        if (obj.equals(civilianViewUI.btnCivilianMainMenu)){
             CivilianMainMenuCntl civilianMainMenuCntl = new CivilianMainMenuCntl();
         }
 

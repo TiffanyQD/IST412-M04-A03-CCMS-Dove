@@ -121,8 +121,8 @@ public class LawyerMainMenuUI extends javax.swing.JFrame {
     
     public void enableButtons(boolean enabled){
         
-        this.btnSearchSpecificCase.setEnabled(enabled);
-        this.btnViewCaseDetails.setEnabled(enabled);
+        this.btnLawyerSearchSpecificCase.setEnabled(enabled);
+        this.btnLawyerViewCaseDetails.setEnabled(enabled);
         this.btnQuit.setEnabled(enabled);
         this.btnMainMenu.setEnabled(enabled);
     }
@@ -140,40 +140,40 @@ public class LawyerMainMenuUI extends javax.swing.JFrame {
         lawyerMainMenuPanel = new javax.swing.JPanel();
         ccmsMainMenuLabel = new javax.swing.JLabel();
         btnQuit = new javax.swing.JButton();
-        btnSearchSpecificCase = new javax.swing.JButton();
-        btnViewCaseDetails = new javax.swing.JButton();
+        btnLawyerSearchSpecificCase = new javax.swing.JButton();
+        btnLawyerViewCaseDetails = new javax.swing.JButton();
         errorMessageLabel = new javax.swing.JLabel();
         btnMainMenu = new javax.swing.JButton();
         lawyerMainMenuLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lawyerMainMenuPanel.setToolTipText("Person Panel");
+        lawyerMainMenuPanel.setToolTipText("Lawyer Main Menu Panel");
 
         ccmsMainMenuLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ccmsMainMenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ccmsMainMenuLabel.setText("Court Case Management System");
-        ccmsMainMenuLabel.setToolTipText("");
+        ccmsMainMenuLabel.setToolTipText("Court Case Management System");
 
         btnQuit.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnQuit.setText("Quit");
         btnQuit.setToolTipText("exit the application");
 
-        btnSearchSpecificCase.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        btnSearchSpecificCase.setText("Search Specific Case");
-        btnSearchSpecificCase.setToolTipText("Search Specific Case");
-        btnSearchSpecificCase.addActionListener(new java.awt.event.ActionListener() {
+        btnLawyerSearchSpecificCase.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        btnLawyerSearchSpecificCase.setText("Search Specific Case");
+        btnLawyerSearchSpecificCase.setToolTipText("Search Specific Case");
+        btnLawyerSearchSpecificCase.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchSpecificCaseActionPerformed(evt);
+                btnLawyerSearchSpecificCaseActionPerformed(evt);
             }
         });
 
-        btnViewCaseDetails.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        btnViewCaseDetails.setText("View Case Details");
-        btnViewCaseDetails.setToolTipText("Clerk Main Menu");
-        btnViewCaseDetails.addActionListener(new java.awt.event.ActionListener() {
+        btnLawyerViewCaseDetails.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        btnLawyerViewCaseDetails.setText("View Case Details");
+        btnLawyerViewCaseDetails.setToolTipText("View Case Details");
+        btnLawyerViewCaseDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewCaseDetailsActionPerformed(evt);
+                btnLawyerViewCaseDetailsActionPerformed(evt);
             }
         });
 
@@ -184,7 +184,7 @@ public class LawyerMainMenuUI extends javax.swing.JFrame {
         lawyerMainMenuLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lawyerMainMenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lawyerMainMenuLabel.setText("Lawyer Main Menu");
-        lawyerMainMenuLabel.setToolTipText("");
+        lawyerMainMenuLabel.setToolTipText("Lawyer Main Menu");
 
         javax.swing.GroupLayout lawyerMainMenuPanelLayout = new javax.swing.GroupLayout(lawyerMainMenuPanel);
         lawyerMainMenuPanel.setLayout(lawyerMainMenuPanelLayout);
@@ -195,8 +195,8 @@ public class LawyerMainMenuUI extends javax.swing.JFrame {
                 .addGroup(lawyerMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(lawyerMainMenuPanelLayout.createSequentialGroup()
                         .addGroup(lawyerMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnSearchSpecificCase)
-                            .addComponent(btnViewCaseDetails)
+                            .addComponent(btnLawyerSearchSpecificCase)
+                            .addComponent(btnLawyerViewCaseDetails)
                             .addComponent(errorMessageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(lawyerMainMenuPanelLayout.createSequentialGroup()
                                 .addComponent(btnQuit)
@@ -217,9 +217,9 @@ public class LawyerMainMenuUI extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(lawyerMainMenuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(61, 61, 61)
-                .addComponent(btnSearchSpecificCase)
+                .addComponent(btnLawyerSearchSpecificCase)
                 .addGap(28, 28, 28)
-                .addComponent(btnViewCaseDetails)
+                .addComponent(btnLawyerViewCaseDetails)
                 .addGap(113, 113, 113)
                 .addComponent(errorMessageLabel)
                 .addGap(69, 69, 69)
@@ -245,19 +245,19 @@ public class LawyerMainMenuUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSearchSpecificCaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchSpecificCaseActionPerformed
+    private void btnLawyerSearchSpecificCaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLawyerSearchSpecificCaseActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSearchSpecificCaseActionPerformed
+    }//GEN-LAST:event_btnLawyerSearchSpecificCaseActionPerformed
 
-    private void btnViewCaseDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewCaseDetailsActionPerformed
+    private void btnLawyerViewCaseDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLawyerViewCaseDetailsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnViewCaseDetailsActionPerformed
+    }//GEN-LAST:event_btnLawyerViewCaseDetailsActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnLawyerSearchSpecificCase;
+    public javax.swing.JButton btnLawyerViewCaseDetails;
     public javax.swing.JButton btnMainMenu;
     public javax.swing.JButton btnQuit;
-    public javax.swing.JButton btnSearchSpecificCase;
-    public javax.swing.JButton btnViewCaseDetails;
     private javax.swing.JLabel ccmsMainMenuLabel;
     private javax.swing.JLabel errorMessageLabel;
     private javax.swing.JLabel lawyerMainMenuLabel;

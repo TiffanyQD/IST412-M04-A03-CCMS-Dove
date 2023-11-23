@@ -143,7 +143,7 @@ public class ClerkMainMenuUI extends javax.swing.JFrame {
         btnViewCaseDetails = new javax.swing.JButton();
         errorMessageLabel = new javax.swing.JLabel();
         btnMainMenu = new javax.swing.JButton();
-        judgeMainMenuLabel = new javax.swing.JLabel();
+        clerkMainMenuLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -152,7 +152,7 @@ public class ClerkMainMenuUI extends javax.swing.JFrame {
         ccmsMainMenuLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ccmsMainMenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ccmsMainMenuLabel.setText("Court Case Management System");
-        ccmsMainMenuLabel.setToolTipText("");
+        ccmsMainMenuLabel.setToolTipText("Court Case Management System");
 
         btnQuit.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnQuit.setText("Quit");
@@ -160,7 +160,7 @@ public class ClerkMainMenuUI extends javax.swing.JFrame {
 
         btnSearchSpecificCase.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnSearchSpecificCase.setText("Search Specific Case");
-        btnSearchSpecificCase.setToolTipText("Search Specific Case");
+        btnSearchSpecificCase.setToolTipText("Search Specific Case for Clerk");
         btnSearchSpecificCase.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchSpecificCaseActionPerformed(evt);
@@ -169,7 +169,7 @@ public class ClerkMainMenuUI extends javax.swing.JFrame {
 
         btnViewCaseDetails.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnViewCaseDetails.setText("View Case Details");
-        btnViewCaseDetails.setToolTipText("Clerk Main Menu");
+        btnViewCaseDetails.setToolTipText("View Case Details for Clerk");
         btnViewCaseDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewCaseDetailsActionPerformed(evt);
@@ -180,10 +180,10 @@ public class ClerkMainMenuUI extends javax.swing.JFrame {
         btnMainMenu.setText("Main Menu");
         btnMainMenu.setToolTipText("exit the application");
 
-        judgeMainMenuLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        judgeMainMenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        judgeMainMenuLabel.setText("Clerk Main Menu");
-        judgeMainMenuLabel.setToolTipText("");
+        clerkMainMenuLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        clerkMainMenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        clerkMainMenuLabel.setText("Clerk Main Menu");
+        clerkMainMenuLabel.setToolTipText("Clerk Main Menu");
 
         javax.swing.GroupLayout clerkMainMenuPanelLayout = new javax.swing.GroupLayout(clerkMainMenuPanel);
         clerkMainMenuPanel.setLayout(clerkMainMenuPanelLayout);
@@ -205,7 +205,7 @@ public class ClerkMainMenuUI extends javax.swing.JFrame {
                     .addGroup(clerkMainMenuPanelLayout.createSequentialGroup()
                         .addGroup(clerkMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(ccmsMainMenuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
-                            .addComponent(judgeMainMenuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE))
+                            .addComponent(clerkMainMenuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE))
                         .addContainerGap())))
         );
         clerkMainMenuPanelLayout.setVerticalGroup(
@@ -214,7 +214,7 @@ public class ClerkMainMenuUI extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(ccmsMainMenuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
-                .addComponent(judgeMainMenuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(clerkMainMenuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(61, 61, 61)
                 .addComponent(btnSearchSpecificCase)
                 .addGap(28, 28, 28)
@@ -258,9 +258,9 @@ public class ClerkMainMenuUI extends javax.swing.JFrame {
     public javax.swing.JButton btnSearchSpecificCase;
     public javax.swing.JButton btnViewCaseDetails;
     private javax.swing.JLabel ccmsMainMenuLabel;
+    private javax.swing.JLabel clerkMainMenuLabel;
     private javax.swing.JPanel clerkMainMenuPanel;
     private javax.swing.JLabel errorMessageLabel;
-    private javax.swing.JLabel judgeMainMenuLabel;
     // End of variables declaration//GEN-END:variables
 
 }

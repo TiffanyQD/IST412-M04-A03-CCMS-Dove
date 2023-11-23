@@ -35,8 +35,8 @@ public class LawyerMainMenuCntl implements ActionListener {
     public void addActionListenersButtons() {
         lawyerMainMenuUI.btnQuit.addActionListener(this);
         lawyerMainMenuUI.btnMainMenu.addActionListener(this);
-        lawyerMainMenuUI.btnSearchSpecificCase.addActionListener(this);
-        lawyerMainMenuUI.btnViewCaseDetails.addActionListener(this);
+        lawyerMainMenuUI.btnLawyerSearchSpecificCase.addActionListener(this);
+        lawyerMainMenuUI.btnLawyerViewCaseDetails.addActionListener(this);
     }
 
     public ArrayList<Person> getListOfPerson() {
@@ -97,12 +97,12 @@ public class LawyerMainMenuCntl implements ActionListener {
         }
         
         //Search Specific Case
-        if (obj.equals(lawyerMainMenuUI.btnSearchSpecificCase)){
+        if (obj.equals(lawyerMainMenuUI.btnLawyerSearchSpecificCase)){
             LawyerSearchCntl lawyerSearchCntl = new LawyerSearchCntl();
         }
         
         //View Case Details
-        if (obj.equals(lawyerMainMenuUI.btnViewCaseDetails)){
+        if (obj.equals(lawyerMainMenuUI.btnLawyerViewCaseDetails)){
             LawyerViewCntl lawyerViewCntl = new LawyerViewCntl();
         }
 

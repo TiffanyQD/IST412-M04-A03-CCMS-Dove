@@ -33,7 +33,7 @@ public class LawyerSearchCntl implements ActionListener {
 
     public void addActionListenersButtons() {
         lawyerSearchUI.btnQuit.addActionListener(this);
-        lawyerSearchUI.btnMainMenu.addActionListener(this);
+        lawyerSearchUI.btnLawyerMainMenu.addActionListener(this);
         lawyerSearchUI.btnSearch.addActionListener(this);
 
     }
@@ -77,7 +77,7 @@ public class LawyerSearchCntl implements ActionListener {
 
         }
         
-        if (obj.equals(lawyerSearchUI.btnMainMenu)){
+        if (obj.equals(lawyerSearchUI.btnLawyerMainMenu)){
             LawyerMainMenuCntl lawyerMainMenuCntl = new LawyerMainMenuCntl();
         }
 

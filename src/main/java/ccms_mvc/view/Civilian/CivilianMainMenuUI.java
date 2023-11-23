@@ -58,11 +58,11 @@ public class CivilianMainMenuUI extends javax.swing.JFrame {
         ccmsMainMenuLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ccmsMainMenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ccmsMainMenuLabel.setText("Court Case Management System");
-        ccmsMainMenuLabel.setToolTipText("");
+        ccmsMainMenuLabel.setToolTipText("Court Case Management System");
 
         btnQuit.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnQuit.setText("Quit");
-        btnQuit.setToolTipText("exit the application");
+        btnQuit.setToolTipText("Exit the Application");
 
         btnSearchSpecificCase.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnSearchSpecificCase.setText("Search Specific Case");
@@ -70,16 +70,16 @@ public class CivilianMainMenuUI extends javax.swing.JFrame {
 
         btnViewCaseDetails.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnViewCaseDetails.setText("View Case Details");
-        btnViewCaseDetails.setToolTipText("Clerk Main Menu");
+        btnViewCaseDetails.setToolTipText("View Case Details ofr Clerk");
 
         btnMainMenu.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnMainMenu.setText("Main Menu");
-        btnMainMenu.setToolTipText("exit the application");
+        btnMainMenu.setToolTipText("Return to the Main Menu");
 
         civilianMainMenuLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         civilianMainMenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         civilianMainMenuLabel.setText("Civilian Main Menu");
-        civilianMainMenuLabel.setToolTipText("");
+        civilianMainMenuLabel.setToolTipText("Civilian Main Menu");
 
         javax.swing.GroupLayout civilianMainMenuPanelLayout = new javax.swing.GroupLayout(civilianMainMenuPanel);
         civilianMainMenuPanel.setLayout(civilianMainMenuPanelLayout);

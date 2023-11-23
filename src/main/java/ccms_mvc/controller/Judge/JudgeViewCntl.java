@@ -33,8 +33,8 @@ public class JudgeViewCntl implements ActionListener {
 
     public void addActionListenersButtons() {
         judgeViewUI.btnQuit.addActionListener(this);
-        judgeViewUI.btnMainMenu.addActionListener(this);
-        judgeViewUI.btnSearch.addActionListener(this);
+        judgeViewUI.btnJudgeMainMenu.addActionListener(this);
+        judgeViewUI.btnView.addActionListener(this);
 
     }
 
@@ -57,7 +57,7 @@ public class JudgeViewCntl implements ActionListener {
         }
 
         //The ADD button was pressed
-        if (obj.equals(judgeViewUI.btnSearch)) {
+        if (obj.equals(judgeViewUI.btnView)) {
             //Enable all of the buttons except for Save button
             judgeViewUI.enableButtons(true);
 
@@ -80,7 +80,7 @@ public class JudgeViewCntl implements ActionListener {
 
         }
         
-        if (obj.equals(judgeViewUI.btnMainMenu)){
+        if (obj.equals(judgeViewUI.btnJudgeMainMenu)){
             JudgeMainMenuCntl judgeMainMenuCntl = new JudgeMainMenuCntl();
         }
 

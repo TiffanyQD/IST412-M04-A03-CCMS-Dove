@@ -152,11 +152,11 @@ public class JudgeMainMenuUI extends javax.swing.JFrame {
         ccmsMainMenuLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ccmsMainMenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ccmsMainMenuLabel.setText("Court Case Management System");
-        ccmsMainMenuLabel.setToolTipText("");
+        ccmsMainMenuLabel.setToolTipText("Court Case Management System");
 
         btnQuit.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnQuit.setText("Quit");
-        btnQuit.setToolTipText("exit the application");
+        btnQuit.setToolTipText("Exit the Application");
 
         btnSearchSpecificCase.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnSearchSpecificCase.setText("Search Specific Case");
@@ -169,7 +169,7 @@ public class JudgeMainMenuUI extends javax.swing.JFrame {
 
         btnViewCaseDetails.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnViewCaseDetails.setText("View Case Details");
-        btnViewCaseDetails.setToolTipText("Clerk Main Menu");
+        btnViewCaseDetails.setToolTipText("View Case Details");
         btnViewCaseDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewCaseDetailsActionPerformed(evt);
@@ -183,7 +183,7 @@ public class JudgeMainMenuUI extends javax.swing.JFrame {
         judgeMainMenuLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         judgeMainMenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         judgeMainMenuLabel.setText("Judge Main Menu");
-        judgeMainMenuLabel.setToolTipText("");
+        judgeMainMenuLabel.setToolTipText("Judge Main Menu");
 
         javax.swing.GroupLayout judgeMainMenuPanelLayout = new javax.swing.GroupLayout(judgeMainMenuPanel);
         judgeMainMenuPanel.setLayout(judgeMainMenuPanelLayout);

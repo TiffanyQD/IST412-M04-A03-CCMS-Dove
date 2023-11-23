@@ -57,9 +57,9 @@
                           <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="btnSearch" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnSearch" min="-2" pref="90" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-                                  <Component id="btnMainMenu" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnJudgeMainMenu" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="btnQuit" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -99,7 +99,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                           <Component id="btnSearch" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnMainMenu" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnJudgeMainMenu" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="btnQuit" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -116,7 +116,7 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Court Case Managment System"/>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="toolTipText" type="java.lang.String" value="Court Case Managment System"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="caseNumberLabel">
@@ -125,11 +125,12 @@
               <Font name="Tahoma" size="13" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Case Number:"/>
+            <Property name="toolTipText" type="java.lang.String" value="Case Number:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="caseNumberTextField">
           <Properties>
-            <Property name="toolTipText" type="java.lang.String" value="Please enter ID num."/>
+            <Property name="toolTipText" type="java.lang.String" value="Please Enter a Case Number (i.e. 11111)"/>
             <Property name="name" type="java.lang.String" value="caseNumberTextField" noResource="true"/>
           </Properties>
         </Component>
@@ -145,7 +146,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="btnMainMenu">
+        <Component class="javax.swing.JButton" name="btnJudgeMainMenu">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="13" style="1"/>
@@ -176,7 +177,7 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Judge - Search Specific Cases"/>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="toolTipText" type="java.lang.String" value="Search Specific Cases for Judge"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="errorMessage">

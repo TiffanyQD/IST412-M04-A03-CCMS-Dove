@@ -74,7 +74,7 @@ public class JudgeSearchUI extends javax.swing.JFrame {
     }
 
     public void enableButtons(boolean enabled){
-        this.btnMainMenu.setEnabled(enabled);
+        this.btnJudgeMainMenu.setEnabled(enabled);
         this.btnSearch.setEnabled(enabled);
         this.btnQuit.setEnabled(enabled);
     }
@@ -94,7 +94,7 @@ public class JudgeSearchUI extends javax.swing.JFrame {
         caseNumberLabel = new javax.swing.JLabel();
         caseNumberTextField = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
-        btnMainMenu = new javax.swing.JButton();
+        btnJudgeMainMenu = new javax.swing.JButton();
         btnQuit = new javax.swing.JButton();
         judgeSearchSpecificCasesLabel = new javax.swing.JLabel();
         errorMessage = new javax.swing.JLabel();
@@ -106,21 +106,22 @@ public class JudgeSearchUI extends javax.swing.JFrame {
         ccmsLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ccmsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ccmsLabel.setText("Court Case Managment System");
-        ccmsLabel.setToolTipText("");
+        ccmsLabel.setToolTipText("Court Case Managment System");
 
         caseNumberLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         caseNumberLabel.setText("Case Number:");
+        caseNumberLabel.setToolTipText("Case Number:");
 
-        caseNumberTextField.setToolTipText("Please enter ID num.");
+        caseNumberTextField.setToolTipText("Please Enter a Case Number (i.e. 11111)");
         caseNumberTextField.setName("caseNumberTextField"); // NOI18N
 
         btnSearch.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnSearch.setText("Search");
         btnSearch.setToolTipText("Search Judge for Specifiic Case");
 
-        btnMainMenu.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        btnMainMenu.setText("Judge Main Menu");
-        btnMainMenu.setToolTipText("Return to Judge Main Menu");
+        btnJudgeMainMenu.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        btnJudgeMainMenu.setText("Judge Main Menu");
+        btnJudgeMainMenu.setToolTipText("Return to Judge Main Menu");
 
         btnQuit.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnQuit.setText("Quit");
@@ -129,7 +130,7 @@ public class JudgeSearchUI extends javax.swing.JFrame {
         judgeSearchSpecificCasesLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         judgeSearchSpecificCasesLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         judgeSearchSpecificCasesLabel.setText("Judge - Search Specific Cases");
-        judgeSearchSpecificCasesLabel.setToolTipText("");
+        judgeSearchSpecificCasesLabel.setToolTipText("Search Specific Cases for Judge");
 
         errorMessage.setForeground(new java.awt.Color(255, 0, 0));
         errorMessage.setToolTipText("");
@@ -149,9 +150,9 @@ public class JudgeSearchUI extends javax.swing.JFrame {
                         .addGap(67, 67, 67)
                         .addGroup(judgeSearchSpecificCasesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(judgeSearchSpecificCasesPanelLayout.createSequentialGroup()
-                                .addComponent(btnSearch)
+                                .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(82, 82, 82)
-                                .addComponent(btnMainMenu)
+                                .addComponent(btnJudgeMainMenu)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnQuit))
                             .addGroup(judgeSearchSpecificCasesPanelLayout.createSequentialGroup()
@@ -181,7 +182,7 @@ public class JudgeSearchUI extends javax.swing.JFrame {
                 .addGroup(judgeSearchSpecificCasesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, judgeSearchSpecificCasesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnSearch)
-                        .addComponent(btnMainMenu))
+                        .addComponent(btnJudgeMainMenu))
                     .addComponent(btnQuit, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(80, Short.MAX_VALUE))
         );
@@ -203,7 +204,7 @@ public class JudgeSearchUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnMainMenu;
+    public javax.swing.JButton btnJudgeMainMenu;
     public javax.swing.JButton btnQuit;
     public javax.swing.JButton btnSearch;
     private javax.swing.JLabel caseNumberLabel;

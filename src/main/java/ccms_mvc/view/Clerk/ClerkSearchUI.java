@@ -74,7 +74,7 @@ public class ClerkSearchUI extends javax.swing.JFrame {
     }
 
     public void enableButtons(boolean enabled){
-        this.btnMainMenu.setEnabled(enabled);
+        this.btnClerkMainMenu.setEnabled(enabled);
         this.btnSearch.setEnabled(enabled);
         this.btnQuit.setEnabled(enabled);
     }
@@ -89,74 +89,75 @@ public class ClerkSearchUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        judgeSearchSpecificCasesPanel = new javax.swing.JPanel();
+        clerkSearchSpecificCasesPanel = new javax.swing.JPanel();
         ccmsLabel = new javax.swing.JLabel();
         caseNumberLabel = new javax.swing.JLabel();
         caseNumberTextField = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
-        btnMainMenu = new javax.swing.JButton();
+        btnClerkMainMenu = new javax.swing.JButton();
         btnQuit = new javax.swing.JButton();
         clerkSearchSpecificCasesLabel = new javax.swing.JLabel();
         errorMessage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        judgeSearchSpecificCasesPanel.setToolTipText("Person Panel");
+        clerkSearchSpecificCasesPanel.setToolTipText("Person Panel");
 
         ccmsLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ccmsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ccmsLabel.setText("Court Case Managment System");
-        ccmsLabel.setToolTipText("");
+        ccmsLabel.setToolTipText("Court Case Managment System");
 
         caseNumberLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         caseNumberLabel.setText("Case Number:");
+        caseNumberLabel.setToolTipText("Case Number:");
 
-        caseNumberTextField.setToolTipText("Please enter ID num.");
+        caseNumberTextField.setToolTipText("Please Enter a Case Number (i.e. 11111)");
         caseNumberTextField.setName("caseNumberTextField"); // NOI18N
 
         btnSearch.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnSearch.setText("Search");
         btnSearch.setToolTipText("Search Judge for Specifiic Case");
 
-        btnMainMenu.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        btnMainMenu.setText("Judge Main Menu");
-        btnMainMenu.setToolTipText("Return to Judge Main Menu");
+        btnClerkMainMenu.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        btnClerkMainMenu.setText("Clerk Main Menu");
+        btnClerkMainMenu.setToolTipText("Return to Clerk Main Menu");
 
         btnQuit.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnQuit.setText("Quit");
-        btnQuit.setToolTipText("exit the application");
+        btnQuit.setToolTipText("Exit the Application");
 
         clerkSearchSpecificCasesLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         clerkSearchSpecificCasesLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         clerkSearchSpecificCasesLabel.setText("Clerk - Search Specific Cases");
-        clerkSearchSpecificCasesLabel.setToolTipText("");
+        clerkSearchSpecificCasesLabel.setToolTipText("Search Specific Cases for Clerk");
 
         errorMessage.setForeground(new java.awt.Color(255, 0, 0));
         errorMessage.setToolTipText("");
 
-        javax.swing.GroupLayout judgeSearchSpecificCasesPanelLayout = new javax.swing.GroupLayout(judgeSearchSpecificCasesPanel);
-        judgeSearchSpecificCasesPanel.setLayout(judgeSearchSpecificCasesPanelLayout);
-        judgeSearchSpecificCasesPanelLayout.setHorizontalGroup(
-            judgeSearchSpecificCasesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(judgeSearchSpecificCasesPanelLayout.createSequentialGroup()
-                .addGroup(judgeSearchSpecificCasesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(judgeSearchSpecificCasesPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout clerkSearchSpecificCasesPanelLayout = new javax.swing.GroupLayout(clerkSearchSpecificCasesPanel);
+        clerkSearchSpecificCasesPanel.setLayout(clerkSearchSpecificCasesPanelLayout);
+        clerkSearchSpecificCasesPanelLayout.setHorizontalGroup(
+            clerkSearchSpecificCasesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(clerkSearchSpecificCasesPanelLayout.createSequentialGroup()
+                .addGroup(clerkSearchSpecificCasesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(clerkSearchSpecificCasesPanelLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(judgeSearchSpecificCasesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(clerkSearchSpecificCasesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(ccmsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(clerkSearchSpecificCasesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, judgeSearchSpecificCasesPanelLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, clerkSearchSpecificCasesPanelLayout.createSequentialGroup()
                         .addGap(67, 67, 67)
-                        .addGroup(judgeSearchSpecificCasesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(judgeSearchSpecificCasesPanelLayout.createSequentialGroup()
-                                .addComponent(btnSearch)
+                        .addGroup(clerkSearchSpecificCasesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(clerkSearchSpecificCasesPanelLayout.createSequentialGroup()
+                                .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(82, 82, 82)
-                                .addComponent(btnMainMenu)
+                                .addComponent(btnClerkMainMenu)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnQuit))
-                            .addGroup(judgeSearchSpecificCasesPanelLayout.createSequentialGroup()
-                                .addGroup(judgeSearchSpecificCasesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(judgeSearchSpecificCasesPanelLayout.createSequentialGroup()
+                            .addGroup(clerkSearchSpecificCasesPanelLayout.createSequentialGroup()
+                                .addGroup(clerkSearchSpecificCasesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(clerkSearchSpecificCasesPanelLayout.createSequentialGroup()
                                         .addComponent(caseNumberLabel)
                                         .addGap(54, 54, 54)
                                         .addComponent(caseNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -164,24 +165,24 @@ public class ClerkSearchUI extends javax.swing.JFrame {
                                 .addGap(0, 77, Short.MAX_VALUE)))))
                 .addContainerGap(103, Short.MAX_VALUE))
         );
-        judgeSearchSpecificCasesPanelLayout.setVerticalGroup(
-            judgeSearchSpecificCasesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(judgeSearchSpecificCasesPanelLayout.createSequentialGroup()
+        clerkSearchSpecificCasesPanelLayout.setVerticalGroup(
+            clerkSearchSpecificCasesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(clerkSearchSpecificCasesPanelLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(ccmsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addComponent(clerkSearchSpecificCasesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68)
-                .addGroup(judgeSearchSpecificCasesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(clerkSearchSpecificCasesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(caseNumberLabel)
                     .addComponent(caseNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
                 .addComponent(errorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(170, 170, 170)
-                .addGroup(judgeSearchSpecificCasesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, judgeSearchSpecificCasesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(clerkSearchSpecificCasesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, clerkSearchSpecificCasesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnSearch)
-                        .addComponent(btnMainMenu))
+                        .addComponent(btnClerkMainMenu))
                     .addComponent(btnQuit, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(80, Short.MAX_VALUE))
         );
@@ -191,27 +192,27 @@ public class ClerkSearchUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(judgeSearchSpecificCasesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(clerkSearchSpecificCasesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 176, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(judgeSearchSpecificCasesPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(clerkSearchSpecificCasesPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnMainMenu;
+    public javax.swing.JButton btnClerkMainMenu;
     public javax.swing.JButton btnQuit;
     public javax.swing.JButton btnSearch;
     private javax.swing.JLabel caseNumberLabel;
     private javax.swing.JTextField caseNumberTextField;
     private javax.swing.JLabel ccmsLabel;
     private javax.swing.JLabel clerkSearchSpecificCasesLabel;
+    private javax.swing.JPanel clerkSearchSpecificCasesPanel;
     public javax.swing.JLabel errorMessage;
-    private javax.swing.JPanel judgeSearchSpecificCasesPanel;
     // End of variables declaration//GEN-END:variables
 
 }

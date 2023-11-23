@@ -33,7 +33,7 @@ public class JudgeSearchCntl implements ActionListener {
 
     public void addActionListenersButtons() {
         judgeSearchUI.btnQuit.addActionListener(this);
-        judgeSearchUI.btnMainMenu.addActionListener(this);
+        judgeSearchUI.btnJudgeMainMenu.addActionListener(this);
         judgeSearchUI.btnSearch.addActionListener(this);
 
     }
@@ -77,7 +77,7 @@ public class JudgeSearchCntl implements ActionListener {
 
         }
         
-        if (obj.equals(judgeSearchUI.btnMainMenu)){
+        if (obj.equals(judgeSearchUI.btnJudgeMainMenu)){
             JudgeMainMenuCntl judgeMainMenuCntl = new JudgeMainMenuCntl();
         }
 
