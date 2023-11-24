@@ -94,16 +94,19 @@ public class JudgeMainMenuCntl implements ActionListener {
         //Return to Main Menu
         if (obj.equals(judgeMainMenuUI.btnMainMenu)){
             MainMenuCntl mainMenuCntl = new MainMenuCntl();
+            judgeMainMenuUI.dispose();
         }
         
         //Search Specific Case
         if (obj.equals(judgeMainMenuUI.btnSearchSpecificCase)){
             JudgeSearchCntl judgeSearchCntl = new JudgeSearchCntl();
+            judgeMainMenuUI.dispose();
         }
         
         //View Case Details
         if (obj.equals(judgeMainMenuUI.btnViewCaseDetails)){
             JudgeViewCntl judgeViewCntl = new JudgeViewCntl();
+            judgeMainMenuUI.dispose();
         }
 
         

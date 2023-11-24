@@ -94,16 +94,19 @@ public class CivilianMainMenuCntl implements ActionListener {
         //Return to Main Menu
         if (obj.equals(civilianMainMenuUI.btnMainMenu)){
             MainMenuCntl mainMenuCntl = new MainMenuCntl();
+            civilianMainMenuUI.dispose();
         }
         
         //Search Specific Case
         if (obj.equals(civilianMainMenuUI.btnSearchSpecificCase)){
             CivilianSearchCntl civilianSearchCntl = new CivilianSearchCntl();
+            civilianMainMenuUI.dispose();
         }
         
         //View Case Details
         if (obj.equals(civilianMainMenuUI.btnViewCaseDetails)){
             CivilianViewCntl civilianViewCntl = new CivilianViewCntl();
+            civilianMainMenuUI.dispose();
         }
 
         

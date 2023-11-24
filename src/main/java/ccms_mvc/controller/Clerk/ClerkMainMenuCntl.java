@@ -94,16 +94,19 @@ public class ClerkMainMenuCntl implements ActionListener {
         //Return to Main Menu
         if (obj.equals(clerkMainMenuUI.btnMainMenu)){
             MainMenuCntl mainMenuCntl = new MainMenuCntl();
+            clerkMainMenuUI.dispose();
         }
         
         //Search Specific Case
         if (obj.equals(clerkMainMenuUI.btnSearchSpecificCase)){
             ClerkSearchCntl clerkSearchCntl = new ClerkSearchCntl();
+            clerkMainMenuUI.dispose();
         }
         
         //View Case Details
         if (obj.equals(clerkMainMenuUI.btnViewCaseDetails)){
             ClerkViewCntl clerkViewCntl = new ClerkViewCntl();
+            clerkMainMenuUI.dispose();
         }
 
         

@@ -82,6 +82,7 @@ public class LawyerViewCntl implements ActionListener {
         
         if (obj.equals(lawyerViewUI.btnMainMenu)){
             LawyerMainMenuCntl lawyerMainMenuCntl = new LawyerMainMenuCntl();
+            lawyerViewUI.dispose();
         }
 
     }

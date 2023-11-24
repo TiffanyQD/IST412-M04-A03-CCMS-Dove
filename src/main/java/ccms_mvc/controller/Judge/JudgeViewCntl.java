@@ -82,6 +82,7 @@ public class JudgeViewCntl implements ActionListener {
         
         if (obj.equals(judgeViewUI.btnJudgeMainMenu)){
             JudgeMainMenuCntl judgeMainMenuCntl = new JudgeMainMenuCntl();
+            judgeViewUI.dispose();
         }
 
     }

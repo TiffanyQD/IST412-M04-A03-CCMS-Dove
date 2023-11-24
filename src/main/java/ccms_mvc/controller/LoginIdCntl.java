@@ -113,6 +113,7 @@ public class LoginIdCntl implements ActionListener {
             if (loginUI.getLoginIdTextField().equals("admin")
                     && loginUI.getPasswordTextField().equals("password")) {
                 MainMenuCntl mainMenuCntl = new MainMenuCntl();
+                loginUI.dispose(); //Close the loginUI
 
             } else {
                 //Set Error Message Label

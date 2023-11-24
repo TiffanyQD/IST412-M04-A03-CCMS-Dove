@@ -79,6 +79,7 @@ public class CivilianSearchCntl implements ActionListener {
         
         if (obj.equals(civilianSearchUI.btnCivilianMainMenu)){
             CivilianMainMenuCntl civilianMainMenuCntl = new CivilianMainMenuCntl();
+            civilianSearchUI.dispose();
         }
 
     }

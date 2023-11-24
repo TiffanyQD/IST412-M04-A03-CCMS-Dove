@@ -79,6 +79,7 @@ public class LawyerSearchCntl implements ActionListener {
         
         if (obj.equals(lawyerSearchUI.btnLawyerMainMenu)){
             LawyerMainMenuCntl lawyerMainMenuCntl = new LawyerMainMenuCntl();
+            lawyerSearchUI.dispose();
         }
 
     }

@@ -64,21 +64,25 @@ public class MainMenuCntl implements ActionListener {
         //Civilian
         if (obj.equals(mainMenuUI.btnCivilianMainMenu)){
             CivilianMainMenuCntl civilianMainMenuCntl = new CivilianMainMenuCntl();
+            mainMenuUI.dispose();
         }
         
         //Clerk
         if (obj.equals(mainMenuUI.btnClerkMainMenu)){
             ClerkMainMenuCntl clerkMainMenuCntl = new ClerkMainMenuCntl();
+            mainMenuUI.dispose();
         }
         
         //Judge
         if (obj.equals(mainMenuUI.bntJudgeMainMenu)){
             JudgeMainMenuCntl judgeMainMenuCntl = new JudgeMainMenuCntl();
+            mainMenuUI.dispose();
         }
 
         //Lawyer
         if (obj.equals(mainMenuUI.btnLawyerMainMenu)){
             LawyerMainMenuCntl lawyerMainMenuCntl = new LawyerMainMenuCntl();
+            mainMenuUI.dispose();
         }
 
         

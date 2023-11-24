@@ -82,6 +82,7 @@ public class ClerkViewCntl implements ActionListener {
         
         if (obj.equals(clerkViewUI.btnClerkMainMenu)){
             ClerkMainMenuCntl clerkMainMenuCntl = new ClerkMainMenuCntl();
+            clerkViewUI.dispose();
         }
 
     }
