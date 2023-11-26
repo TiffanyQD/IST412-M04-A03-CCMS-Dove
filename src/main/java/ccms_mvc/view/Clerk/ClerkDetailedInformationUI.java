@@ -1,17 +1,16 @@
-package ccms_mvc.view.Civilian;
+package ccms_mvc.view.Clerk;
 
-import ccms_mvc.controller.Civilian.CivilianViewCntl;
+import ccms_mvc.controller.Clerk.ClerkDetailedInformationCntl;
 import ccms_mvc.model.CourtCases;
-import java.util.ArrayList;
 
 /**
  *
  * @author Tiffany Dove
  */
-public class CivilianViewUI extends javax.swing.JFrame {
+public class ClerkDetailedInformationUI extends javax.swing.JFrame {
 
     //Reference to Person Controller
-    private CivilianViewCntl civilianViewCntl;
+    private ClerkDetailedInformationCntl clerkDetailedInformationCntl;
     
     //An Array of CourtCases
     CourtCases[] arrayCourtCases; 
@@ -34,11 +33,11 @@ public class CivilianViewUI extends javax.swing.JFrame {
     /**
      * Creates new form PersonUI
      */
-    public CivilianViewUI(CivilianViewCntl civilianViewCntl) {
-        this.civilianViewCntl = civilianViewCntl;
+    public ClerkDetailedInformationUI(ClerkDetailedInformationCntl clerkDetailedInformationCntl) {
+        this.clerkDetailedInformationCntl = clerkDetailedInformationCntl;
         initComponents();
         
-        arrayCourtCases = civilianViewCntl.getArrayCourtCases();
+        arrayCourtCases = clerkDetailedInformationCntl.getArrayCourtCases();
 //        arrayListPerson = civilianViewCntl.getListOfPerson();
 //        arrayListCourtCases = civilianViewCntl.getListOfCourtCases();
 
@@ -137,11 +136,11 @@ public class CivilianViewUI extends javax.swing.JFrame {
     }
 
     public void enableButtons(boolean enabled){
-        this.btnCivilianMainMenu.setEnabled(enabled);
+        this.btnClerkMainMenu.setEnabled(enabled);
         this.btnView.setEnabled(enabled);
         this.btnQuit.setEnabled(enabled);
-        this.btnNext.setEnabled(enabled);
-        this.btnPrevious.setEnabled(enabled);
+        this.btnAdd.setEnabled(enabled);
+        this.btnUpdate.setEnabled(enabled);
     }
 
 
@@ -159,9 +158,9 @@ public class CivilianViewUI extends javax.swing.JFrame {
         caseNumberLabel = new javax.swing.JLabel();
         caseNumberTextField = new javax.swing.JTextField();
         btnView = new javax.swing.JButton();
-        btnCivilianMainMenu = new javax.swing.JButton();
+        btnClerkMainMenu = new javax.swing.JButton();
         btnQuit = new javax.swing.JButton();
-        civilianViewCaseDetailsLabel = new javax.swing.JLabel();
+        clerkModifyCaseInformationLabel = new javax.swing.JLabel();
         errorMessage = new javax.swing.JLabel();
         partyNameLabel = new javax.swing.JLabel();
         partyNameTextField = new javax.swing.JTextField();
@@ -193,8 +192,9 @@ public class CivilianViewUI extends javax.swing.JFrame {
         caseTypeTextField = new javax.swing.JTextField();
         filingDateTextField = new javax.swing.JTextField();
         caseStatusTextField = new javax.swing.JTextField();
-        btnPrevious = new javax.swing.JButton();
-        btnNext = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
+        btnAdd = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -217,18 +217,18 @@ public class CivilianViewUI extends javax.swing.JFrame {
         btnView.setText("View");
         btnView.setToolTipText("View Case Details for Specifiic Case - Civilian ");
 
-        btnCivilianMainMenu.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        btnCivilianMainMenu.setText("Civilian Main Menu");
-        btnCivilianMainMenu.setToolTipText("Return to Civilan Main Menu");
+        btnClerkMainMenu.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        btnClerkMainMenu.setText("Clerk Main Menu");
+        btnClerkMainMenu.setToolTipText("Return to Clerk Main Menu");
 
         btnQuit.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnQuit.setText("Quit");
         btnQuit.setToolTipText("Exit the Application");
 
-        civilianViewCaseDetailsLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        civilianViewCaseDetailsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        civilianViewCaseDetailsLabel.setText("Civilian - View Case Details");
-        civilianViewCaseDetailsLabel.setToolTipText("");
+        clerkModifyCaseInformationLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        clerkModifyCaseInformationLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        clerkModifyCaseInformationLabel.setText("Clerk - Detailed Case Information");
+        clerkModifyCaseInformationLabel.setToolTipText("Clerk - Detailed Case Information");
 
         errorMessage.setForeground(new java.awt.Color(255, 0, 0));
         errorMessage.setToolTipText("");
@@ -319,12 +319,15 @@ public class CivilianViewUI extends javax.swing.JFrame {
         caseStatusTextField.setToolTipText("Case Status Text Field");
         caseStatusTextField.setName("caseNumberTextField"); // NOI18N
 
-        btnPrevious.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnPrevious.setText("Previous");
+        btnUpdate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnUpdate.setText("Update");
 
-        btnNext.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        btnNext.setText("Next");
-        btnNext.setToolTipText("to move fowards through the objects in teh ArrayList");
+        btnAdd.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        btnAdd.setText("Add");
+        btnAdd.setToolTipText("to move fowards through the objects in teh ArrayList");
+
+        btnDelete.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnDelete.setText("Delete");
 
         javax.swing.GroupLayout civilianViewCaseDetailsPanelLayout = new javax.swing.GroupLayout(civilianViewCaseDetailsPanel);
         civilianViewCaseDetailsPanel.setLayout(civilianViewCaseDetailsPanelLayout);
@@ -335,47 +338,11 @@ public class CivilianViewUI extends javax.swing.JFrame {
                 .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
                         .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                                .addComponent(lawyerCommentsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lawyerScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lawyerInformationLabel)
-                            .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                                        .addComponent(plantiffLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(plantiffTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(55, 55, 55)
-                                        .addComponent(defendantLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(defendantTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(involvedPartiesLabel)
-                                    .addComponent(judgeInformationLabel)
-                                    .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                                        .addComponent(judgeCommentsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(judgeScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                        .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnNext)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnPrevious, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                        .addComponent(btnCivilianMainMenu)
-                        .addGap(43, 43, 43)
-                        .addComponent(btnQuit)
-                        .addGap(189, 189, 189))
-                    .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                        .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, civilianViewCaseDetailsPanelLayout.createSequentialGroup()
                                     .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(ccmsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(civilianViewCaseDetailsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(clerkModifyCaseInformationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGap(103, 103, 103))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, civilianViewCaseDetailsPanelLayout.createSequentialGroup()
                                     .addComponent(involvedPartiesSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -417,7 +384,45 @@ public class CivilianViewUI extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(caseTypeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(errorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(0, 38, Short.MAX_VALUE))
+                    .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
+                        .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnAdd)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnClerkMainMenu)
+                        .addGap(43, 43, 43)
+                        .addComponent(btnQuit)
+                        .addGap(102, 102, 102))
+                    .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
+                        .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
+                                .addComponent(lawyerCommentsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lawyerScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lawyerInformationLabel)
+                            .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
+                                        .addComponent(plantiffLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(plantiffTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(55, 55, 55)
+                                        .addComponent(defendantLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(defendantTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(involvedPartiesLabel)
+                                    .addComponent(judgeInformationLabel)
+                                    .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
+                                        .addComponent(judgeCommentsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(judgeScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         civilianViewCaseDetailsPanelLayout.setVerticalGroup(
             civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -425,7 +430,7 @@ public class CivilianViewUI extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(ccmsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(civilianViewCaseDetailsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(clerkModifyCaseInformationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(caseInformationSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -492,15 +497,16 @@ public class CivilianViewUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnView)
-                    .addComponent(btnCivilianMainMenu)
+                    .addComponent(btnClerkMainMenu)
                     .addComponent(btnQuit)
-                    .addComponent(btnPrevious)
-                    .addComponent(btnNext))
+                    .addComponent(btnUpdate)
+                    .addComponent(btnAdd)
+                    .addComponent(btnDelete))
                 .addContainerGap(181, Short.MAX_VALUE))
         );
 
         btnView.getAccessibleContext().setAccessibleDescription("");
-        btnCivilianMainMenu.getAccessibleContext().setAccessibleDescription("");
+        btnClerkMainMenu.getAccessibleContext().setAccessibleDescription("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -519,10 +525,11 @@ public class CivilianViewUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnCivilianMainMenu;
-    public javax.swing.JButton btnNext;
-    public javax.swing.JButton btnPrevious;
+    public javax.swing.JButton btnAdd;
+    public javax.swing.JButton btnClerkMainMenu;
+    public javax.swing.JButton btnDelete;
     public javax.swing.JButton btnQuit;
+    public javax.swing.JButton btnUpdate;
     public javax.swing.JButton btnView;
     private javax.swing.JLabel caseInformationLabel;
     private javax.swing.JSeparator caseInformationSeparator;
@@ -533,8 +540,8 @@ public class CivilianViewUI extends javax.swing.JFrame {
     public javax.swing.JLabel caseTypeLabel;
     private javax.swing.JTextField caseTypeTextField;
     private javax.swing.JLabel ccmsLabel;
-    private javax.swing.JLabel civilianViewCaseDetailsLabel;
     private javax.swing.JPanel civilianViewCaseDetailsPanel;
+    private javax.swing.JLabel clerkModifyCaseInformationLabel;
     private javax.swing.JLabel courtSystemLabel;
     private javax.swing.JTextField courtSystemTextField;
     public javax.swing.JLabel defendantLabel;

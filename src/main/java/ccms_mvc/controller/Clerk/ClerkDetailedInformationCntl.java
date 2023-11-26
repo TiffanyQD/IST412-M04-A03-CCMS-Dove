@@ -1,22 +1,22 @@
-package ccms_mvc.controller.Civilian;
+package ccms_mvc.controller.Clerk;
 
 import ccms_mvc.model.CourtCases;
-import ccms_mvc.view.Civilian.CivilianViewUI;
+import ccms_mvc.view.Clerk.ClerkDetailedInformationUI;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
-public class CivilianViewCntl implements ActionListener {
+public class ClerkDetailedInformationCntl implements ActionListener {
 
     private CourtCases[] arrayCourtCases;
     private CourtCases courtCases;
 
-    private CivilianViewUI civilianViewUI;
+    private ClerkDetailedInformationUI clerkDetailedInformationUI;
     private int indexOfCurrentCourtCase;
 
-    public CivilianViewCntl() {
+    public ClerkDetailedInformationCntl() {
 //        personList = new PersonList();
 //        courtCasesList = new CourtCasesList();
 
@@ -30,20 +30,20 @@ public class CivilianViewCntl implements ActionListener {
 
 
 
-        civilianViewUI = new CivilianViewUI(this);
+        clerkDetailedInformationUI = new ClerkDetailedInformationUI(this);
         //Call to addActionListernerButtons to activate listener for various
         //buttons.
         addActionListenersButtons();
         //set the Person UI to be visible (true)
-        civilianViewUI.setVisible(true);
+        clerkDetailedInformationUI.setVisible(true);
     }
 
     public void addActionListenersButtons() {
-        civilianViewUI.btnQuit.addActionListener(this);
-        civilianViewUI.btnCivilianMainMenu.addActionListener(this);
-        civilianViewUI.btnView.addActionListener(this);
-        civilianViewUI.btnNext.addActionListener(this);
-        civilianViewUI.btnPrevious.addActionListener(this);
+        clerkDetailedInformationUI.btnQuit.addActionListener(this);
+        clerkDetailedInformationUI.btnClerkMainMenu.addActionListener(this);
+        clerkDetailedInformationUI.btnView.addActionListener(this);
+        clerkDetailedInformationUI.btnAdd.addActionListener(this);
+        clerkDetailedInformationUI.btnUpdate.addActionListener(this);
 
     }
 
@@ -65,53 +65,53 @@ public class CivilianViewCntl implements ActionListener {
         Object obj = e.getSource();
 
         //The PREVIOUS button was pressed
-        if (obj.equals(civilianViewUI.btnPrevious)) {
+        if (obj.equals(clerkDetailedInformationUI.btnUpdate)) {
             /*
             So that you don't have problems with out of bounds, if the current 
             position equals 0, then loop around to the last element in the 
             array list.
              */
-            indexOfCurrentCourtCase = civilianViewUI.getIndexOfCurrentCourtCase();
+            indexOfCurrentCourtCase = clerkDetailedInformationUI.getIndexOfCurrentCourtCase();
             if (indexOfCurrentCourtCase == 0) {
                 indexOfCurrentCourtCase = arrayCourtCases.length - 1;
             } else {
                 indexOfCurrentCourtCase--;
             }
             
-            civilianViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
-            civilianViewUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
+            clerkDetailedInformationUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
+            clerkDetailedInformationUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
         }
 
         //The NEXT button was pressed
-        if (obj.equals(civilianViewUI.btnNext)) {
+        if (obj.equals(clerkDetailedInformationUI.btnAdd)) {
             /*
             So that you don't have problems with out of bounds, if the current 
             position equals the last element in the array list, then loop 
             around to the first element in the array list.
              */
-            indexOfCurrentCourtCase = civilianViewUI.getIndexOfCurrentCourtCase();
+            indexOfCurrentCourtCase = clerkDetailedInformationUI.getIndexOfCurrentCourtCase();
             if (indexOfCurrentCourtCase == arrayCourtCases.length - 1) {
                 indexOfCurrentCourtCase = 0;
             } else {
                 indexOfCurrentCourtCase++;
             }
-            civilianViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
-            civilianViewUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
+            clerkDetailedInformationUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
+            clerkDetailedInformationUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
         }
 
         //The QUIT button was pressed
-        if (obj.equals(civilianViewUI.btnQuit)) {
+        if (obj.equals(clerkDetailedInformationUI.btnQuit)) {
             System.exit(0);
         }
 
         //The ADD button was pressed
-        if (obj.equals(civilianViewUI.btnView)) {
+        if (obj.equals(clerkDetailedInformationUI.btnView)) {
             //Enable all of the buttons except for Save button
-            civilianViewUI.enableButtons(true);
+            clerkDetailedInformationUI.enableButtons(true);
             
             boolean caseNumberFound = false;
             for (int i =0; i < arrayCourtCases.length; i ++){
-                if (arrayCourtCases[i].getCaseNumber().equals(civilianViewUI.getCaseNumberTextField())) {
+                if (arrayCourtCases[i].getCaseNumber().equals(clerkDetailedInformationUI.getCaseNumberTextField())) {
                     courtCases = arrayCourtCases[i];
                     indexOfCurrentCourtCase = i;
                     caseNumberFound = true;
@@ -120,19 +120,19 @@ public class CivilianViewCntl implements ActionListener {
             }
             
             if (caseNumberFound) {
-                civilianViewUI.parseCourtCases(courtCases);
-                civilianViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
-                civilianViewUI.errorMessage.setText("Case Number: " + civilianViewUI.getCaseNumberTextField() + " was found. !!!");
+                clerkDetailedInformationUI.parseCourtCases(courtCases);
+                clerkDetailedInformationUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
+                clerkDetailedInformationUI.errorMessage.setText("Case Number: " + clerkDetailedInformationUI.getCaseNumberTextField() + " was found. !!!");
             } else {
-                civilianViewUI.errorMessage.setText("Case Number: " + civilianViewUI.getCaseNumberTextField() + " was NOT found. !!!");
-                civilianViewUI.clearTheFieldsInCourtCasesUI();
+                clerkDetailedInformationUI.errorMessage.setText("Case Number: " + clerkDetailedInformationUI.getCaseNumberTextField() + " was NOT found. !!!");
+                clerkDetailedInformationUI.clearTheFieldsInCourtCasesUI();
             }
 
         }
         
-        if (obj.equals(civilianViewUI.btnCivilianMainMenu)){
-            CivilianMainMenuCntl civilianMainMenuCntl = new CivilianMainMenuCntl();
-            civilianViewUI.dispose();
+        if (obj.equals(clerkDetailedInformationUI.btnClerkMainMenu)){
+            ClerkMainMenuCntl clerkMainMenuCntl = new ClerkMainMenuCntl(); 
+            clerkDetailedInformationUI.dispose();
         }
 
     }
