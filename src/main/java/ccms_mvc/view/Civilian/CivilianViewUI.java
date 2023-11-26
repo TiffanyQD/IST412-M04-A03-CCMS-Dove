@@ -93,9 +93,39 @@ public class CivilianViewUI extends javax.swing.JFrame {
         this.lawyerCommentsTextArea.setText(courtCases.getLawyerInformation());
     }
 
-    public void clearTheFieldsInPersonUI() {
-        //set the UI's id num text field with the id num from Person
-        caseNumberTextField.setText("");
+    public void clearTheFieldsInCourtCasesUI() {
+        //Set the Court System field
+        this.courtSystemTextField.setText("");
+        
+        //Set the Location field
+        this.locationTextField.setText("");
+        
+        //Set the Case Number field
+        this.caseNumberTextField.setText("");
+        
+        //Set the Party Name field
+        this.partyNameTextField.setText("");
+        
+        //Set the Case Type field
+        this.caseTypeTextField.setText("");
+        
+        //Set the Filing Data field
+        this.filingDateTextField.setText("");
+        
+        //Set the Case Status 
+        this.caseStatusTextField.setText("");
+        
+        //Set the Plantiff
+        this.plantiffTextField.setText("");
+        
+        //Set the Defendant
+        this.defendantTextField.setText("");
+        
+        //Set the Judge Comments
+        this.judgeCommentsTextArea.setText("");
+        
+        //Set the Lawyer Comments
+        this.lawyerCommentsTextArea.setText("");
     }
 
 
@@ -115,6 +145,8 @@ public class CivilianViewUI extends javax.swing.JFrame {
         this.btnCivilianMainMenu.setEnabled(enabled);
         this.btnView.setEnabled(enabled);
         this.btnQuit.setEnabled(enabled);
+        this.btnNext.setEnabled(enabled);
+        this.btnPrevious.setEnabled(enabled);
     }
 
 
@@ -179,6 +211,7 @@ public class CivilianViewUI extends javax.swing.JFrame {
         ccmsLabel.setToolTipText("Court Case Managment System");
 
         caseNumberLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        caseNumberLabel.setForeground(new java.awt.Color(255, 0, 0));
         caseNumberLabel.setText("Case Number:");
         caseNumberLabel.setToolTipText("Case Number:");
 
@@ -305,33 +338,12 @@ public class CivilianViewUI extends javax.swing.JFrame {
             .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                            .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(ccmsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(civilianViewCaseDetailsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(103, 103, 103))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                            .addComponent(involvedPartiesSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(24, 24, 24))
-                        .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                            .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(judgeInformationSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lawyerInformationSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(24, 24, 24)))
                     .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
                         .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
                                 .addComponent(lawyerCommentsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                                        .addComponent(btnNext)
-                                        .addGap(33, 33, 33)
-                                        .addComponent(btnCivilianMainMenu)
-                                        .addGap(53, 53, 53)
-                                        .addComponent(btnQuit))
-                                    .addComponent(lawyerScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(lawyerScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(lawyerInformationLabel)
                             .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
@@ -352,7 +364,32 @@ public class CivilianViewUI extends javax.swing.JFrame {
                                         .addComponent(judgeScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
+                        .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnNext)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnPrevious, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                        .addComponent(btnCivilianMainMenu)
+                        .addGap(43, 43, 43)
+                        .addComponent(btnQuit)
+                        .addGap(189, 189, 189))
+                    .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
                         .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, civilianViewCaseDetailsPanelLayout.createSequentialGroup()
+                                    .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(ccmsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(civilianViewCaseDetailsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(103, 103, 103))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, civilianViewCaseDetailsPanelLayout.createSequentialGroup()
+                                    .addComponent(involvedPartiesSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(24, 24, 24))
+                                .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
+                                    .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(judgeInformationSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lawyerInformationSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(24, 24, 24)))
                             .addComponent(caseInformationSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
                                 .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -384,12 +421,8 @@ public class CivilianViewUI extends javax.swing.JFrame {
                                         .addComponent(caseTypeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(caseTypeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                                .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(44, 44, 44)
-                                .addComponent(btnPrevious))
                             .addComponent(errorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 79, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         civilianViewCaseDetailsPanelLayout.setVerticalGroup(
             civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -398,7 +431,7 @@ public class CivilianViewUI extends javax.swing.JFrame {
                 .addComponent(ccmsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(civilianViewCaseDetailsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(caseInformationSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(caseInformationLabel)
@@ -433,7 +466,7 @@ public class CivilianViewUI extends javax.swing.JFrame {
                         .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(caseStatusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(caseStatusTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(27, 27, 27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(involvedPartiesSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(involvedPartiesLabel)
@@ -451,7 +484,7 @@ public class CivilianViewUI extends javax.swing.JFrame {
                 .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(judgeCommentsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(judgeScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lawyerInformationSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lawyerInformationLabel)
@@ -459,16 +492,16 @@ public class CivilianViewUI extends javax.swing.JFrame {
                 .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lawyerCommentsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lawyerScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(errorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnView)
                     .addComponent(btnCivilianMainMenu)
                     .addComponent(btnQuit)
                     .addComponent(btnPrevious)
                     .addComponent(btnNext))
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
 
         btnView.getAccessibleContext().setAccessibleDescription("");

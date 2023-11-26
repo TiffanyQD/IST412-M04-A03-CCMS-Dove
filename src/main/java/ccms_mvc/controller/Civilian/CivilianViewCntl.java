@@ -42,6 +42,8 @@ public class CivilianViewCntl implements ActionListener {
         civilianViewUI.btnQuit.addActionListener(this);
         civilianViewUI.btnCivilianMainMenu.addActionListener(this);
         civilianViewUI.btnView.addActionListener(this);
+        civilianViewUI.btnNext.addActionListener(this);
+        civilianViewUI.btnPrevious.addActionListener(this);
 
     }
 
@@ -107,24 +109,23 @@ public class CivilianViewCntl implements ActionListener {
             //Enable all of the buttons except for Save button
             civilianViewUI.enableButtons(true);
             
-            
-            
-            
-
             boolean caseNumberFound = false;
-            for (CourtCases cc : arrayCourtCases){
-                if (cc.getCaseNumber().equals(civilianViewUI.getCaseNumberTextField())) {
-                    courtCases = cc;
+            for (int i =0; i < arrayCourtCases.length; i ++){
+                if (arrayCourtCases[i].getCaseNumber().equals(civilianViewUI.getCaseNumberTextField())) {
+                    courtCases = arrayCourtCases[i];
+                    indexOfCurrentCourtCase = i;
                     caseNumberFound = true;
                     break;
                 }
             }
-
+            
             if (caseNumberFound) {
                 civilianViewUI.parseCourtCases(courtCases);
-                civilianViewUI.errorMessage.setText("Case Number: " + civilianViewUI.getCaseNumberTextField() + " was found. !!!");
+                civilianViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
+//                civilianViewUI.errorMessage.setText("Case Number: " + civilianViewUI.getCaseNumberTextField() + " was found. !!!");
             } else {
                 civilianViewUI.errorMessage.setText("Case Number: " + civilianViewUI.getCaseNumberTextField() + " was NOT found. !!!");
+                civilianViewUI.clearTheFieldsInCourtCasesUI();
             }
 
         }
