@@ -4,29 +4,25 @@ import ccms_mvc.controller.Civilian.CivilianMainMenuCntl;
 import ccms_mvc.controller.Clerk.ClerkMainMenuCntl;
 import ccms_mvc.controller.Judge.JudgeMainMenuCntl;
 import ccms_mvc.controller.Lawyer.LawyerMainMenuCntl;
-import ccms_mvc.model.CourtCases;
-import ccms_mvc.model.CourtCasesList;
-import ccms_mvc.model.Person;
-import ccms_mvc.model.PersonList;
+import ccms_mvc.model.LoginInformation;
 import ccms_mvc.view.MainMenuUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class MainMenuCntl implements ActionListener {
 
-    private Person person;
-    private PersonList personList;
+//    private Person person;
+//    private PersonList personList;
 
-    private CourtCases courtCases;
-    private CourtCasesList courtCasesList;
+//    private CourtCases courtCases;
+//    private CourtCasesList courtCasesList;
 
     private MainMenuUI mainMenuUI;
     private int indexOfCurrentPerson;
 
     public MainMenuCntl() {
-        personList = new PersonList();
-        courtCasesList = new CourtCasesList();
+//        personList = new PersonList();
+//        courtCasesList = new CourtCasesList();
         mainMenuUI = new MainMenuUI(this);
         //Call to addActionListernerButtons toactivate listener for various
         //buttons.
@@ -39,16 +35,8 @@ public class MainMenuCntl implements ActionListener {
         mainMenuUI.btnQuit.addActionListener(this);
         mainMenuUI.btnCivilianMainMenu.addActionListener(this);
         mainMenuUI.btnClerkMainMenu.addActionListener(this);
-        mainMenuUI.bntJudgeMainMenu.addActionListener(this);
+        mainMenuUI.btnJudgeMainMenu.addActionListener(this);
         mainMenuUI.btnLawyerMainMenu.addActionListener(this);
-    }
-
-    public ArrayList<Person> getListOfPerson() {
-        return personList.getPersonArrayList();
-    }
-
-    public ArrayList<CourtCases> getListOfCourtCases() {
-        return courtCasesList.getCourtCasesArrayList();
     }
 
     @Override
@@ -74,7 +62,7 @@ public class MainMenuCntl implements ActionListener {
         }
         
         //Judge
-        if (obj.equals(mainMenuUI.bntJudgeMainMenu)){
+        if (obj.equals(mainMenuUI.btnJudgeMainMenu)){
             JudgeMainMenuCntl judgeMainMenuCntl = new JudgeMainMenuCntl();
             mainMenuUI.dispose();
         }
@@ -84,7 +72,6 @@ public class MainMenuCntl implements ActionListener {
             LawyerMainMenuCntl lawyerMainMenuCntl = new LawyerMainMenuCntl();
             mainMenuUI.dispose();
         }
-
-        
+       
     }
 }

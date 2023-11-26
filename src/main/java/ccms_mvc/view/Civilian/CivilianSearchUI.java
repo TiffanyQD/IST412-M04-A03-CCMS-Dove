@@ -33,8 +33,8 @@ public class CivilianSearchUI extends javax.swing.JFrame {
     public CivilianSearchUI(CivilianSearchCntl civilianSearchCntl) {
         this.civilianSearchCntl = civilianSearchCntl;
         initComponents();
-        arrayListPerson = civilianSearchCntl.getListOfPerson();
-        arrayListCourtCases = civilianSearchCntl.getListOfCourtCases();
+//        arrayListPerson = civilianSearchCntl.getListOfPerson();
+//        arrayListCourtCases = civilianSearchCntl.getListOfCourtCases();
         //Get a Person occurrence from the arrayList using the current position.
         //namely current person.
         person = arrayListPerson.get(indexOfCurrentPerson);

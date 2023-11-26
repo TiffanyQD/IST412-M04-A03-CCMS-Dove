@@ -9,7 +9,7 @@ public class PersonList {
 
     public PersonList() {
         this.personArrayList = new ArrayList<>();
-        if (personArrayList.size() == 0){
+        if (personArrayList.isEmpty()){
             createPersonArrayList();
         }
     }

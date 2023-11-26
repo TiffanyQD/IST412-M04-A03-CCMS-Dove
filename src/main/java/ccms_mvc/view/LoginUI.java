@@ -36,11 +36,11 @@ public class LoginUI extends javax.swing.JFrame {
     public LoginUI(LoginIdCntl loginIdCntl) {
         this.loginIdCntl = loginIdCntl;
         initComponents();
-        arrayListPerson = loginIdCntl.getListOfPerson();
-        arrayListCourtCases = loginIdCntl.getListOfCourtCases();
+//        arrayListPerson = loginIdCntl.getListOfPerson();
+//        arrayListCourtCases = loginIdCntl.getListOfCourtCases();
         //Get a Person occurrence from the arrayList using the current position.
         //namely current person.
-        person = arrayListPerson.get(indexOfCurrentPerson);
+//        person = arrayListPerson.get(indexOfCurrentPerson);
         //Using the Person (person) class, take the values and populate
         //the UI.
 
@@ -65,7 +65,7 @@ public class LoginUI extends javax.swing.JFrame {
 //    }
 
 
-    public void clearTheFieldsInPersonUI() {
+    public void clearTheFieldsInLoginUI() {
         //set the UI's id num text field with the id num from Person
         loginIdTextField.setText("");
         //set the UI's name text field with the name from Person

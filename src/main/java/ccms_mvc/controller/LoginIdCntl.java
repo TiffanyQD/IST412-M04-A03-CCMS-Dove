@@ -1,28 +1,40 @@
 package ccms_mvc.controller;
 
-import ccms_mvc.model.CourtCases;
-import ccms_mvc.model.CourtCasesList;
-import ccms_mvc.model.Person;
-import ccms_mvc.model.PersonList;
+import ccms_mvc.model.LoginInformation;
 import ccms_mvc.view.LoginUI;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
+import java.io.File;
+import java.io.IOException;
 
 public class LoginIdCntl implements ActionListener {
 
-    private Person person;
-    private PersonList personList;
+//    private Person person;
+//    private PersonList personList;
 
-    private CourtCases courtCases;
-    private CourtCasesList courtCasesList;
+//    private CourtCases courtCases;
+//    private CourtCasesList courtCasesList;
 
     private LoginUI loginUI;
     private int indexOfCurrentPerson;
-
+    
+    private LoginInformation[] listLoginInformation;
+ 
     public LoginIdCntl() {
-        personList = new PersonList();
-        courtCasesList = new CourtCasesList();
+
+        ObjectMapper mapper = new ObjectMapper();
+
+        try {
+            listLoginInformation = mapper.readValue(new File("src/resources/loginInformation.json"), LoginInformation[].class);
+            System.out.println(listLoginInformation);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+//        personList = new PersonList();
+//        courtCasesList = new CourtCasesList();
+
         loginUI = new LoginUI(this);
         //Call to addActionListernerButtons to activate listener for various
         //buttons.
@@ -34,14 +46,6 @@ public class LoginIdCntl implements ActionListener {
     public void addActionListenersButtons() {
         loginUI.btnQuit.addActionListener(this);
         loginUI.btnSubmit.addActionListener(this);
-    }
-
-    public ArrayList<Person> getListOfPerson() {
-        return personList.getPersonArrayList();
-    }
-
-    public ArrayList<CourtCases> getListOfCourtCases() {
-        return courtCasesList.getCourtCasesArrayList();
     }
 
     @Override
@@ -82,7 +86,6 @@ public class LoginIdCntl implements ActionListener {
 //            loginUI.setIndexOfCurrentPerson(indexOfCurrentPerson);
 //            loginUI.parsePerson(personList.getPersonArrayList().get(indexOfCurrentPerson));
 //        }
-
         //The QUIT button was pressed
         if (obj.equals(loginUI.btnQuit)) {
             System.exit(0);
@@ -95,7 +98,7 @@ public class LoginIdCntl implements ActionListener {
 //                personList.getPersonArrayList().remove(indexOfCurrentPerson);
 //                if (personList.getPersonArrayList().size() == 0) {
 //                    System.out.println("There are no more records to delete.");
-//                    loginUI.clearTheFieldsInPersonUI();
+//                    loginUI.clearTheFieldsInLoginUI();
 //                } else {
 //                    loginUI.parsePerson(personList.getPersonArrayList().get(0));
 //                }
@@ -104,23 +107,29 @@ public class LoginIdCntl implements ActionListener {
 //            }
 //
 //        }
-
         //The ADD button was pressed
         if (obj.equals(loginUI.btnSubmit)) {
             //Enable all of the buttons except for Save button
             loginUI.enableButtons(true);
 
-            if (loginUI.getLoginIdTextField().equals("admin")
-                    && loginUI.getPasswordTextField().equals("password")) {
+            boolean blnFound = false; 
+            for (LoginInformation loginInfo : listLoginInformation) {
+                if (loginInfo.getLoginId().contains(loginUI.getLoginIdTextField()) &&
+                        loginInfo.getPassword().contains(loginUI.getPasswordTextField())){
+                    blnFound = true;
+                    break;
+                }
+            }
+            
+            if (blnFound) {
                 MainMenuCntl mainMenuCntl = new MainMenuCntl();
                 loginUI.dispose(); //Close the loginUI
-
             } else {
                 //Set Error Message Label
                 loginUI.setErrorMessageLabel("Invalid iogin ID and password combination.");
 
-                //Clear the fields in the Person UI
-                loginUI.clearTheFieldsInPersonUI();
+                //Clear the fields in the Login UI
+                loginUI.clearTheFieldsInLoginUI();
             }
         }
 

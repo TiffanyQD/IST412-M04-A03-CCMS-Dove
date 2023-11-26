@@ -21,8 +21,9 @@ public class CivilianSearchCntl implements ActionListener {
     private int indexOfCurrentPerson;
 
     public CivilianSearchCntl() {
-        personList = new PersonList();
-        courtCasesList = new CourtCasesList();
+//        personList = new PersonList();
+//        courtCasesList = new CourtCasesList();
+        //TODO Tiffany, Add logic to retrieve cases.
         civilianSearchUI = new CivilianSearchUI(this);
         //Call to addActionListernerButtons to activate listener for various
         //buttons.
@@ -38,13 +39,13 @@ public class CivilianSearchCntl implements ActionListener {
 
     }
 
-    public ArrayList<Person> getListOfPerson() {
-        return personList.getPersonArrayList();
-    }
-
-    public ArrayList<CourtCases> getListOfCourtCases() {
-        return courtCasesList.getCourtCasesArrayList();
-    }
+//    public ArrayList<Person> getListOfPerson() {
+//        return personList.getPersonArrayList();
+//    }
+//
+//    public ArrayList<CourtCases> getListOfCourtCases() {
+//        return courtCasesList.getCourtCasesArrayList();
+//    }
 
     @Override
     public void actionPerformed(ActionEvent e) {

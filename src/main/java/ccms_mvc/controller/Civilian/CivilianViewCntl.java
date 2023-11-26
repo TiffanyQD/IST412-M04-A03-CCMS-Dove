@@ -21,8 +21,8 @@ public class CivilianViewCntl implements ActionListener {
     private int indexOfCurrentPerson;
 
     public CivilianViewCntl() {
-        personList = new PersonList();
-        courtCasesList = new CourtCasesList();
+//        personList = new PersonList();
+//        courtCasesList = new CourtCasesList();
         civilianViewUI = new CivilianViewUI(this);
         //Call to addActionListernerButtons to activate listener for various
         //buttons.
@@ -38,13 +38,13 @@ public class CivilianViewCntl implements ActionListener {
 
     }
 
-    public ArrayList<Person> getListOfPerson() {
-        return personList.getPersonArrayList();
-    }
-
-    public ArrayList<CourtCases> getListOfCourtCases() {
-        return courtCasesList.getCourtCasesArrayList();
-    }
+//    public ArrayList<Person> getListOfPerson() {
+//        return personList.getPersonArrayList();
+//    }
+//
+//    public ArrayList<CourtCases> getListOfCourtCases() {
+//        return courtCasesList.getCourtCasesArrayList();
+//    }
 
     @Override
     public void actionPerformed(ActionEvent e) {

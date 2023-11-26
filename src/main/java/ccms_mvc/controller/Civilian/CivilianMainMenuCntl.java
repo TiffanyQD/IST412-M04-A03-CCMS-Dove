@@ -22,8 +22,8 @@ public class CivilianMainMenuCntl implements ActionListener {
     private int indexOfCurrentPerson;
 
     public CivilianMainMenuCntl() {
-        personList = new PersonList();
-        courtCasesList = new CourtCasesList();
+//        personList = new PersonList();
+//        courtCasesList = new CourtCasesList();
         civilianMainMenuUI = new CivilianMainMenuUI(this);
         //Call to addActionListernerButtons toactivate listener for various
         //buttons.
@@ -37,14 +37,6 @@ public class CivilianMainMenuCntl implements ActionListener {
         civilianMainMenuUI.btnMainMenu.addActionListener(this);
         civilianMainMenuUI.btnSearchSpecificCase.addActionListener(this);
         civilianMainMenuUI.btnViewCaseDetails.addActionListener(this);
-    }
-
-    public ArrayList<Person> getListOfPerson() {
-        return personList.getPersonArrayList();
-    }
-
-    public ArrayList<CourtCases> getListOfCourtCases() {
-        return courtCasesList.getCourtCasesArrayList();
     }
 
     @Override

@@ -6,35 +6,26 @@
 
 package ccms_mvc.model;
 
+import java.time.ZonedDateTime;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
+@Getter
+@Setter
+@ToString
 public class CourtCases {
+    public CourtSystem courtSystem;
+    public Location location;
     public String caseNumber;
     public String partyName;
-
-    public CourtCases() {
-        this.caseNumber = "CaseNumber";
-        this.partyName = "partyName";
-    }
-
-    public CourtCases(String caseNumber, String partyName) {
-        this.caseNumber = caseNumber;
-        this.partyName = partyName;
-    }
-
-    public String getCaseNumber() {
-        return caseNumber;
-    }
-
-    public void setCaseNumber(String caseNumber) {
-        this.caseNumber = caseNumber;
-    }
-
-    public String getPartyName() {
-        return partyName;
-    }
-
-    public void setPartyName(String partyName) {
-        this.partyName = partyName;
-    }
+    public CaseType caseType;
+    public ZonedDateTime fillingDate;
+    public CaseStatus caseStatus; 
+    public String plantiff;
+    public String defendant;
+    public String judgeInformation; 
+    public String lawyerInformation;
 
 }
