@@ -13,17 +13,26 @@ public class CivilianViewUI extends javax.swing.JFrame {
 
     //Reference to Person Controller
     private CivilianViewCntl civilianViewCntl;
+    
     //An arrayList of Person
     private ArrayList<Person> arrayListPerson;  
     //An arrayList of Person
     private ArrayList<CourtCases> arrayListCourtCases;  
     //Counter of the current Person
-    private int indexOfCurrentPerson = 0;
-    //Reference to Person class
-    private Person person;
+    
+    //An Array of CourtCases
+    CourtCases[] arrayCourtCases; 
+    
+    private int indexOfCurrentCourtCase = 0;
+    //Reference to CourtCases class
+    private CourtCases courtCases;
 
-    public int getIndexOfCurrentPerson() {
-        return indexOfCurrentPerson;
+    public int getIndexOfCurrentCourtCase() {
+        return indexOfCurrentCourtCase;
+    }
+
+    public void setIndexOfCurrentCourtCase(int indexOfCurrentPerson) {
+        this.indexOfCurrentCourtCase = indexOfCurrentPerson;
     }
             
             
@@ -33,31 +42,56 @@ public class CivilianViewUI extends javax.swing.JFrame {
     public CivilianViewUI(CivilianViewCntl civilianViewCntl) {
         this.civilianViewCntl = civilianViewCntl;
         initComponents();
+        
+        arrayCourtCases = civilianViewCntl.getArrayCourtCases();
 //        arrayListPerson = civilianViewCntl.getListOfPerson();
 //        arrayListCourtCases = civilianViewCntl.getListOfCourtCases();
+
         //Get a Person occurrence from the arrayList using the current position.
         //namely current person.
-        person = arrayListPerson.get(indexOfCurrentPerson);
+        courtCases = arrayCourtCases[indexOfCurrentCourtCase];
+
         //Using the Person (person) class, take the values and populate
         //the UI.
 
-//        parsePerson(person);
+        parseCourtCases(courtCases);
     }
 
-//    public void parsePerson(Person person) {
-//        //set the UI's id num text field with the id num from Person
-//        idNumTextField.setText(String.valueOf(person.getIdNum()));
-//        //set the UI's name text field with the name from Person
-//        nameTextField.setText(person.getName());
-//        //set the UI's address text field with the address from Person
-//        addressTextField.setText(person.getAddress());
-//        //set the UI's city text field with the city from Person
-//        cityTextField.setText(person.getCity());
-//        //set the UI's state text field with the state from Person
-//        stateTextField.setText(person.getState());
-//        //set the UI's zip code text field with the zip code from Person
-//        zipCodeTextField.setText(String.valueOf(person.getZipCode()));
-//    }
+    public void parseCourtCases(CourtCases courtCases) {
+        
+        //Set the Court System field
+        this.courtSystemTextField.setText(courtCases.getCourtSystem().name());
+        
+        //Set the Location field
+        this.locationTextField.setText(courtCases.getLocation().name());
+        
+        //Set the Case Number field
+        this.caseNumberTextField.setText(courtCases.getCaseNumber());
+        
+        //Set the Party Name field
+        this.partyNameTextField.setText(courtCases.getPartyName());
+        
+        //Set the Case Type field
+        this.caseTypeTextField.setText(courtCases.getCaseType().name());
+        
+        //Set the Filing Data field
+        this.filingDateTextField.setText(courtCases.getFillingDate());
+        
+        //Set the Case Status 
+        this.caseStatusTextField.setText(courtCases.getCaseType().name());
+        
+        //Set the Plantiff
+        this.plantiffTextField.setText(courtCases.getPlantiff());
+        
+        //Set the Defendant
+        this.defendantTextField.setText(courtCases.getDefendant());
+        
+        //Set the Judge Comments
+        this.judgeCommentsTextArea.setText(courtCases.getJudgeInformation());
+        
+        //Set the Lawyer Comments
+        this.lawyerCommentsTextArea.setText(courtCases.getLawyerInformation());
+    }
 
     public void clearTheFieldsInPersonUI() {
         //set the UI's id num text field with the id num from Person
@@ -132,6 +166,8 @@ public class CivilianViewUI extends javax.swing.JFrame {
         caseTypeTextField = new javax.swing.JTextField();
         filingDateTextField = new javax.swing.JTextField();
         caseStatusTextField = new javax.swing.JTextField();
+        btnPrevious = new javax.swing.JButton();
+        btnNext = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -255,6 +291,13 @@ public class CivilianViewUI extends javax.swing.JFrame {
         caseStatusTextField.setToolTipText("Case Status Text Field");
         caseStatusTextField.setName("caseNumberTextField"); // NOI18N
 
+        btnPrevious.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnPrevious.setText("Previous");
+
+        btnNext.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        btnNext.setText("Next");
+        btnNext.setToolTipText("to move fowards through the objects in teh ArrayList");
+
         javax.swing.GroupLayout civilianViewCaseDetailsPanelLayout = new javax.swing.GroupLayout(civilianViewCaseDetailsPanel);
         civilianViewCaseDetailsPanel.setLayout(civilianViewCaseDetailsPanelLayout);
         civilianViewCaseDetailsPanelLayout.setHorizontalGroup(
@@ -282,9 +325,11 @@ public class CivilianViewUI extends javax.swing.JFrame {
                                 .addComponent(lawyerCommentsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, civilianViewCaseDetailsPanelLayout.createSequentialGroup()
+                                        .addComponent(btnNext)
+                                        .addGap(33, 33, 33)
                                         .addComponent(btnCivilianMainMenu)
-                                        .addGap(161, 161, 161)
+                                        .addGap(53, 53, 53)
                                         .addComponent(btnQuit))
                                     .addComponent(lawyerScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(lawyerInformationLabel)
@@ -339,7 +384,10 @@ public class CivilianViewUI extends javax.swing.JFrame {
                                         .addComponent(caseTypeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(caseTypeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
+                                .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(44, 44, 44)
+                                .addComponent(btnPrevious))
                             .addComponent(errorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 79, Short.MAX_VALUE))))
         );
@@ -402,24 +450,29 @@ public class CivilianViewUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(judgeCommentsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(judgeScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(judgeScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
                 .addComponent(lawyerInformationSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lawyerInformationLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lawyerCommentsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lawyerScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(lawyerScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
                 .addComponent(errorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnView)
                     .addComponent(btnCivilianMainMenu)
-                    .addComponent(btnQuit))
-                .addContainerGap(73, Short.MAX_VALUE))
+                    .addComponent(btnQuit)
+                    .addComponent(btnPrevious)
+                    .addComponent(btnNext))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
+
+        btnView.getAccessibleContext().setAccessibleDescription("");
+        btnCivilianMainMenu.getAccessibleContext().setAccessibleDescription("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -438,45 +491,47 @@ public class CivilianViewUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCivilianMainMenu;
-    private javax.swing.JButton btnQuit;
-    private javax.swing.JButton btnView;
+    public javax.swing.JButton btnCivilianMainMenu;
+    public javax.swing.JButton btnNext;
+    public javax.swing.JButton btnPrevious;
+    public javax.swing.JButton btnQuit;
+    public javax.swing.JButton btnView;
     private javax.swing.JLabel caseInformationLabel;
     private javax.swing.JSeparator caseInformationSeparator;
     private javax.swing.JLabel caseNumberLabel;
     private javax.swing.JTextField caseNumberTextField;
-    private javax.swing.JLabel caseStatusLabel;
+    public javax.swing.JLabel caseStatusLabel;
     private javax.swing.JTextField caseStatusTextField;
-    private javax.swing.JLabel caseTypeLabel;
+    public javax.swing.JLabel caseTypeLabel;
     private javax.swing.JTextField caseTypeTextField;
     private javax.swing.JLabel ccmsLabel;
     private javax.swing.JLabel civilianViewCaseDetailsLabel;
     private javax.swing.JPanel civilianViewCaseDetailsPanel;
     private javax.swing.JLabel courtSystemLabel;
     private javax.swing.JTextField courtSystemTextField;
-    private javax.swing.JLabel defendantLabel;
-    private javax.swing.JTextField defendantTextField;
-    private javax.swing.JLabel errorMessage;
-    private javax.swing.JLabel filingDateLabel;
+    public javax.swing.JLabel defendantLabel;
+    public javax.swing.JTextField defendantTextField;
+    public javax.swing.JLabel errorMessage;
+    public javax.swing.JLabel filingDateLabel;
     private javax.swing.JTextField filingDateTextField;
     private javax.swing.JLabel involvedPartiesLabel;
     private javax.swing.JSeparator involvedPartiesSeparator;
-    private javax.swing.JLabel judgeCommentsLabel;
+    public javax.swing.JLabel judgeCommentsLabel;
     private javax.swing.JTextArea judgeCommentsTextArea;
     private javax.swing.JLabel judgeInformationLabel;
     private javax.swing.JSeparator judgeInformationSeparator;
     private javax.swing.JScrollPane judgeScrollPane;
-    private javax.swing.JLabel lawyerCommentsLabel;
+    public javax.swing.JLabel lawyerCommentsLabel;
     private javax.swing.JTextArea lawyerCommentsTextArea;
     private javax.swing.JLabel lawyerInformationLabel;
     private javax.swing.JSeparator lawyerInformationSeparator1;
     private javax.swing.JScrollPane lawyerScrollPane;
     private javax.swing.JLabel locationLabel;
     private javax.swing.JTextField locationTextField;
-    private javax.swing.JLabel partyNameLabel;
-    private javax.swing.JTextField partyNameTextField;
-    private javax.swing.JLabel plantiffLabel;
-    private javax.swing.JTextField plantiffTextField;
+    public javax.swing.JLabel partyNameLabel;
+    public javax.swing.JTextField partyNameTextField;
+    public javax.swing.JLabel plantiffLabel;
+    public javax.swing.JTextField plantiffTextField;
     // End of variables declaration//GEN-END:variables
 
 }

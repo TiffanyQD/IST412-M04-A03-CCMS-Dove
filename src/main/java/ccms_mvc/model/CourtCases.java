@@ -21,7 +21,7 @@ public class CourtCases {
     public String caseNumber;
     public String partyName;
     public CaseType caseType;
-    public ZonedDateTime fillingDate;
+    public String fillingDate;
     public CaseStatus caseStatus; 
     public String plantiff;
     public String defendant;

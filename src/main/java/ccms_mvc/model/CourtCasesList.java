@@ -31,18 +31,18 @@ public class CourtCasesList {
     }
 
     private void createCourtCasesArrayList() {
-        courtCases = new CourtCases("11111", "Benjamin vs. Franklin");
-        courtCasesArrayList.add(courtCases);
-        courtCases = new CourtCases("22222", "Mosby vs. Mosby");
-        courtCasesArrayList.add(courtCases);
-        courtCases = new CourtCases("33333", "Good vs. Bad");
-        courtCasesArrayList.add(courtCases);
-        courtCases = new CourtCases("44444", "Ravens vs. Browns");
-        courtCasesArrayList.add(courtCases);
-        courtCases = new CourtCases("55555", "Jackson vs. Watson");
-        courtCasesArrayList.add(courtCases);
-        courtCases = new CourtCases("66666", "Steelers vs. Bengals");
-        courtCasesArrayList.add(courtCases);
+//        courtCases = new CourtCases("11111", "Benjamin vs. Franklin");
+//        courtCasesArrayList.add(courtCases);
+//        courtCases = new CourtCases("22222", "Mosby vs. Mosby");
+//        courtCasesArrayList.add(courtCases);
+//        courtCases = new CourtCases("33333", "Good vs. Bad");
+//        courtCasesArrayList.add(courtCases);
+//        courtCases = new CourtCases("44444", "Ravens vs. Browns");
+//        courtCasesArrayList.add(courtCases);
+//        courtCases = new CourtCases("55555", "Jackson vs. Watson");
+//        courtCasesArrayList.add(courtCases);
+//        courtCases = new CourtCases("66666", "Steelers vs. Bengals");
+//        courtCasesArrayList.add(courtCases);
     }
 
 }
