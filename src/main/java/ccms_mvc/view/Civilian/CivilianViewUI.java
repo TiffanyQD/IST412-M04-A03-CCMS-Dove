@@ -184,22 +184,22 @@ public class CivilianViewUI extends javax.swing.JFrame {
 
         locationLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         locationLabel.setText("Location:");
-        locationLabel.setToolTipText("Case Number:");
+        locationLabel.setToolTipText("Location:");
 
-        locationTextField.setToolTipText("Please Enter a Case Number (i.e.. 11111)");
+        locationTextField.setToolTipText("Location Text Field");
         locationTextField.setName("caseNumberTextField"); // NOI18N
 
         caseTypeLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         caseTypeLabel.setText("Case Type:");
-        caseTypeLabel.setToolTipText("Party Name:");
+        caseTypeLabel.setToolTipText("Case Type:");
 
         filingDateLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         filingDateLabel.setText("Filing Date:");
-        filingDateLabel.setToolTipText("Party Name:");
+        filingDateLabel.setToolTipText("Filing Date:");
 
         caseStatusLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         caseStatusLabel.setText("Case Status:");
-        caseStatusLabel.setToolTipText("Party Name:");
+        caseStatusLabel.setToolTipText("Case Status:");
 
         caseInformationLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         caseInformationLabel.setText("Case Information");
@@ -210,45 +210,49 @@ public class CivilianViewUI extends javax.swing.JFrame {
 
         plantiffLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         plantiffLabel.setText("Plantiff:");
-        plantiffLabel.setToolTipText("Party Name:");
+        plantiffLabel.setToolTipText("Plantiff:");
 
-        plantiffTextField.setToolTipText("Party Name Field");
+        plantiffTextField.setToolTipText("Plantiff Text Field");
 
         defendantLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         defendantLabel.setText("Defendant:");
-        defendantLabel.setToolTipText("Party Name:");
+        defendantLabel.setToolTipText("Defendant:");
 
-        defendantTextField.setToolTipText("Party Name Field");
+        defendantTextField.setToolTipText("Defendant Text Field");
 
         judgeInformationLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         judgeInformationLabel.setText("Judge Information:");
+        judgeInformationLabel.setToolTipText("Judge Information:");
 
         judgeCommentsLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         judgeCommentsLabel.setText("Judge Comments:");
-        judgeCommentsLabel.setToolTipText("Party Name:");
+        judgeCommentsLabel.setToolTipText("Judge Comments:");
 
         judgeCommentsTextArea.setColumns(20);
         judgeCommentsTextArea.setRows(5);
+        judgeCommentsTextArea.setToolTipText("Judge Comments Text Area");
         judgeScrollPane.setViewportView(judgeCommentsTextArea);
 
         lawyerInformationLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lawyerInformationLabel.setText("Lawyer Information:");
+        lawyerInformationLabel.setToolTipText("Lawyer Information:");
 
         lawyerCommentsLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         lawyerCommentsLabel.setText("Lawyer Comments:");
-        lawyerCommentsLabel.setToolTipText("Party Name:");
+        lawyerCommentsLabel.setToolTipText("Lawyer Comments:");
 
         lawyerCommentsTextArea.setColumns(20);
         lawyerCommentsTextArea.setRows(5);
+        lawyerCommentsTextArea.setToolTipText("Lawyer Comments Text Field");
         lawyerScrollPane.setViewportView(lawyerCommentsTextArea);
 
-        caseTypeTextField.setToolTipText("Court System Text Field");
+        caseTypeTextField.setToolTipText("Case Type Text Field");
         caseTypeTextField.setName("caseNumberTextField"); // NOI18N
 
         filingDateTextField.setToolTipText("Court System Text Field");
         filingDateTextField.setName("caseNumberTextField"); // NOI18N
 
-        caseStatusTextField.setToolTipText("Court System Text Field");
+        caseStatusTextField.setToolTipText("Case Status Text Field");
         caseStatusTextField.setName("caseNumberTextField"); // NOI18N
 
         javax.swing.GroupLayout civilianViewCaseDetailsPanelLayout = new javax.swing.GroupLayout(civilianViewCaseDetailsPanel);
@@ -282,9 +286,7 @@ public class CivilianViewUI extends javax.swing.JFrame {
                                         .addComponent(btnCivilianMainMenu)
                                         .addGap(161, 161, 161)
                                         .addComponent(btnQuit))
-                                    .addComponent(lawyerScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(errorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(lawyerScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(lawyerInformationLabel)
                             .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
@@ -337,8 +339,9 @@ public class CivilianViewUI extends javax.swing.JFrame {
                                         .addComponent(caseTypeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(caseTypeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(errorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 79, Short.MAX_VALUE))))
         );
         civilianViewCaseDetailsPanelLayout.setVerticalGroup(
             civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -404,16 +407,13 @@ public class CivilianViewUI extends javax.swing.JFrame {
                 .addComponent(lawyerInformationSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lawyerInformationLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(errorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lawyerCommentsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lawyerScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(59, 59, 59)
+                    .addComponent(lawyerCommentsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lawyerScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(errorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
                 .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnView)
                     .addComponent(btnCivilianMainMenu)
