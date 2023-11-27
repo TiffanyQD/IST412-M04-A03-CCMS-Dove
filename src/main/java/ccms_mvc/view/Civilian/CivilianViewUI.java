@@ -3,6 +3,7 @@ package ccms_mvc.view.Civilian;
 import ccms_mvc.controller.Civilian.CivilianViewCntl;
 import ccms_mvc.model.CourtCases;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -13,9 +14,9 @@ public class CivilianViewUI extends javax.swing.JFrame {
     //Reference to Person Controller
     private CivilianViewCntl civilianViewCntl;
     
-    //An Array of CourtCases
-    CourtCases[] arrayCourtCases; 
-    
+    //Array List of Court Cases
+    private List<CourtCases> listCourtCases;
+        
     //Counter of the current Person
     private int indexOfCurrentCourtCase = 0;
     
@@ -38,13 +39,14 @@ public class CivilianViewUI extends javax.swing.JFrame {
         this.civilianViewCntl = civilianViewCntl;
         initComponents();
         
-        arrayCourtCases = civilianViewCntl.getArrayCourtCases();
+        listCourtCases = civilianViewCntl.getListCourtCases();
+        
 //        arrayListPerson = civilianViewCntl.getListOfPerson();
 //        arrayListCourtCases = civilianViewCntl.getListOfCourtCases();
 
         //Get a Person occurrence from the arrayList using the current position.
         //namely current person.
-        courtCases = arrayCourtCases[indexOfCurrentCourtCase];
+        courtCases = listCourtCases.get(indexOfCurrentCourtCase);
 
         //Using the Person (person) class, take the values and populate
         //the UI.

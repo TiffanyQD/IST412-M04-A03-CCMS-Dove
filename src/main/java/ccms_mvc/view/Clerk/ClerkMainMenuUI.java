@@ -124,6 +124,7 @@ public class ClerkMainMenuUI extends javax.swing.JFrame {
         this.btnViewCaseDetails.setEnabled(enabled);
         this.btnQuit.setEnabled(enabled);
         this.btnMainMenu.setEnabled(enabled);
+        this.btnDetailedInformation.setEnabled(enabled);
     }
 
 
@@ -144,6 +145,7 @@ public class ClerkMainMenuUI extends javax.swing.JFrame {
         errorMessageLabel = new javax.swing.JLabel();
         btnMainMenu = new javax.swing.JButton();
         clerkMainMenuLabel = new javax.swing.JLabel();
+        btnDetailedInformation = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -161,20 +163,10 @@ public class ClerkMainMenuUI extends javax.swing.JFrame {
         btnSearchSpecificCase.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnSearchSpecificCase.setText("Search Specific Case");
         btnSearchSpecificCase.setToolTipText("Search Specific Case for Clerk");
-        btnSearchSpecificCase.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchSpecificCaseActionPerformed(evt);
-            }
-        });
 
         btnViewCaseDetails.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnViewCaseDetails.setText("View Case Details");
         btnViewCaseDetails.setToolTipText("View Case Details for Clerk");
-        btnViewCaseDetails.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewCaseDetailsActionPerformed(evt);
-            }
-        });
 
         btnMainMenu.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnMainMenu.setText("Main Menu");
@@ -185,6 +177,10 @@ public class ClerkMainMenuUI extends javax.swing.JFrame {
         clerkMainMenuLabel.setText("Clerk Main Menu");
         clerkMainMenuLabel.setToolTipText("Clerk Main Menu");
 
+        btnDetailedInformation.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        btnDetailedInformation.setText("Detailed Information");
+        btnDetailedInformation.setToolTipText("View Case Details for Clerk");
+
         javax.swing.GroupLayout clerkMainMenuPanelLayout = new javax.swing.GroupLayout(clerkMainMenuPanel);
         clerkMainMenuPanel.setLayout(clerkMainMenuPanelLayout);
         clerkMainMenuPanelLayout.setHorizontalGroup(
@@ -194,13 +190,15 @@ public class ClerkMainMenuUI extends javax.swing.JFrame {
                 .addGroup(clerkMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(clerkMainMenuPanelLayout.createSequentialGroup()
                         .addGroup(clerkMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnSearchSpecificCase)
-                            .addComponent(btnViewCaseDetails)
                             .addComponent(errorMessageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(clerkMainMenuPanelLayout.createSequentialGroup()
                                 .addComponent(btnQuit)
                                 .addGap(123, 123, 123)
-                                .addComponent(btnMainMenu)))
+                                .addComponent(btnMainMenu))
+                            .addGroup(clerkMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(btnSearchSpecificCase, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                                .addComponent(btnViewCaseDetails, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnDetailedInformation, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(clerkMainMenuPanelLayout.createSequentialGroup()
                         .addGroup(clerkMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,15 +215,17 @@ public class ClerkMainMenuUI extends javax.swing.JFrame {
                 .addComponent(clerkMainMenuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(61, 61, 61)
                 .addComponent(btnSearchSpecificCase)
-                .addGap(28, 28, 28)
+                .addGap(22, 22, 22)
                 .addComponent(btnViewCaseDetails)
+                .addGap(19, 19, 19)
+                .addComponent(btnDetailedInformation)
                 .addGap(113, 113, 113)
                 .addComponent(errorMessageLabel)
                 .addGap(69, 69, 69)
                 .addGroup(clerkMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnMainMenu)
                     .addComponent(btnQuit))
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -244,15 +244,8 @@ public class ClerkMainMenuUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSearchSpecificCaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchSpecificCaseActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSearchSpecificCaseActionPerformed
-
-    private void btnViewCaseDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewCaseDetailsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnViewCaseDetailsActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnDetailedInformation;
     public javax.swing.JButton btnMainMenu;
     public javax.swing.JButton btnQuit;
     public javax.swing.JButton btnSearchSpecificCase;

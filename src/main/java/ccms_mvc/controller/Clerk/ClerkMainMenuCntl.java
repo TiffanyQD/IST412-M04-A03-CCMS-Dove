@@ -12,18 +12,18 @@ import java.util.ArrayList;
 
 public class ClerkMainMenuCntl implements ActionListener {
 
-    private Person person;
-    private PersonList personList;
-
-    private CourtCases courtCases;
-    private CourtCasesList courtCasesList;
+//    private Person person;
+//    private PersonList personList;
+//
+//    private CourtCases courtCases;
+//    private CourtCasesList courtCasesList;
 
     private ClerkMainMenuUI clerkMainMenuUI;
-    private int indexOfCurrentPerson;
+//    private int indexOfCurrentPerson;
 
     public ClerkMainMenuCntl() {
-        personList = new PersonList();
-        courtCasesList = new CourtCasesList();
+//        personList = new PersonList();
+//        courtCasesList = new CourtCasesList();
         clerkMainMenuUI = new ClerkMainMenuUI(this);
         //Call to addActionListernerButtons toactivate listener for various
         //buttons.
@@ -37,16 +37,17 @@ public class ClerkMainMenuCntl implements ActionListener {
         clerkMainMenuUI.btnMainMenu.addActionListener(this);
         clerkMainMenuUI.btnSearchSpecificCase.addActionListener(this);
         clerkMainMenuUI.btnViewCaseDetails.addActionListener(this);
+        clerkMainMenuUI.btnDetailedInformation.addActionListener(this);
     }
 
-    public ArrayList<Person> getListOfPerson() {
-        return personList.getPersonArrayList();
-    }
-
-    public ArrayList<CourtCases> getListOfCourtCases() {
-        return courtCasesList.getCourtCasesArrayList();
-    }
-
+//    public ArrayList<Person> getListOfPerson() {
+//        return personList.getPersonArrayList();
+//    }
+//
+//    public ArrayList<CourtCases> getListOfCourtCases() {
+//        return courtCasesList.getCourtCasesArrayList();
+//    }
+//
     @Override
     public void actionPerformed(ActionEvent e) {
         //e.source will let you know what button was pushed. 
@@ -109,6 +110,11 @@ public class ClerkMainMenuCntl implements ActionListener {
             clerkMainMenuUI.dispose();
         }
 
-        
+        //View Case Details
+        if (obj.equals(clerkMainMenuUI.btnDetailedInformation)){
+            ClerkDetailedInformationCntl clerkDetailedInformationCntl = new ClerkDetailedInformationCntl();
+            clerkMainMenuUI.dispose();
+        }
+
     }
 }

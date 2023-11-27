@@ -7,11 +7,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 public class CivilianViewCntl implements ActionListener {
 
     private CourtCases[] arrayCourtCases;
     private CourtCases courtCases;
+    private List<CourtCases> listCourtCases;
 
     private CivilianViewUI civilianViewUI;
     private int indexOfCurrentCourtCase;
@@ -24,6 +27,7 @@ public class CivilianViewCntl implements ActionListener {
         
        try {
            arrayCourtCases = mapper.readValue(new File("src/resources/courtCases.json"), CourtCases[].class);
+           listCourtCases = Arrays.asList(arrayCourtCases);
        } catch (IOException e){
            e.printStackTrace();
        }
@@ -47,18 +51,19 @@ public class CivilianViewCntl implements ActionListener {
 
     }
 
-    public CourtCases[] getArrayCourtCases() {
-        return arrayCourtCases;
-    }
-
-//    public ArrayList<Person> getListOfPerson() {
-//        return personList.getPersonArrayList();
+//    public CourtCases[] getArrayourtCases() {
+//        return arrayCourtCases;
 //    }
 //
+
+    public List<CourtCases> getListCourtCases() {
+        return listCourtCases;
+
+    }
+
 //    public ArrayList<CourtCases> getListOfCourtCases() {
 //        return courtCasesList.getCourtCasesArrayList();
 //    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         //e.source will let you know what button was pushed. 
@@ -67,10 +72,10 @@ public class CivilianViewCntl implements ActionListener {
         //The PREVIOUS button was pressed
         if (obj.equals(civilianViewUI.btnPrevious)) {
             /*
-            So that you don't have problems with out of bounds, if the current 
+            So that you don't have problems with out of bounds, if the current
             position equals 0, then loop around to the last element in the 
             array list.
-             */
+            */
             indexOfCurrentCourtCase = civilianViewUI.getIndexOfCurrentCourtCase();
             if (indexOfCurrentCourtCase == 0) {
                 indexOfCurrentCourtCase = arrayCourtCases.length - 1;
@@ -85,10 +90,10 @@ public class CivilianViewCntl implements ActionListener {
         //The NEXT button was pressed
         if (obj.equals(civilianViewUI.btnNext)) {
             /*
-            So that you don't have problems with out of bounds, if the current 
+            So that you don't have problems with out of bounds, if the current
             position equals the last element in the array list, then loop 
             around to the first element in the array list.
-             */
+            */
             indexOfCurrentCourtCase = civilianViewUI.getIndexOfCurrentCourtCase();
             if (indexOfCurrentCourtCase == arrayCourtCases.length - 1) {
                 indexOfCurrentCourtCase = 0;
@@ -134,6 +139,5 @@ public class CivilianViewCntl implements ActionListener {
             CivilianMainMenuCntl civilianMainMenuCntl = new CivilianMainMenuCntl();
             civilianViewUI.dispose();
         }
-
     }
 }
