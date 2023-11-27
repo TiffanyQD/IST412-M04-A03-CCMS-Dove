@@ -127,10 +127,10 @@ public class ClerkDetailedInformationUI extends javax.swing.JFrame {
     }
 
 
-//    public String getCaseNumberTextField(){
-//        return caseNumberTextField.getText();
-//    }
-//
+    public String getCaseNumberTextField(){
+        return caseNumberTextField.getText();
+    }
+
 //    public void setCaseNumberTextField(String caseNumberTextFieldString){
 //        this.caseNumberTextField.setText(caseNumberTextFieldString);
 //    }
@@ -398,9 +398,6 @@ public class ClerkDetailedInformationUI extends javax.swing.JFrame {
                         .addGap(34, 34, 34))
                     .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
                         .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(ccmsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(clerkModifyCaseInformationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(involvedPartiesSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(judgeInformationSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lawyerInformationSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -427,6 +424,12 @@ public class ClerkDetailedInformationUI extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(judgeScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
+                .addGap(153, 153, 153)
+                .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ccmsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clerkModifyCaseInformationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         civilianViewCaseDetailsPanelLayout.setVerticalGroup(
             civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

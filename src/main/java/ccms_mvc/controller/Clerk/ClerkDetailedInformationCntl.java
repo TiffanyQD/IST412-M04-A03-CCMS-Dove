@@ -188,7 +188,7 @@ public class ClerkDetailedInformationCntl implements ActionListener {
             //Set the Location field
             court.setLocation(Location.valueOf(clerkDetailedInformationUI.getLocationTextField().getText()));
             //Set the Case Number field
-            court.setCaseNumber(clerkDetailedInformationUI.getCaseNumberTextField().getText());
+            court.setCaseNumber(clerkDetailedInformationUI.getCaseNumberTextField());
             //Set the Party Name field
             court.setPartyName(clerkDetailedInformationUI.getPartyNameTextField().getText());
             //Set the Case Type field
@@ -234,7 +234,7 @@ public class ClerkDetailedInformationCntl implements ActionListener {
             //Update the record with the various fields from the PersonUI. 
             getListCourtCases().get(indexOfCurrentCourtCase).setCourtSystem(CourtSystem.valueOf(clerkDetailedInformationUI.getCourtSystemTextField().getText()));
             getListCourtCases().get(indexOfCurrentCourtCase).setLocation(Location.valueOf(clerkDetailedInformationUI.getLocationTextField().getText()));
-            getListCourtCases().get(indexOfCurrentCourtCase).setCaseNumber(clerkDetailedInformationUI.getCaseNumberTextField().getText());
+            getListCourtCases().get(indexOfCurrentCourtCase).setCaseNumber(clerkDetailedInformationUI.getCaseNumberTextField());
             getListCourtCases().get(indexOfCurrentCourtCase).setPartyName(clerkDetailedInformationUI.getPartyNameTextField().getText());
             getListCourtCases().get(indexOfCurrentCourtCase).setCaseType(CaseType.valueOf(clerkDetailedInformationUI.getCaseTypeTextField().getText()));
             getListCourtCases().get(indexOfCurrentCourtCase).setFillingDate(clerkDetailedInformationUI.getFilingDateTextField().getText());

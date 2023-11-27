@@ -112,10 +112,6 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Component id="ccmsLabel" alignment="1" min="-2" pref="404" max="-2" attributes="0"/>
-                                  <Component id="clerkModifyCaseInformationLabel" min="-2" pref="404" max="-2" attributes="0"/>
-                              </Group>
                               <Component id="involvedPartiesSeparator" alignment="0" min="-2" pref="702" max="-2" attributes="0"/>
                               <Component id="judgeInformationSeparator" min="-2" pref="702" max="-2" attributes="0"/>
                               <Component id="lawyerInformationSeparator1" min="-2" pref="702" max="-2" attributes="0"/>
@@ -150,6 +146,14 @@
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="ccmsLabel" alignment="1" min="-2" pref="404" max="-2" attributes="0"/>
+                      <Component id="clerkModifyCaseInformationLabel" min="-2" pref="404" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
