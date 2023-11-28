@@ -10,7 +10,7 @@ public class MainMenuUI extends javax.swing.JFrame {
 
     //Reference to Main Menu Controller
     private MainMenuCntl mainMenuCntl;
-            
+
     /**
      * Creates new form MainMenuUI
      */
@@ -23,15 +23,14 @@ public class MainMenuUI extends javax.swing.JFrame {
         this.errorMessageLabel.setText(errorMessageString);
     }
 
-    public void enableButtons(boolean enabled){
-        
+    public void enableButtons(boolean enabled) {
+
         this.btnCivilianMainMenu.setEnabled(enabled);
         this.btnClerkMainMenu.setEnabled(enabled);
         this.btnJudgeMainMenu.setEnabled(enabled);
         this.btnLawyerMainMenu.setEnabled(enabled);
         this.btnQuit.setEnabled(enabled);
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -126,15 +125,15 @@ public class MainMenuUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ccmsMainMenuPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(ccmsMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnQuit, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ccmsMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnLawyerMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnJudgeMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnClerkMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCivilianMainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ccmsMainMenuPanelLayout.createSequentialGroup()
-                        .addGroup(ccmsMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnLawyerMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnJudgeMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnClerkMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnCivilianMainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(89, 89, 89)))
-                .addGap(129, 129, 129))
+                        .addComponent(btnQuit)
+                        .addGap(29, 29, 29)))
+                .addGap(248, 248, 248))
         );
         ccmsMainMenuPanelLayout.setVerticalGroup(
             ccmsMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,7 +142,7 @@ public class MainMenuUI extends javax.swing.JFrame {
                 .addComponent(ccmsMainMenuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(mainMenuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(36, 36, 36)
                 .addComponent(btnCivilianMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(btnClerkMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -151,9 +150,9 @@ public class MainMenuUI extends javax.swing.JFrame {
                 .addComponent(btnJudgeMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(19, 19, 19)
                 .addComponent(btnLawyerMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(16, 16, 16)
+                .addGap(49, 49, 49)
                 .addComponent(btnQuit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(62, 62, 62)
+                .addGap(26, 26, 26)
                 .addComponent(errorMessageLabel)
                 .addGap(149, 149, 149))
         );

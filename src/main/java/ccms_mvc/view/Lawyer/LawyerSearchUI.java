@@ -14,9 +14,9 @@ public class LawyerSearchUI extends javax.swing.JFrame {
     //Reference to Person Controller
     private LawyerSearchCntl lawyerSearchCntl;
     //An arrayList of Person
-    private ArrayList<Person> arrayListPerson;  
+    private ArrayList<Person> arrayListPerson;
     //An arrayList of Person
-    private ArrayList<CourtCases> arrayListCourtCases;  
+    private ArrayList<CourtCases> arrayListCourtCases;
     //Counter of the current Person
     private int indexOfCurrentPerson = 0;
     //Reference to Person class
@@ -25,8 +25,7 @@ public class LawyerSearchUI extends javax.swing.JFrame {
     public int getIndexOfCurrentPerson() {
         return indexOfCurrentPerson;
     }
-            
-            
+
     /**
      * Creates new form PersonUI
      */
@@ -58,27 +57,24 @@ public class LawyerSearchUI extends javax.swing.JFrame {
 //        //set the UI's zip code text field with the zip code from Person
 //        zipCodeTextField.setText(String.valueOf(person.getZipCode()));
 //    }
-
     public void clearTheFieldsInPersonUI() {
         //set the UI's id num text field with the id num from Person
         caseNumberTextField.setText("");
     }
 
-
-    public String getCaseNumberTextField(){
+    public String getCaseNumberTextField() {
         return caseNumberTextField.getText();
     }
 
-    public void setCaseNumberTextField(String caseNumberTextFieldString){
+    public void setCaseNumberTextField(String caseNumberTextFieldString) {
         this.caseNumberTextField.setText(caseNumberTextFieldString);
     }
 
-    public void enableButtons(boolean enabled){
+    public void enableButtons(boolean enabled) {
         this.btnLawyerMainMenu.setEnabled(enabled);
         this.btnSearch.setEnabled(enabled);
         this.btnQuit.setEnabled(enabled);
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.

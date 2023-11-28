@@ -24,7 +24,6 @@ public class ClerkMainMenuUI extends javax.swing.JFrame {
 //    public void setIndexOfCurrentPerson(int indexOfCurrentPerson) {
 //        this.indexOfCurrentPerson = indexOfCurrentPerson;
 //    }
-            
     /**
      * Creates new form PersonUI
      */
@@ -117,16 +116,14 @@ public class ClerkMainMenuUI extends javax.swing.JFrame {
 //    public void setZipCodeTextField(String zipCodeTextFieldString) {
 //        this.zipCodeTextField.setText(zipCodeTextFieldString);
 //    }
-    
-    public void enableButtons(boolean enabled){
-        
+    public void enableButtons(boolean enabled) {
+
         this.btnSearchSpecificCase.setEnabled(enabled);
         this.btnViewCaseDetails.setEnabled(enabled);
         this.btnQuit.setEnabled(enabled);
         this.btnMainMenu.setEnabled(enabled);
         this.btnDetailedInformation.setEnabled(enabled);
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.

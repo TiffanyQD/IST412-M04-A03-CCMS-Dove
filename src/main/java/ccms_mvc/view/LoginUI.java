@@ -14,9 +14,9 @@ public class LoginUI extends javax.swing.JFrame {
     //Reference to Login Id Controller
     private LoginIdCntl loginIdCntl;
     //An arrayList of Person
-    private ArrayList<Person> arrayListPerson;  
+    private ArrayList<Person> arrayListPerson;
     //An arrayList of Court Cases
-    private ArrayList<CourtCases> arrayListCourtCases;  
+    private ArrayList<CourtCases> arrayListCourtCases;
     //Counter of the current Person
     private int indexOfCurrentPerson = 0;
     //Reference to Person class
@@ -29,7 +29,7 @@ public class LoginUI extends javax.swing.JFrame {
     public void setIndexOfCurrentPerson(int indexOfCurrentPerson) {
         this.indexOfCurrentPerson = indexOfCurrentPerson;
     }
-            
+
     /**
      * Creates new form PersonUI
      */
@@ -43,7 +43,6 @@ public class LoginUI extends javax.swing.JFrame {
 //        person = arrayListPerson.get(indexOfCurrentPerson);
         //Using the Person (person) class, take the values and populate
         //the UI.
-
 
 //        parsePerson(person);
 //        parseLogIn();
@@ -63,8 +62,6 @@ public class LoginUI extends javax.swing.JFrame {
 //        //set the UI's zip code text field with the zip code from Person
 //        zipCodeTextField.setText(String.valueOf(person.getZipCode()));
 //    }
-
-
     public void clearTheFieldsInLoginUI() {
         //set the UI's id num text field with the id num from Person
         loginIdTextField.setText("");
@@ -73,32 +70,30 @@ public class LoginUI extends javax.swing.JFrame {
         //set the UI's address text field with the address from Person
     }
 
-
-    public String getLoginIdTextField(){
+    public String getLoginIdTextField() {
         return loginIdTextField.getText();
     }
 
-    public void setLoginIdTextField(String loginTextFieldString){
+    public void setLoginIdTextField(String loginTextFieldString) {
         this.loginIdTextField.setText(loginTextFieldString);
     }
 
-    public String getPasswordTextField(){
+    public String getPasswordTextField() {
         return passwordTextField.getText();
     }
 
-    public void setErrorMessageLabel(String errorMessageLabel){
+    public void setErrorMessageLabel(String errorMessageLabel) {
         this.errorMessageLabel.setText(errorMessageLabel);
     }
 
-    public void setPasswordTextField(String passwordTextFieldString){
+    public void setPasswordTextField(String passwordTextFieldString) {
         this.passwordTextField.setText(passwordTextFieldString);
     }
 
-    public void enableButtons(boolean enabled){
+    public void enableButtons(boolean enabled) {
         this.btnSubmit.setEnabled(enabled);
         this.btnQuit.setEnabled(enabled);
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.

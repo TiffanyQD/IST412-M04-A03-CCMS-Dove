@@ -2,7 +2,6 @@ package ccms_mvc.view.Civilian;
 
 import ccms_mvc.controller.Civilian.CivilianViewCntl;
 import ccms_mvc.model.CourtCases;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,15 +10,15 @@ import java.util.List;
  */
 public class CivilianViewUI extends javax.swing.JFrame {
 
-    //Reference to Person Controller
+    //Reference to Civilian Controller
     private CivilianViewCntl civilianViewCntl;
-    
+
     //Array List of Court Cases
     private List<CourtCases> listCourtCases;
-        
-    //Counter of the current Person
+
+    //Counter of the current Court Case
     private int indexOfCurrentCourtCase = 0;
-    
+
     //Reference to CourtCases class
     private CourtCases courtCases;
 
@@ -27,65 +26,58 @@ public class CivilianViewUI extends javax.swing.JFrame {
         return indexOfCurrentCourtCase;
     }
 
-    public void setIndexOfCurrentCourtCase(int indexOfCurrentPerson) {
-        this.indexOfCurrentCourtCase = indexOfCurrentPerson;
+    public void setIndexOfCurrentCourtCase(int indexOfCurrentCourtCase) {
+        this.indexOfCurrentCourtCase = indexOfCurrentCourtCase;
     }
-            
-            
+
     /**
-     * Creates new form PersonUI
+     * Creates new form CivilianViewUI
      */
     public CivilianViewUI(CivilianViewCntl civilianViewCntl) {
         this.civilianViewCntl = civilianViewCntl;
         initComponents();
-        
-        listCourtCases = civilianViewCntl.getListCourtCases();
-        
-//        arrayListPerson = civilianViewCntl.getListOfPerson();
-//        arrayListCourtCases = civilianViewCntl.getListOfCourtCases();
 
-        //Get a Person occurrence from the arrayList using the current position.
-        //namely current person.
+        listCourtCases = civilianViewCntl.getListCourtCases();
+
         courtCases = listCourtCases.get(indexOfCurrentCourtCase);
 
-        //Using the Person (person) class, take the values and populate
+        //Using the CourtCase class, take the values and populate
         //the UI.
-
         parseCourtCases(courtCases);
     }
 
     public void parseCourtCases(CourtCases courtCases) {
-        
+
         //Set the Court System field
         this.courtSystemTextField.setText(courtCases.getCourtSystem().name());
-        
+
         //Set the Location field
         this.locationTextField.setText(courtCases.getLocation().name());
-        
+
         //Set the Case Number field
         this.caseNumberTextField.setText(courtCases.getCaseNumber());
-        
+
         //Set the Party Name field
         this.partyNameTextField.setText(courtCases.getPartyName());
-        
+
         //Set the Case Type field
         this.caseTypeTextField.setText(courtCases.getCaseType().name());
-        
+
         //Set the Filing Data field
         this.filingDateTextField.setText(courtCases.getFillingDate());
-        
+
         //Set the Case Status 
         this.caseStatusTextField.setText(courtCases.getCaseType().name());
-        
+
         //Set the Plantiff
         this.plantiffTextField.setText(courtCases.getPlantiff());
-        
+
         //Set the Defendant
         this.defendantTextField.setText(courtCases.getDefendant());
-        
+
         //Set the Judge Comments
         this.judgeCommentsTextArea.setText(courtCases.getJudgeInformation());
-        
+
         //Set the Lawyer Comments
         this.lawyerCommentsTextArea.setText(courtCases.getLawyerInformation());
     }
@@ -93,59 +85,57 @@ public class CivilianViewUI extends javax.swing.JFrame {
     public void clearTheFieldsInCourtCasesUI() {
         //Set the Court System field
         this.courtSystemTextField.setText("");
-        
+
         //Set the Location field
         this.locationTextField.setText("");
-        
+
         //Set the Case Number field
         this.caseNumberTextField.setText("");
-        
+
         //Set the Party Name field
         this.partyNameTextField.setText("");
-        
+
         //Set the Case Type field
         this.caseTypeTextField.setText("");
-        
+
         //Set the Filing Data field
         this.filingDateTextField.setText("");
-        
+
         //Set the Case Status 
         this.caseStatusTextField.setText("");
-        
+
         //Set the Plantiff
         this.plantiffTextField.setText("");
-        
+
         //Set the Defendant
         this.defendantTextField.setText("");
-        
+
         //Set the Judge Comments
         this.judgeCommentsTextArea.setText("");
-        
+
         //Set the Lawyer Comments
         this.lawyerCommentsTextArea.setText("");
     }
 
-
-    public String getCaseNumberTextField(){
+    public String getCaseNumberTextField() {
         return caseNumberTextField.getText();
     }
 
-    public void setCaseNumberTextField(String caseNumberTextFieldString){
+    public void setCaseNumberTextField(String caseNumberTextFieldString) {
         this.caseNumberTextField.setText(caseNumberTextFieldString);
     }
 
-    public void setPartyName(String partyNameTextFieldString){
+    public void setPartyName(String partyNameTextFieldString) {
         this.partyNameTextField.setText(partyNameTextFieldString);
     }
 
-    public void enableButtons(boolean enabled){
+    public void enableButtons(boolean enabled) {
         this.btnCivilianMainMenu.setEnabled(enabled);
         this.btnView.setEnabled(enabled);
         this.btnQuit.setEnabled(enabled);
         this.btnNext.setEnabled(enabled);
         this.btnPrevious.setEnabled(enabled);
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.

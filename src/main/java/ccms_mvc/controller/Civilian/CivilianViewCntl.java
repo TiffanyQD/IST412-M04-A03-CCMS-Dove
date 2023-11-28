@@ -10,38 +10,60 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * This controller class that is used in conjunction with the CivilianViewUI to
+ * display/view Court Case details.
+ */
 public class CivilianViewCntl implements ActionListener {
 
+    //Array of CourtCases
     private CourtCases[] arrayCourtCases;
+
+    //Call CourCases object
     private CourtCases courtCases;
+
+    //ArrayList of CourtCases
     private List<CourtCases> listCourtCases;
 
+    //Call to CivilianViewUI object
     private CivilianViewUI civilianViewUI;
+
+    //Index of the Current Court Case
     private int indexOfCurrentCourtCase;
 
+    /**
+     * Constructor for CivilianViewCntl
+     */
     public CivilianViewCntl() {
-//        personList = new PersonList();
-//        courtCasesList = new CourtCasesList();
 
+        //Call ObjectMapper which will be used to retrieve json of court cases.
         ObjectMapper mapper = new ObjectMapper();
-        
-       try {
-           arrayCourtCases = mapper.readValue(new File("src/resources/courtCases.json"), CourtCases[].class);
-           listCourtCases = Arrays.asList(arrayCourtCases);
-       } catch (IOException e){
-           e.printStackTrace();
-       }
 
+        try {
+            //Read the courtCases.json file and place the contents into arrayCourtCases
+            arrayCourtCases = mapper.readValue(new File("src/resources/courtCases.json"), CourtCases[].class);
 
+            //Create an arraylist (listCourtCases) from the array (arrayCourtCases)
+            listCourtCases = Arrays.asList(arrayCourtCases);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+        //Instantiate CivilianViewUI
         civilianViewUI = new CivilianViewUI(this);
+
         //Call to addActionListernerButtons to activate listener for various
         //buttons.
         addActionListenersButtons();
-        //set the Person UI to be visible (true)
+
+        //set the CivilianViewUI to be visible (true)
         civilianViewUI.setVisible(true);
     }
 
+    /**
+     * Call to addActionListener method to activiate listener for various
+     * buttons.
+     */
     public void addActionListenersButtons() {
         civilianViewUI.btnQuit.addActionListener(this);
         civilianViewUI.btnCivilianMainMenu.addActionListener(this);
@@ -51,38 +73,31 @@ public class CivilianViewCntl implements ActionListener {
 
     }
 
-//    public CourtCases[] getArrayourtCases() {
-//        return arrayCourtCases;
-//    }
-//
-
     public List<CourtCases> getListCourtCases() {
         return listCourtCases;
 
     }
 
-//    public ArrayList<CourtCases> getListOfCourtCases() {
-//        return courtCasesList.getCourtCasesArrayList();
-//    }
     @Override
     public void actionPerformed(ActionEvent e) {
         //e.source will let you know what button was pushed. 
         Object obj = e.getSource();
 
+        //TODO Would prefer if the following code used the listCourtCases instead of arrayCourtCases
         //The PREVIOUS button was pressed
         if (obj.equals(civilianViewUI.btnPrevious)) {
             /*
             So that you don't have problems with out of bounds, if the current
             position equals 0, then loop around to the last element in the 
             array list.
-            */
+             */
             indexOfCurrentCourtCase = civilianViewUI.getIndexOfCurrentCourtCase();
             if (indexOfCurrentCourtCase == 0) {
                 indexOfCurrentCourtCase = arrayCourtCases.length - 1;
             } else {
                 indexOfCurrentCourtCase--;
             }
-            
+
             civilianViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
             civilianViewUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
         }
@@ -93,7 +108,7 @@ public class CivilianViewCntl implements ActionListener {
             So that you don't have problems with out of bounds, if the current
             position equals the last element in the array list, then loop 
             around to the first element in the array list.
-            */
+             */
             indexOfCurrentCourtCase = civilianViewUI.getIndexOfCurrentCourtCase();
             if (indexOfCurrentCourtCase == arrayCourtCases.length - 1) {
                 indexOfCurrentCourtCase = 0;
@@ -109,13 +124,13 @@ public class CivilianViewCntl implements ActionListener {
             System.exit(0);
         }
 
-        //The ADD button was pressed
+        //The View button was pressed
         if (obj.equals(civilianViewUI.btnView)) {
             //Enable all of the buttons except for Save button
             civilianViewUI.enableButtons(true);
-            
+
             boolean caseNumberFound = false;
-            for (int i =0; i < arrayCourtCases.length; i ++){
+            for (int i = 0; i < arrayCourtCases.length; i++) {
                 if (arrayCourtCases[i].getCaseNumber().equals(civilianViewUI.getCaseNumberTextField())) {
                     courtCases = arrayCourtCases[i];
                     indexOfCurrentCourtCase = i;
@@ -123,7 +138,7 @@ public class CivilianViewCntl implements ActionListener {
                     break;
                 }
             }
-            
+
             if (caseNumberFound) {
                 civilianViewUI.parseCourtCases(courtCases);
                 civilianViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
@@ -134,8 +149,9 @@ public class CivilianViewCntl implements ActionListener {
             }
 
         }
-        
-        if (obj.equals(civilianViewUI.btnCivilianMainMenu)){
+
+        //The Civilian Main Menu button was pressed.	
+        if (obj.equals(civilianViewUI.btnCivilianMainMenu)) {
             CivilianMainMenuCntl civilianMainMenuCntl = new CivilianMainMenuCntl();
             civilianViewUI.dispose();
         }

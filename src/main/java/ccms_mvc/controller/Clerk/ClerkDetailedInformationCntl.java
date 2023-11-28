@@ -14,6 +14,10 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * This class will allow the clerk/admin to view, add, delete, update, and save
+ * detailed court case information.
+ */
 public class ClerkDetailedInformationCntl implements ActionListener {
 
     private CourtCases[] arrayCourtCases;
@@ -25,26 +29,33 @@ public class ClerkDetailedInformationCntl implements ActionListener {
     private int indexOfCurrentCourtCase;
 
     public ClerkDetailedInformationCntl() {
-//        personList = new PersonList();
-//        courtCasesList = new CourtCasesList();
 
+        //Instantiate ObjectMapper to read json from a file.
         mapper = new ObjectMapper();
 
         try {
+            //Read the court case information into an array (arrayCourtCases)
             arrayCourtCases = mapper.readValue(new File("src/resources/courtCases.json"), CourtCases[].class);
+            //Convert array(arrayCourtCases) to an ArrayList(listCourtCases)
             listCourtCases = Arrays.asList(arrayCourtCases);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+        //Instantiate ClerkDetailedInformationUI
         clerkDetailedInformationUI = new ClerkDetailedInformationUI(this);
+
         //Call to addActionListernerButtons to activate listener for various
         //buttons.
         addActionListenersButtons();
-        //set the Person UI to be visible (true)
+
+        //set the ClerDetailedInformationUI to be visible (true)
         clerkDetailedInformationUI.setVisible(true);
     }
 
+    /**
+     * This method will activate the ActionListener for all of the buttons.
+     */
     public void addActionListenersButtons() {
         clerkDetailedInformationUI.btnQuit.addActionListener(this);
         clerkDetailedInformationUI.btnClerkMainMenu.addActionListener(this);
@@ -56,54 +67,25 @@ public class ClerkDetailedInformationCntl implements ActionListener {
 
     }
 
+    /**
+     * Method to retrieve an ArrayList of CourtCases
+     */
     public List<CourtCases> getListCourtCases() {
         return listCourtCases;
 
     }
 
-//    public ArrayList<CourtCases> getListOfCourtCases() {
-//        return courtCasesList.getCourtCasesArrayList();
-//    }
     @Override
     public void actionPerformed(ActionEvent e) {
         //e.source will let you know what button was pushed. 
         Object obj = e.getSource();
 
-        //The PREVIOUS button was pressed
-        if (obj.equals(clerkDetailedInformationUI.btnUpdate)) {
-            /*
-            So that you don't have problems with out of bounds, if the current 
-            position equals 0, then loop around to the last element in the 
-            array list.
-             */
-            indexOfCurrentCourtCase = clerkDetailedInformationUI.getIndexOfCurrentCourtCase();
-            if (indexOfCurrentCourtCase == 0) {
-                indexOfCurrentCourtCase = arrayCourtCases.length - 1;
-            } else {
-                indexOfCurrentCourtCase--;
-            }
+        //TODO Convert references of arrayCourtCases to listCourtCases
 
-            clerkDetailedInformationUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
-            clerkDetailedInformationUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
-        }
-
-        //The NEXT button was pressed
-        if (obj.equals(clerkDetailedInformationUI.btnAdd)) {
-            /*
-            So that you don't have problems with out of bounds, if the current 
-            position equals the last element in the array list, then loop 
-            around to the first element in the array list.
-             */
-            indexOfCurrentCourtCase = clerkDetailedInformationUI.getIndexOfCurrentCourtCase();
-            if (indexOfCurrentCourtCase == arrayCourtCases.length - 1) {
-                indexOfCurrentCourtCase = 0;
-            } else {
-                indexOfCurrentCourtCase++;
-            }
-            clerkDetailedInformationUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
-            clerkDetailedInformationUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
-        }
-
+        
+        
+        
+        
         //The QUIT button was pressed
         if (obj.equals(clerkDetailedInformationUI.btnQuit)) {
             System.exit(0);
@@ -172,7 +154,7 @@ public class ClerkDetailedInformationCntl implements ActionListener {
         if (obj.equals(clerkDetailedInformationUI.btnAdd)) {
             //Enable all of the buttons except for Save button
             clerkDetailedInformationUI.enableButtons(false);
-            //Clear the fields in the Person UI
+            //Clear the fields in the ClerkDetailedInformationUI
             clerkDetailedInformationUI.clearTheFieldsInCourtCasesUI();
         }
 
@@ -206,10 +188,10 @@ public class ClerkDetailedInformationCntl implements ActionListener {
             //Set the Lawyer Comments
             court.setLawyerInformation(clerkDetailedInformationUI.getLawyerCommentsTextArea().getText());
 
-            //Add the Person to the CourtCases Array List
+            //Add the CourtCases to the CourtCases Array List
             getListCourtCases().add(court);
 
-            //Set index of the current person
+            //Set index of the current court case
             indexOfCurrentCourtCase = getListCourtCases().size() - 1;
             clerkDetailedInformationUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
             //Even though the element was added, redraw the screen with the element.

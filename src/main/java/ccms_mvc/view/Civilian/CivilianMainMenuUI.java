@@ -2,7 +2,6 @@ package ccms_mvc.view.Civilian;
 
 import ccms_mvc.controller.Civilian.CivilianMainMenuCntl;
 
-
 /**
  *
  * @author Tiffany Dove
@@ -11,7 +10,7 @@ public class CivilianMainMenuUI extends javax.swing.JFrame {
 
     //Reference to Person Controller
     private CivilianMainMenuCntl civilianMainMenuCntl;
-            
+
     /**
      * Creates new form Civilian Main Menu UI
      */
@@ -24,14 +23,13 @@ public class CivilianMainMenuUI extends javax.swing.JFrame {
         this.errorMessageLabel.setText(errorMessageString);
     }
 
-    public void enableButtons(boolean enabled){
-        
+    public void enableButtons(boolean enabled) {
+
         this.btnSearchSpecificCase.setEnabled(enabled);
         this.btnViewCaseDetails.setEnabled(enabled);
         this.btnQuit.setEnabled(enabled);
         this.btnMainMenu.setEnabled(enabled);
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.

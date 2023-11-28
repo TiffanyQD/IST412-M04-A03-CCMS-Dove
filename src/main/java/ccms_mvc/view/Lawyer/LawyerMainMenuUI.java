@@ -2,7 +2,6 @@ package ccms_mvc.view.Lawyer;
 
 import ccms_mvc.controller.Lawyer.LawyerMainMenuCntl;
 
-
 /**
  *
  * @author Tiffany Dove
@@ -25,7 +24,6 @@ public class LawyerMainMenuUI extends javax.swing.JFrame {
 //    public void setIndexOfCurrentPerson(int indexOfCurrentPerson) {
 //        this.indexOfCurrentPerson = indexOfCurrentPerson;
 //    }
-            
     /**
      * Creates new form PersonUI
      */
@@ -118,15 +116,13 @@ public class LawyerMainMenuUI extends javax.swing.JFrame {
 //    public void setZipCodeTextField(String zipCodeTextFieldString) {
 //        this.zipCodeTextField.setText(zipCodeTextFieldString);
 //    }
-    
-    public void enableButtons(boolean enabled){
-        
+    public void enableButtons(boolean enabled) {
+
         this.btnLawyerSearchSpecificCase.setEnabled(enabled);
         this.btnLawyerViewCaseDetails.setEnabled(enabled);
         this.btnQuit.setEnabled(enabled);
         this.btnMainMenu.setEnabled(enabled);
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -145,6 +141,7 @@ public class LawyerMainMenuUI extends javax.swing.JFrame {
         errorMessageLabel = new javax.swing.JLabel();
         btnMainMenu = new javax.swing.JButton();
         lawyerMainMenuLabel = new javax.swing.JLabel();
+        btnDetailedInformation = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -186,6 +183,10 @@ public class LawyerMainMenuUI extends javax.swing.JFrame {
         lawyerMainMenuLabel.setText("Lawyer Main Menu");
         lawyerMainMenuLabel.setToolTipText("Lawyer Main Menu");
 
+        btnDetailedInformation.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        btnDetailedInformation.setText("Detailed Information");
+        btnDetailedInformation.setToolTipText("View Case Details for Lawyer");
+
         javax.swing.GroupLayout lawyerMainMenuPanelLayout = new javax.swing.GroupLayout(lawyerMainMenuPanel);
         lawyerMainMenuPanel.setLayout(lawyerMainMenuPanelLayout);
         lawyerMainMenuPanelLayout.setHorizontalGroup(
@@ -195,6 +196,12 @@ public class LawyerMainMenuUI extends javax.swing.JFrame {
                 .addGroup(lawyerMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(lawyerMainMenuPanelLayout.createSequentialGroup()
                         .addGroup(lawyerMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ccmsMainMenuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
+                            .addComponent(lawyerMainMenuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addGroup(lawyerMainMenuPanelLayout.createSequentialGroup()
+                        .addGroup(lawyerMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnDetailedInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnLawyerSearchSpecificCase)
                             .addComponent(btnLawyerViewCaseDetails)
                             .addComponent(errorMessageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -202,12 +209,7 @@ public class LawyerMainMenuUI extends javax.swing.JFrame {
                                 .addComponent(btnQuit)
                                 .addGap(123, 123, 123)
                                 .addComponent(btnMainMenu)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(lawyerMainMenuPanelLayout.createSequentialGroup()
-                        .addGroup(lawyerMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ccmsMainMenuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
-                            .addComponent(lawyerMainMenuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE))
-                        .addContainerGap())))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         lawyerMainMenuPanelLayout.setVerticalGroup(
             lawyerMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,7 +222,9 @@ public class LawyerMainMenuUI extends javax.swing.JFrame {
                 .addComponent(btnLawyerSearchSpecificCase)
                 .addGap(28, 28, 28)
                 .addComponent(btnLawyerViewCaseDetails)
-                .addGap(113, 113, 113)
+                .addGap(29, 29, 29)
+                .addComponent(btnDetailedInformation)
+                .addGap(61, 61, 61)
                 .addComponent(errorMessageLabel)
                 .addGap(69, 69, 69)
                 .addGroup(lawyerMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -254,6 +258,7 @@ public class LawyerMainMenuUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLawyerViewCaseDetailsActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnDetailedInformation;
     public javax.swing.JButton btnLawyerSearchSpecificCase;
     public javax.swing.JButton btnLawyerViewCaseDetails;
     public javax.swing.JButton btnMainMenu;

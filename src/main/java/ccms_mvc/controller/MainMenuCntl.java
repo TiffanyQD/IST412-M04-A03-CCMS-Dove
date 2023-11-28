@@ -4,33 +4,38 @@ import ccms_mvc.controller.Civilian.CivilianMainMenuCntl;
 import ccms_mvc.controller.Clerk.ClerkMainMenuCntl;
 import ccms_mvc.controller.Judge.JudgeMainMenuCntl;
 import ccms_mvc.controller.Lawyer.LawyerMainMenuCntl;
-import ccms_mvc.model.LoginInformation;
 import ccms_mvc.view.MainMenuUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * This is the main menu controller. The responsibility of this class is that it
+ * will direct the user to the appropriate menu.
+ */
 public class MainMenuCntl implements ActionListener {
 
-//    private Person person;
-//    private PersonList personList;
-
-//    private CourtCases courtCases;
-//    private CourtCasesList courtCasesList;
-
+    //Call to the Main Menu UI
     private MainMenuUI mainMenuUI;
+
+    //Index of the current court case
     private int indexOfCurrentPerson;
 
     public MainMenuCntl() {
-//        personList = new PersonList();
-//        courtCasesList = new CourtCasesList();
+        //Create an instance of MainMenuUI
         mainMenuUI = new MainMenuUI(this);
-        //Call to addActionListernerButtons toactivate listener for various
+
+        //Call to addActionListernerButtons to activate the listener for various
         //buttons.
         addActionListenersButtons();
-        //set the Person UI to be visible (true)
+
+        //Set the MainMenuUI to be visible (true)
         mainMenuUI.setVisible(true);
     }
 
+    /**
+     * This method will add action listeners for the various buttons on the
+     * MainMenuUI
+     */
     public void addActionListenersButtons() {
         mainMenuUI.btnQuit.addActionListener(this);
         mainMenuUI.btnCivilianMainMenu.addActionListener(this);
@@ -49,29 +54,29 @@ public class MainMenuCntl implements ActionListener {
             System.exit(0);
         }
 
-        //Civilian
-        if (obj.equals(mainMenuUI.btnCivilianMainMenu)){
+        //The Civilian Menu button was pressed
+        if (obj.equals(mainMenuUI.btnCivilianMainMenu)) {
             CivilianMainMenuCntl civilianMainMenuCntl = new CivilianMainMenuCntl();
             mainMenuUI.dispose();
         }
-        
-        //Clerk
-        if (obj.equals(mainMenuUI.btnClerkMainMenu)){
+
+        //The Clerk Menu button was pressed
+        if (obj.equals(mainMenuUI.btnClerkMainMenu)) {
             ClerkMainMenuCntl clerkMainMenuCntl = new ClerkMainMenuCntl();
             mainMenuUI.dispose();
         }
-        
-        //Judge
-        if (obj.equals(mainMenuUI.btnJudgeMainMenu)){
+
+        //The Judge Menu button was pressed
+        if (obj.equals(mainMenuUI.btnJudgeMainMenu)) {
             JudgeMainMenuCntl judgeMainMenuCntl = new JudgeMainMenuCntl();
             mainMenuUI.dispose();
         }
 
-        //Lawyer
-        if (obj.equals(mainMenuUI.btnLawyerMainMenu)){
+        //The Lawyer Menu button was pressed
+        if (obj.equals(mainMenuUI.btnLawyerMainMenu)) {
             LawyerMainMenuCntl lawyerMainMenuCntl = new LawyerMainMenuCntl();
             mainMenuUI.dispose();
         }
-       
+
     }
 }

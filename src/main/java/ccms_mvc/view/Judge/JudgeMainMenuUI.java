@@ -24,7 +24,6 @@ public class JudgeMainMenuUI extends javax.swing.JFrame {
 //    public void setIndexOfCurrentPerson(int indexOfCurrentPerson) {
 //        this.indexOfCurrentPerson = indexOfCurrentPerson;
 //    }
-            
     /**
      * Creates new form PersonUI
      */
@@ -117,15 +116,14 @@ public class JudgeMainMenuUI extends javax.swing.JFrame {
 //    public void setZipCodeTextField(String zipCodeTextFieldString) {
 //        this.zipCodeTextField.setText(zipCodeTextFieldString);
 //    }
-    
-    public void enableButtons(boolean enabled){
-        
+    public void enableButtons(boolean enabled) {
+
         this.btnSearchSpecificCase.setEnabled(enabled);
         this.btnViewCaseDetails.setEnabled(enabled);
         this.btnQuit.setEnabled(enabled);
         this.btnMainMenu.setEnabled(enabled);
+        this.btnDetailedInformation.setEnabled(enabled);
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -144,6 +142,7 @@ public class JudgeMainMenuUI extends javax.swing.JFrame {
         errorMessageLabel = new javax.swing.JLabel();
         btnMainMenu = new javax.swing.JButton();
         judgeMainMenuLabel = new javax.swing.JLabel();
+        btnDetailedInformation = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -161,20 +160,10 @@ public class JudgeMainMenuUI extends javax.swing.JFrame {
         btnSearchSpecificCase.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnSearchSpecificCase.setText("Search Specific Case");
         btnSearchSpecificCase.setToolTipText("Search Specific Case");
-        btnSearchSpecificCase.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchSpecificCaseActionPerformed(evt);
-            }
-        });
 
         btnViewCaseDetails.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnViewCaseDetails.setText("View Case Details");
         btnViewCaseDetails.setToolTipText("View Case Details");
-        btnViewCaseDetails.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewCaseDetailsActionPerformed(evt);
-            }
-        });
 
         btnMainMenu.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnMainMenu.setText("Main Menu");
@@ -185,6 +174,10 @@ public class JudgeMainMenuUI extends javax.swing.JFrame {
         judgeMainMenuLabel.setText("Judge Main Menu");
         judgeMainMenuLabel.setToolTipText("Judge Main Menu");
 
+        btnDetailedInformation.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        btnDetailedInformation.setText("Detailed Information");
+        btnDetailedInformation.setToolTipText("View Case Details for Lawyer");
+
         javax.swing.GroupLayout judgeMainMenuPanelLayout = new javax.swing.GroupLayout(judgeMainMenuPanel);
         judgeMainMenuPanel.setLayout(judgeMainMenuPanelLayout);
         judgeMainMenuPanelLayout.setHorizontalGroup(
@@ -194,19 +187,21 @@ public class JudgeMainMenuUI extends javax.swing.JFrame {
                 .addGroup(judgeMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(judgeMainMenuPanelLayout.createSequentialGroup()
                         .addGroup(judgeMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnSearchSpecificCase)
-                            .addComponent(btnViewCaseDetails)
+                            .addComponent(ccmsMainMenuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
+                            .addComponent(judgeMainMenuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addGroup(judgeMainMenuPanelLayout.createSequentialGroup()
+                        .addGroup(judgeMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(errorMessageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(judgeMainMenuPanelLayout.createSequentialGroup()
                                 .addComponent(btnQuit)
                                 .addGap(123, 123, 123)
-                                .addComponent(btnMainMenu)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(judgeMainMenuPanelLayout.createSequentialGroup()
-                        .addGroup(judgeMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ccmsMainMenuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
-                            .addComponent(judgeMainMenuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE))
-                        .addContainerGap())))
+                                .addComponent(btnMainMenu))
+                            .addComponent(btnDetailedInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(judgeMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(btnViewCaseDetails, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnSearchSpecificCase, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         judgeMainMenuPanelLayout.setVerticalGroup(
             judgeMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,15 +212,17 @@ public class JudgeMainMenuUI extends javax.swing.JFrame {
                 .addComponent(judgeMainMenuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(61, 61, 61)
                 .addComponent(btnSearchSpecificCase)
-                .addGap(28, 28, 28)
+                .addGap(31, 31, 31)
                 .addComponent(btnViewCaseDetails)
-                .addGap(113, 113, 113)
+                .addGap(30, 30, 30)
+                .addComponent(btnDetailedInformation)
+                .addGap(54, 54, 54)
                 .addComponent(errorMessageLabel)
                 .addGap(69, 69, 69)
                 .addGroup(judgeMainMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnMainMenu)
                     .addComponent(btnQuit))
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -244,15 +241,8 @@ public class JudgeMainMenuUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSearchSpecificCaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchSpecificCaseActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSearchSpecificCaseActionPerformed
-
-    private void btnViewCaseDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewCaseDetailsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnViewCaseDetailsActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnDetailedInformation;
     public javax.swing.JButton btnMainMenu;
     public javax.swing.JButton btnQuit;
     public javax.swing.JButton btnSearchSpecificCase;

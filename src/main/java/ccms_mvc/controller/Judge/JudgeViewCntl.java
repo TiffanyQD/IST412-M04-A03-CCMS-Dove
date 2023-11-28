@@ -1,36 +1,69 @@
 package ccms_mvc.controller.Judge;
 
 import ccms_mvc.model.CourtCases;
-import ccms_mvc.model.CourtCasesList;
-import ccms_mvc.model.Person;
-import ccms_mvc.model.PersonList;
 import ccms_mvc.view.Judge.JudgeViewUI;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
+/**
+ * This controller class that is used in conjunction with the JudgeViewUI to
+ * display/view Court Case details.
+ */
 public class JudgeViewCntl implements ActionListener {
 
-    private Person person;
-    private PersonList personList;
+    //Array of CourtCases
+    private CourtCases[] arrayCourtCases;
 
+    //Call CourCases object
     private CourtCases courtCases;
-    private CourtCasesList courtCasesList;
 
+    //ArrayList of CourtCases
+    private List<CourtCases> listCourtCases;
+
+    //Call to JudgeViewUI object
     private JudgeViewUI judgeViewUI;
-    private int indexOfCurrentPerson;
 
+    //Index of the Current Court Case
+    private int indexOfCurrentCourtCase;
+
+    /**
+     * Constructor for JudgeViewCntl
+     */
     public JudgeViewCntl() {
-        personList = new PersonList();
-        courtCasesList = new CourtCasesList();
+
+        //Call ObjectMapper which will be used to retrieve json of court cases.
+        ObjectMapper mapper = new ObjectMapper();
+
+        try {
+            //Read the courtCases.json file and place the contents into arrayCourtCases
+            arrayCourtCases = mapper.readValue(new File("src/resources/courtCases.json"), CourtCases[].class);
+
+            //Create an arraylist (listCourtCases) from the array (arrayCourtCases)
+            listCourtCases = Arrays.asList(arrayCourtCases);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //Instantiate JudgeViewUI
         judgeViewUI = new JudgeViewUI(this);
+
         //Call to addActionListernerButtons to activate listener for various
         //buttons.
         addActionListenersButtons();
-        //set the Person UI to be visible (true)
+
+        //set the JudgeViewUI to be visible (true)        
         judgeViewUI.setVisible(true);
     }
 
+    /**
+     * Call to addActionListener method to activiate listener for various
+     * buttons.
+     */
     public void addActionListenersButtons() {
         judgeViewUI.btnQuit.addActionListener(this);
         judgeViewUI.btnJudgeMainMenu.addActionListener(this);
@@ -38,12 +71,9 @@ public class JudgeViewCntl implements ActionListener {
 
     }
 
-    public ArrayList<Person> getListOfPerson() {
-        return personList.getPersonArrayList();
-    }
+    public List<CourtCases> getListCourtCases() {
+        return listCourtCases;
 
-    public ArrayList<CourtCases> getListOfCourtCases() {
-        return courtCasesList.getCourtCasesArrayList();
     }
 
     @Override
@@ -51,36 +81,75 @@ public class JudgeViewCntl implements ActionListener {
         //e.source will let you know what button was pushed. 
         Object obj = e.getSource();
 
+        //TODO Would prefer if the following code used the listCourtCases instead of arrayCourtCases
+        //The PREVIOUS button was pressed
+        if (obj.equals(judgeViewUI.btnPrevious)) {
+            /*
+            So that you don't have problems with out of bounds, if the current
+            position equals 0, then loop around to the last element in the 
+            array list.
+             */
+            indexOfCurrentCourtCase = judgeViewUI.getIndexOfCurrentCourtCase();
+            if (indexOfCurrentCourtCase == 0) {
+                indexOfCurrentCourtCase = arrayCourtCases.length - 1;
+            } else {
+                indexOfCurrentCourtCase--;
+            }
+
+            judgeViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
+            judgeViewUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
+        }
+
+        //The NEXT button was pressed
+        if (obj.equals(judgeViewUI.btnNext)) {
+            /*
+            So that you don't have problems with out of bounds, if the current
+            position equals the last element in the array list, then loop 
+            around to the first element in the array list.
+             */
+            indexOfCurrentCourtCase = judgeViewUI.getIndexOfCurrentCourtCase();
+            if (indexOfCurrentCourtCase == arrayCourtCases.length - 1) {
+                indexOfCurrentCourtCase = 0;
+            } else {
+                indexOfCurrentCourtCase++;
+            }
+            judgeViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
+            judgeViewUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
+        }
+
         //The QUIT button was pressed
         if (obj.equals(judgeViewUI.btnQuit)) {
             System.exit(0);
         }
 
-        //The ADD button was pressed
+        //The View button was pressed
         if (obj.equals(judgeViewUI.btnView)) {
             //Enable all of the buttons except for Save button
             judgeViewUI.enableButtons(true);
 
-            ArrayList<CourtCases> courtCasesArrayList = courtCasesList.getCourtCasesArrayList();
             boolean caseNumberFound = false;
-            String partyName = "";
-            for (CourtCases courtCases : courtCasesArrayList) {
-                if (courtCases.getCaseNumber().equals(judgeViewUI.getCaseNumberTextField())) {
-                    partyName = courtCases.getPartyName();
+            for (int i = 0; i < arrayCourtCases.length; i++) {
+                if (arrayCourtCases[i].getCaseNumber().equals(judgeViewUI.getCaseNumberTextField())) {
+                    courtCases = arrayCourtCases[i];
+                    indexOfCurrentCourtCase = i;
                     caseNumberFound = true;
                     break;
                 }
             }
+
             if (caseNumberFound) {
-                judgeViewUI.partyNameTextField.setText(partyName);
+                judgeViewUI.parseCourtCases(courtCases);
+                judgeViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
                 judgeViewUI.errorMessage.setText("Case Number: " + judgeViewUI.getCaseNumberTextField() + " was found. !!!");
             } else {
                 judgeViewUI.errorMessage.setText("Case Number: " + judgeViewUI.getCaseNumberTextField() + " was NOT found. !!!");
+                judgeViewUI.clearTheFieldsInCourtCasesUI();
             }
 
         }
-        
-        if (obj.equals(judgeViewUI.btnJudgeMainMenu)){
+
+        //The Judge Main Menu button was pressed.	
+        if (obj.equals(judgeViewUI.btnJudgeMainMenu)) {
             JudgeMainMenuCntl judgeMainMenuCntl = new JudgeMainMenuCntl();
             judgeViewUI.dispose();
         }
