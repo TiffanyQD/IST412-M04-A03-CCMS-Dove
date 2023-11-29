@@ -11,18 +11,24 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * This class will allow the judge to view, add, delete, update, and save
  * detailed court case information.
  */
+@Getter
+@Setter
 public class JudgeDetailedInformationCntl implements ActionListener {
 
     private CourtCases[] arrayCourtCases;
     private CourtCases courtCases;
     private List<CourtCases> listCourtCases;
+    private List<CourtCases> arrayListCourtCases;
     ObjectMapper mapper;
 
     private JudgeDetailedInformationUI judgeDetailedInformationUI;
@@ -38,6 +44,7 @@ public class JudgeDetailedInformationCntl implements ActionListener {
             arrayCourtCases = mapper.readValue(new File("src/resources/courtCases.json"), CourtCases[].class);
             //Convert array(arrayCourtCases) to an ArrayList(listCourtCases)
             listCourtCases = Arrays.asList(arrayCourtCases);
+            arrayListCourtCases = new ArrayList<>(listCourtCases);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -67,13 +74,13 @@ public class JudgeDetailedInformationCntl implements ActionListener {
 
     }
 
-    /**
-     * Method to retrieve an ArrayList of CourtCases
-     */
-    public List<CourtCases> getListCourtCases() {
-        return listCourtCases;
-
-    }
+//    /**
+//     * Method to retrieve an ArrayList of CourtCases
+//     */
+//    public List<CourtCases> getListCourtCases() {
+//        return listCourtCases;
+//
+//    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -184,19 +191,18 @@ public class JudgeDetailedInformationCntl implements ActionListener {
             court.setLawyerInformation(judgeDetailedInformationUI.getLawyerCommentsTextArea().getText());
 
             //Add the CourtCases to the CourtCases Array List
-            getListCourtCases().add(court);
+            arrayListCourtCases.add(court);
 
             //Set index of the current court case
-            indexOfCurrentCourtCase = getListCourtCases().size() - 1;
+            indexOfCurrentCourtCase = arrayListCourtCases.size() - 1;
             judgeDetailedInformationUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
             //Even though the element was added, redraw the screen with the element.
-            judgeDetailedInformationUI.parseCourtCases(getListCourtCases().get(indexOfCurrentCourtCase));
+            judgeDetailedInformationUI.parseCourtCases(arrayListCourtCases.get(indexOfCurrentCourtCase));
             //Enable all of the buttons except for Save button
             judgeDetailedInformationUI.enableButtons(true);
 
             try {
-                List<CourtCases> listCourtCases1 = getListCourtCases();
-                mapper.writeValue(new File("src/resources/courtCases.json"), listCourtCases1);
+                mapper.writeValue(new File("src/resources/courtCases.json"), arrayListCourtCases);
             } catch (IOException ioe) {
                 ioe.printStackTrace();
             }
