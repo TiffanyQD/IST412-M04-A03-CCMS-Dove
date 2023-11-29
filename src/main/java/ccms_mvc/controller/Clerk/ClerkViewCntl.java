@@ -61,7 +61,7 @@ public class ClerkViewCntl implements ActionListener {
     }
 
     /**
-     * Call to addActionListener method to activiate listener for various
+     * Call to addActionListener method to activate listener for various
      * buttons.
      */
     public void addActionListenersButtons() {
@@ -98,6 +98,7 @@ public class ClerkViewCntl implements ActionListener {
                 indexOfCurrentCourtCase--;
             }
 
+            clerkViewUI.errorMessage.setText("");
             clerkViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
             clerkViewUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
         }
@@ -115,6 +116,8 @@ public class ClerkViewCntl implements ActionListener {
             } else {
                 indexOfCurrentCourtCase++;
             }
+
+            clerkViewUI.errorMessage.setText("");
             clerkViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
             clerkViewUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
         }

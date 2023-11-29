@@ -61,13 +61,15 @@ public class JudgeViewCntl implements ActionListener {
     }
 
     /**
-     * Call to addActionListener method to activiate listener for various
+     * Call to addActionListener method to activate listener for various
      * buttons.
      */
     public void addActionListenersButtons() {
         judgeViewUI.btnQuit.addActionListener(this);
         judgeViewUI.btnJudgeMainMenu.addActionListener(this);
         judgeViewUI.btnView.addActionListener(this);
+        judgeViewUI.btnNext.addActionListener(this);
+        judgeViewUI.btnPrevious.addActionListener(this);
 
     }
 
@@ -96,6 +98,7 @@ public class JudgeViewCntl implements ActionListener {
                 indexOfCurrentCourtCase--;
             }
 
+            judgeViewUI.errorMessage.setText("");
             judgeViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
             judgeViewUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
         }
@@ -113,6 +116,8 @@ public class JudgeViewCntl implements ActionListener {
             } else {
                 indexOfCurrentCourtCase++;
             }
+
+            judgeViewUI.errorMessage.setText("");
             judgeViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
             judgeViewUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
         }

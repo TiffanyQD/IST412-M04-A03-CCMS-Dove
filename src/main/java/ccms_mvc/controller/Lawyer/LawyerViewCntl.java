@@ -94,6 +94,7 @@ public class LawyerViewCntl implements ActionListener {
                 indexOfCurrentCourtCase--;
             }
 
+            lawyerViewUI.errorMessage.setText("");
             lawyerViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
             lawyerViewUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
         }
@@ -111,6 +112,8 @@ public class LawyerViewCntl implements ActionListener {
             } else {
                 indexOfCurrentCourtCase++;
             }
+
+            lawyerViewUI.errorMessage.setText("");
             lawyerViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
             lawyerViewUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
         }

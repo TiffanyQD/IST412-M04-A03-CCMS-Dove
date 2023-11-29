@@ -11,7 +11,7 @@ package ccms_mvc.model;
 public enum CaseType {
     
         CIVIL,
-        CRIMINIAL,
+        CRIMINAL,
         TRAFFIC,
         CIVIL_ACTION
     

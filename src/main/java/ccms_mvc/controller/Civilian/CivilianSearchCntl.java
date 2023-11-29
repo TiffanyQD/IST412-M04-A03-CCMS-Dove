@@ -9,11 +9,13 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import lombok.Getter;
 
 /**
  * This is the controller class that is used in conjunction with the
  * CivilianSearchUI to search Court Case details for the Civilian.
  */
+@Getter
 public class CivilianSearchCntl implements ActionListener {
 
     //Create an Array of CourtCases

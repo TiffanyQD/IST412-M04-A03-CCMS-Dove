@@ -6,8 +6,6 @@
 
 package ccms_mvc.model;
 
-import java.time.ZonedDateTime;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -21,7 +19,7 @@ public class CourtCases {
     public String caseNumber;
     public String partyName;
     public CaseType caseType;
-    public String fillingDate;
+    public String filingDate;
     public CaseStatus caseStatus; 
     public String plantiff;
     public String defendant;

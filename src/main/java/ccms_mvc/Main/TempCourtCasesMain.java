@@ -12,8 +12,6 @@ import ccms_mvc.model.Location;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.util.Arrays;
 import java.util.List;
 
@@ -26,9 +24,9 @@ public class TempCourtCasesMain {
     public static void main(String[] args) {
         ObjectMapper mapper = new ObjectMapper();
         
-//        ZonedDateTime fillingDate = ZonedDateTime.of(2015, 11, 20, 23, 45, 59, 1234, ZoneId.of ("UTC"));
-//        ZonedDateTime fillingDate = ZonedDateTime.now();
-        String fillingDate = "2023-11-22";
+//        ZonedDateTime filingDate = ZonedDateTime.of(2015, 11, 20, 23, 45, 59, 1234, ZoneId.of ("UTC"));
+//        ZonedDateTime filingDate = ZonedDateTime.now();
+        String filingDate = "2023-11-22";
 
         CourtCases courtCase1 = new CourtCases();
         courtCase1.setCourtSystem(CourtSystem.CIRCUIT);
@@ -36,7 +34,7 @@ public class TempCourtCasesMain {
         courtCase1.setCaseNumber("11111");
         courtCase1.setPartyName("Benjamin vs. Franklin");
         courtCase1.setCaseType(CaseType.CIVIL);
-        courtCase1.setFillingDate(fillingDate);
+        courtCase1.setFilingDate(filingDate);
         courtCase1.setCaseStatus(CaseStatus.OPEN);
         courtCase1.setPlantiff("Benjamin");
         courtCase1.setDefendant("Franklin");
@@ -50,7 +48,7 @@ public class TempCourtCasesMain {
         courtCase2.setCaseNumber("22222");
         courtCase2.setPartyName("Mosby vs. Mosby et al");
         courtCase2.setCaseType(CaseType.CIVIL_ACTION);
-        courtCase1.setFillingDate(fillingDate);
+        courtCase2.setFilingDate(filingDate);
         courtCase2.setCaseStatus(CaseStatus.CLOSED);
         courtCase2.setPlantiff("Mosby");
         courtCase2.setDefendant("Mosby et al");
@@ -64,8 +62,8 @@ public class TempCourtCasesMain {
         courtCase3.setLocation(Location.MONTGOMERY);
         courtCase3.setCaseNumber("33333");
         courtCase3.setPartyName("Good vs. Bad");
-        courtCase3.setCaseType(CaseType.CRIMINIAL);
-        courtCase1.setFillingDate(fillingDate);
+        courtCase3.setCaseType(CaseType.CRIMINAL);
+        courtCase3.setFilingDate(filingDate);
         courtCase3.setCaseStatus(CaseStatus.POSTPONED);
         courtCase3.setPlantiff("Good");
         courtCase3.setDefendant("Bad");
@@ -79,7 +77,7 @@ public class TempCourtCasesMain {
         courtCase4.setCaseNumber("44444");
         courtCase4.setPartyName("Ravens vs. Browns");
         courtCase4.setCaseType(CaseType.TRAFFIC);
-        courtCase1.setFillingDate(fillingDate);
+        courtCase4.setFilingDate(filingDate);
         courtCase4.setCaseStatus(CaseStatus.OPEN);
         courtCase4.setPlantiff("Ravens");
         courtCase4.setDefendant("Browns");
@@ -93,7 +91,7 @@ public class TempCourtCasesMain {
         courtCase5.setCaseNumber("55555");
         courtCase5.setPartyName("Jackson vs. Watson");
         courtCase5.setCaseType(CaseType.CIVIL);
-        courtCase1.setFillingDate(fillingDate);
+        courtCase5.setFilingDate(filingDate);
         courtCase5.setCaseStatus(CaseStatus.OPEN);
         courtCase5.setPlantiff("Jackson");
         courtCase5.setDefendant("Watson");

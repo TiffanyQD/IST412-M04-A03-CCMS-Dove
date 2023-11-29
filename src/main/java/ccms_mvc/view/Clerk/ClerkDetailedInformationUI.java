@@ -6,13 +6,14 @@ import java.util.List;
 import lombok.Getter;
 
 /**
+ * This class sets up the is ClerkDetailedInformationUI Form.
  *
  * @author Tiffany Dove
  */
 @Getter
 public class ClerkDetailedInformationUI extends javax.swing.JFrame {
 
-    //Reference to Person Controller
+    //Reference to ClerkDetailedInformationCntl Controller
     private ClerkDetailedInformationCntl clerkDetailedInformationCntl;
 
     //Array List of Court Cases
@@ -24,34 +25,37 @@ public class ClerkDetailedInformationUI extends javax.swing.JFrame {
     //Reference to CourtCases class
     private CourtCases courtCases;
 
+    //Get the index of the current court case
     public int getIndexOfCurrentCourtCase() {
         return indexOfCurrentCourtCase;
     }
 
+    //Set the index of the current court case
     public void setIndexOfCurrentCourtCase(int indexOfCurrentPerson) {
         this.indexOfCurrentCourtCase = indexOfCurrentPerson;
     }
 
     /**
-     * Creates new form PersonUI
+     * Creates new form ClerkDetailedInformationUI
      */
     public ClerkDetailedInformationUI(ClerkDetailedInformationCntl clerkDetailedInformationCntl) {
         this.clerkDetailedInformationCntl = clerkDetailedInformationCntl;
         initComponents();
 
+        //Retrieve a list of all of the court cases
         listCourtCases = clerkDetailedInformationCntl.getListCourtCases();
 
-//        arrayListPerson = civilianViewCntl.getListOfPerson();
-//        arrayListCourtCases = civilianViewCntl.getListOfCourtCases();
-        //Get a Person occurrence from the arrayList using the current position.
-        //namely current person.
+        //Retreive a specific court case from the list of court cases.
         courtCases = listCourtCases.get(indexOfCurrentCourtCase);
 
-        //Using the Person (person) class, take the values and populate
+        //Using the CourtCase class, take the values and populate
         //the UI.
         parseCourtCases(courtCases);
     }
 
+    /**
+     * Parse the Court Cases
+     */
     public void parseCourtCases(CourtCases courtCases) {
 
         //Set the Court System field
@@ -70,10 +74,10 @@ public class ClerkDetailedInformationUI extends javax.swing.JFrame {
         this.caseTypeTextField.setText(courtCases.getCaseType().name());
 
         //Set the Filing Data field
-        this.filingDateTextField.setText(courtCases.getFillingDate());
+        this.filingDateTextField.setText(courtCases.getFilingDate());
 
         //Set the Case Status 
-        this.caseStatusTextField.setText(courtCases.getCaseType().name());
+        this.caseStatusTextField.setText(courtCases.getCaseStatus().name());
 
         //Set the Plantiff
         this.plantiffTextField.setText(courtCases.getPlantiff());
@@ -88,6 +92,9 @@ public class ClerkDetailedInformationUI extends javax.swing.JFrame {
         this.lawyerCommentsTextArea.setText(courtCases.getLawyerInformation());
     }
 
+    /**
+     * Clear the Fields in the Court Case UI
+     */
     public void clearTheFieldsInCourtCasesUI() {
         //Set the Court System field
         this.courtSystemTextField.setText("");
@@ -123,18 +130,24 @@ public class ClerkDetailedInformationUI extends javax.swing.JFrame {
         this.lawyerCommentsTextArea.setText("");
     }
 
+    //Get the Case Number field
     public String getCaseNumberTextField() {
         return caseNumberTextField.getText();
     }
 
-//    public void setCaseNumberTextField(String caseNumberTextFieldString){
-//        this.caseNumberTextField.setText(caseNumberTextFieldString);
-//    }
-//
-//    public void setPartyName(String partyNameTextFieldString){
-//        this.partyNameTextField.setText(partyNameTextFieldString);
-//    }
-//
+    //Set the Case Number field
+    public void setCaseNumberTextField(String caseNumberTextFieldString) {
+        this.caseNumberTextField.setText(caseNumberTextFieldString);
+    }
+
+    //Set the Party Name field
+    public void setPartyName(String partyNameTextFieldString) {
+        this.partyNameTextField.setText(partyNameTextFieldString);
+    }
+
+    /**
+     * Enable the buttons in the UI
+     */
     public void enableButtons(boolean enabled) {
         this.btnClerkMainMenu.setEnabled(enabled);
         this.btnView.setEnabled(enabled);
@@ -245,14 +258,14 @@ public class ClerkDetailedInformationUI extends javax.swing.JFrame {
         courtSystemLabel.setText("Court System:");
         courtSystemLabel.setToolTipText("Court System:");
 
-        courtSystemTextField.setToolTipText("Court System Text Field");
+        courtSystemTextField.setToolTipText("Please enter one of the following CIRCUIT, DISTRIC");
         courtSystemTextField.setName("caseNumberTextField"); // NOI18N
 
         locationLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         locationLabel.setText("Location:");
         locationLabel.setToolTipText("Location:");
 
-        locationTextField.setToolTipText("Location Text Field");
+        locationTextField.setToolTipText("Please enter one of the following: BALTIMORE, BALTIMORE_CITY, PRINCE_GEORGE, MONTGOMERY");
         locationTextField.setName("caseNumberTextField"); // NOI18N
 
         caseTypeLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
@@ -312,13 +325,13 @@ public class ClerkDetailedInformationUI extends javax.swing.JFrame {
         lawyerCommentsTextArea.setToolTipText("Lawyer Comments Text Field");
         lawyerScrollPane.setViewportView(lawyerCommentsTextArea);
 
-        caseTypeTextField.setToolTipText("Case Type Text Field");
+        caseTypeTextField.setToolTipText("Please enter one of the following: CIVIL, CRIMINAL, TRAFFIC, CIVIL_ACTION");
         caseTypeTextField.setName("caseNumberTextField"); // NOI18N
 
         filingDateTextField.setToolTipText("Court System Text Field");
         filingDateTextField.setName("caseNumberTextField"); // NOI18N
 
-        caseStatusTextField.setToolTipText("Case Status Text Field");
+        caseStatusTextField.setToolTipText("Please enter one of the following: OPEN, CLOSED, POSTPONED");
         caseStatusTextField.setName("caseNumberTextField"); // NOI18N
 
         btnUpdate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N

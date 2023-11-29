@@ -2,10 +2,12 @@ package ccms_mvc.view;
 
 import ccms_mvc.controller.LoginIdCntl;
 import ccms_mvc.model.CourtCases;
-import ccms_mvc.model.Person;
-import java.util.ArrayList;
+import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
+ * This class sets up the is LoginUI Form.
  *
  * @author Tiffany Dove
  */
@@ -13,54 +15,37 @@ public class LoginUI extends javax.swing.JFrame {
 
     //Reference to Login Id Controller
     private LoginIdCntl loginIdCntl;
-    //An arrayList of Person
-    private ArrayList<Person> arrayListPerson;
-    //An arrayList of Court Cases
-    private ArrayList<CourtCases> arrayListCourtCases;
-    //Counter of the current Person
-    private int indexOfCurrentPerson = 0;
-    //Reference to Person class
-    private Person person;
 
-    public int getIndexOfCurrentPerson() {
-        return indexOfCurrentPerson;
+    //Array List of Court Cases
+    private List<CourtCases> listCourtCases;
+
+    //Counter of the current Court Case
+    private int indexOfCurrentCourtCase = 0;
+
+    //Reference to CourtCases class
+    private CourtCases courtCases;
+
+    //Get the index of the current court case
+    public int getIndexOfCurrentCourtCase() {
+        return indexOfCurrentCourtCase;
     }
 
-    public void setIndexOfCurrentPerson(int indexOfCurrentPerson) {
-        this.indexOfCurrentPerson = indexOfCurrentPerson;
+    //Set the index of the current court case
+    public void setIndexOfCurrentCourtCase(int indexOfCurrentCourtCase) {
+        this.indexOfCurrentCourtCase = indexOfCurrentCourtCase;
     }
 
     /**
-     * Creates new form PersonUI
+     * Creates new form CivilianViewUI
      */
     public LoginUI(LoginIdCntl loginIdCntl) {
         this.loginIdCntl = loginIdCntl;
         initComponents();
-//        arrayListPerson = loginIdCntl.getListOfPerson();
-//        arrayListCourtCases = loginIdCntl.getListOfCourtCases();
-        //Get a Person occurrence from the arrayList using the current position.
-        //namely current person.
-//        person = arrayListPerson.get(indexOfCurrentPerson);
-        //Using the Person (person) class, take the values and populate
-        //the UI.
 
-//        parsePerson(person);
-//        parseLogIn();
     }
 
-//    public void parsePerson(Person person) {
-//        //set the UI's id num text field with the id num from Person
-//        loginIdTextField.setText(String.valueOf(person.getIdNum()));
-//        //set the UI's name text field with the name from Person
-//        passwordTextField.setText(person.getName());
-//        //set the UI's address text field with the address from Person
-//        addressTextField.setText(person.getAddress());
-//        //set the UI's city text field with the city from Person
-//        cityTextField.setText(person.getCity());
-//        //set the UI's state text field with the state from Person
-//        stateTextField.setText(person.getState());
-//        //set the UI's zip code text field with the zip code from Person
-//        zipCodeTextField.setText(String.valueOf(person.getZipCode()));
+//    public String getLoginIdTextField() {
+//        return loginIdTextField.getText();
 //    }
     public void clearTheFieldsInLoginUI() {
         //set the UI's id num text field with the id num from Person
@@ -86,10 +71,12 @@ public class LoginUI extends javax.swing.JFrame {
         this.errorMessageLabel.setText(errorMessageLabel);
     }
 
-    public void setPasswordTextField(String passwordTextFieldString) {
-        this.passwordTextField.setText(passwordTextFieldString);
-    }
-
+//    public void setPasswordTextField(String passwordTextFieldString) {
+//        this.passwordTextField.setText(passwordTextFieldString);
+//    }
+    /**
+     * Enable the buttons in the UI
+     */
     public void enableButtons(boolean enabled) {
         this.btnSubmit.setEnabled(enabled);
         this.btnQuit.setEnabled(enabled);

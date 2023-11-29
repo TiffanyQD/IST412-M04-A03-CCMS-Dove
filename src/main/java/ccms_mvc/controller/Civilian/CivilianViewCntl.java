@@ -61,7 +61,7 @@ public class CivilianViewCntl implements ActionListener {
     }
 
     /**
-     * Call to addActionListener method to activiate listener for various
+     * Call to addActionListener method to activate listener for various
      * buttons.
      */
     public void addActionListenersButtons() {
@@ -98,6 +98,7 @@ public class CivilianViewCntl implements ActionListener {
                 indexOfCurrentCourtCase--;
             }
 
+            civilianViewUI.errorMessage.setText("");
             civilianViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
             civilianViewUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
         }
@@ -115,6 +116,8 @@ public class CivilianViewCntl implements ActionListener {
             } else {
                 indexOfCurrentCourtCase++;
             }
+
+            civilianViewUI.errorMessage.setText("");
             civilianViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
             civilianViewUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
         }

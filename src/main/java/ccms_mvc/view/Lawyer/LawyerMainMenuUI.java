@@ -3,121 +3,32 @@ package ccms_mvc.view.Lawyer;
 import ccms_mvc.controller.Lawyer.LawyerMainMenuCntl;
 
 /**
+ * This class sets up the is LawyerMainMenuUI Form.
  *
  * @author Tiffany Dove
  */
 public class LawyerMainMenuUI extends javax.swing.JFrame {
 
-    //Reference to Person Controller
+    //Reference to LawyerMainMenuCntl Controller
     private LawyerMainMenuCntl lawyerMainMenuCntl;
-//    //An arrayList of Person
-//    private ArrayList<Person> arrayListPerson;  
-//    //Counter of the current Person
-//    private int indexOfCurrentPerson = 0;
-//    //Reference to Person class
-//    private Person person;
 
-//    public int getIndexOfCurrentPerson() {
-//        return indexOfCurrentPerson;
-//    }
-//
-//    public void setIndexOfCurrentPerson(int indexOfCurrentPerson) {
-//        this.indexOfCurrentPerson = indexOfCurrentPerson;
-//    }
     /**
-     * Creates new form PersonUI
+     * Creates new form LawyerMainMenuUI
      */
     public LawyerMainMenuUI(LawyerMainMenuCntl lawyerMainMenuCntl) {
         this.lawyerMainMenuCntl = lawyerMainMenuCntl;
         initComponents();
-//        arrayListPerson = mainMenuCntl.getListOfCourtCases();
-//        //Get a Person occurrence from the arrayList using the current position.
-//        //namely current person.
-//        person = arrayListPerson.get(indexOfCurrentPerson);
-//        //Using the Person (person) class, take the values and populate
-//        //the UI.
-//        parsePerson(person);
     }
 
-//    public void parsePerson(Person person) {
-//        //set the UI's id num text field with the id num from Person
-//        idNumTextField.setText(String.valueOf(person.getIdNum()));
-//        //set the UI's name text field with the name from Person
-//        nameTextField.setText(person.getName());
-//        //set the UI's address text field with the address from Person
-//        addressTextField.setText(person.getAddress());
-//        //set the UI's city text field with the city from Person
-//        cityTextField.setText(person.getCity());
-//        //set the UI's state text field with the state from Person
-//        stateTextField.setText(person.getState());
-//        //set the UI's zip code text field with the zip code from Person
-//        zipCodeTextField.setText(String.valueOf(person.getZipCode()));
-//    }
-//
-//    public void clearTheFieldsInPersonUI() {
-//        //set the UI's id num text field with the id num from Person
-//        idNumTextField.setText("");
-//        //set the UI's name text field with the name from Person
-//        nameTextField.setText("");
-//        //set the UI's address text field with the address from Person
-//        addressTextField.setText("");
-//        //set the UI's city text field with the city from Person
-//        cityTextField.setText("");
-//        //set the UI's state text field with the state from Person
-//        stateTextField.setText("");
-//        //set the UI's zip code text field with the zip code from Person
-//        zipCodeTextField.setText("");
-//    }
-//
-//    public String getAddressTextField() {
-//        return addressTextField.getText();
-//    }
-//
-//    public void setAddressTextField(String addressTextFieldString) {
-//        this.addressTextField.setText(addressTextFieldString);
-//    }
-//
-//    public String getCityTextField() {
-//        return cityTextField.getText();
-//    }
-//
-//    public void setCityTextField(String cityTextFieldString) {
-//        this.cityTextField.setText(cityTextFieldString);
-//    }
-//
-//    public String getIdNumTextField() {
-//        return idNumTextField.getText();
-//    }
-//
-//    public void setIdNumTextField(String idNumTextFieldString) {
-//        this.idNumTextField.setText(idNumTextFieldString);
-//    }
-//
-//    public String getNameTextField() {
-//        return nameTextField.getText();
-//    }
-//
-//    public void setNameTextField(String nameTextFieldString) {
-//        this.nameTextField.setText(nameTextFieldString);
-//    }
-//
-//    public String getStateTextField() {
-//        return stateTextField.getText();
-//    }
-//
+    //Set Error Message Field
     public void setErrorMessageString(String errorMessageString) {
         this.errorMessageLabel.setText(errorMessageString);
     }
 
-//    public String getZipCodeTextField() {
-//        return zipCodeTextField.getText();
-//    }
-//
-//    public void setZipCodeTextField(String zipCodeTextFieldString) {
-//        this.zipCodeTextField.setText(zipCodeTextFieldString);
-//    }
+    /**
+     * Enable the buttons in the UI
+     */
     public void enableButtons(boolean enabled) {
-
         this.btnLawyerSearchSpecificCase.setEnabled(enabled);
         this.btnLawyerViewCaseDetails.setEnabled(enabled);
         this.btnQuit.setEnabled(enabled);

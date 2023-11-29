@@ -1,28 +1,55 @@
 package ccms_mvc.view.Civilian;
 
 import ccms_mvc.controller.Civilian.CivilianMainMenuCntl;
+import ccms_mvc.model.CourtCases;
+import java.util.List;
 
 /**
+ * This class sets up the is CivilianMainMenuUI Form.
  *
  * @author Tiffany Dove
  */
 public class CivilianMainMenuUI extends javax.swing.JFrame {
 
-    //Reference to Person Controller
+    //Reference to CivilianMainMenuCntl object
     private CivilianMainMenuCntl civilianMainMenuCntl;
 
+    //Array List of Court Cases
+    private List<CourtCases> listCourtCases;
+
+    //Counter of the current Court Case
+    private int indexOfCurrentCourtCase = 0;
+
+    //Reference to CourtCases class
+    private CourtCases courtCases;
+
+    //Get the index of the current court case
+    public int getIndexOfCurrentCourtCase() {
+        return indexOfCurrentCourtCase;
+    }
+
+    //Set the index of the current court case
+    public void setIndexOfCurrentCourtCase(int indexOfCurrentCourtCase) {
+        this.indexOfCurrentCourtCase = indexOfCurrentCourtCase;
+    }
+
     /**
-     * Creates new form Civilian Main Menu UI
+     * Creates new form CivilianMainMenuUI
      */
     public CivilianMainMenuUI(CivilianMainMenuCntl civilianMainMenuCntl) {
         this.civilianMainMenuCntl = civilianMainMenuCntl;
         initComponents();
+
     }
 
+    //Set Error Message String
     public void setErrorMessageString(String errorMessageString) {
         this.errorMessageLabel.setText(errorMessageString);
     }
 
+    /**
+     * Enable the buttons in the UI
+     */
     public void enableButtons(boolean enabled) {
 
         this.btnSearchSpecificCase.setEnabled(enabled);

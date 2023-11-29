@@ -5,146 +5,154 @@ import ccms_mvc.model.CourtCases;
 import java.util.List;
 
 /**
+ * This class sets up the is JudgeViewUI Form.
  *
  * @author Tiffany Dove
  */
 public class JudgeViewUI extends javax.swing.JFrame {
 
-    //Reference to Person Controller
+    //Reference to JudgeViewCntl Controller
     private JudgeViewCntl judgeViewCntl;
-    
+
     //Array List of Court Cases
     private List<CourtCases> listCourtCases;
-        
+
     //Counter of the current Person
     private int indexOfCurrentCourtCase = 0;
-    
+
     //Reference to CourtCases class
     private CourtCases courtCases;
 
+    //Get the index of the current court case
     public int getIndexOfCurrentCourtCase() {
         return indexOfCurrentCourtCase;
     }
 
-    public void setIndexOfCurrentCourtCase(int indexOfCurrentPerson) {
-        this.indexOfCurrentCourtCase = indexOfCurrentPerson;
+    //Set the index of the current court case
+    public void setIndexOfCurrentCourtCase(int indexOfCurrentCourtCase) {
+        this.indexOfCurrentCourtCase = indexOfCurrentCourtCase;
     }
-            
-            
+
     /**
-     * Creates new form PersonUI
+     * Creates new form JudgeViewUI
      */
     public JudgeViewUI(JudgeViewCntl judgeViewCntl) {
         this.judgeViewCntl = judgeViewCntl;
         initComponents();
-        
-        listCourtCases = judgeViewCntl.getListCourtCases();
-        
-//        arrayListPerson = civilianViewCntl.getListOfPerson();
-//        arrayListCourtCases = civilianViewCntl.getListOfCourtCases();
 
-        //Get a Person occurrence from the arrayList using the current position.
-        //namely current person.
+        //Retrieve a list of all of the court cases
+        listCourtCases = judgeViewCntl.getListCourtCases();
+
+        //Retreive a specific court case from the list of court cases.
         courtCases = listCourtCases.get(indexOfCurrentCourtCase);
 
-        //Using the Person (person) class, take the values and populate
+        //Using the CourtCase class, take the values and populate
         //the UI.
-
         parseCourtCases(courtCases);
     }
 
+    /**
+     * Parse the Court Cases
+     */
     public void parseCourtCases(CourtCases courtCases) {
-        
+
         //Set the Court System field
         this.courtSystemTextField.setText(courtCases.getCourtSystem().name());
-        
+
         //Set the Location field
         this.locationTextField.setText(courtCases.getLocation().name());
-        
+
         //Set the Case Number field
         this.caseNumberTextField.setText(courtCases.getCaseNumber());
-        
+
         //Set the Party Name field
         this.partyNameTextField.setText(courtCases.getPartyName());
-        
+
         //Set the Case Type field
         this.caseTypeTextField.setText(courtCases.getCaseType().name());
-        
+
         //Set the Filing Data field
-        this.filingDateTextField.setText(courtCases.getFillingDate());
-        
+        this.filingDateTextField.setText(courtCases.getFilingDate());
+
         //Set the Case Status 
-        this.caseStatusTextField.setText(courtCases.getCaseType().name());
-        
+        this.caseStatusTextField.setText(courtCases.getCaseStatus().name());
+
         //Set the Plantiff
         this.plantiffTextField.setText(courtCases.getPlantiff());
-        
+
         //Set the Defendant
         this.defendantTextField.setText(courtCases.getDefendant());
-        
+
         //Set the Judge Comments
         this.judgeCommentsTextArea.setText(courtCases.getJudgeInformation());
-        
+
         //Set the Lawyer Comments
         this.lawyerCommentsTextArea.setText(courtCases.getLawyerInformation());
     }
 
+    /**
+     * Clear the Fields in the Court Case UI
+     */
     public void clearTheFieldsInCourtCasesUI() {
         //Set the Court System field
         this.courtSystemTextField.setText("");
-        
+
         //Set the Location field
         this.locationTextField.setText("");
-        
+
         //Set the Case Number field
         this.caseNumberTextField.setText("");
-        
+
         //Set the Party Name field
         this.partyNameTextField.setText("");
-        
+
         //Set the Case Type field
         this.caseTypeTextField.setText("");
-        
+
         //Set the Filing Data field
         this.filingDateTextField.setText("");
-        
+
         //Set the Case Status 
         this.caseStatusTextField.setText("");
-        
+
         //Set the Plantiff
         this.plantiffTextField.setText("");
-        
+
         //Set the Defendant
         this.defendantTextField.setText("");
-        
+
         //Set the Judge Comments
         this.judgeCommentsTextArea.setText("");
-        
+
         //Set the Lawyer Comments
         this.lawyerCommentsTextArea.setText("");
     }
 
-
-    public String getCaseNumberTextField(){
+    //Get the Case Number field
+    public String getCaseNumberTextField() {
         return caseNumberTextField.getText();
     }
 
-    public void setCaseNumberTextField(String caseNumberTextFieldString){
+    //Set the Case Number field
+    public void setCaseNumberTextField(String caseNumberTextFieldString) {
         this.caseNumberTextField.setText(caseNumberTextFieldString);
     }
 
-    public void setPartyName(String partyNameTextFieldString){
+    //Set the Party Name field
+    public void setPartyName(String partyNameTextFieldString) {
         this.partyNameTextField.setText(partyNameTextFieldString);
     }
 
-    public void enableButtons(boolean enabled){
+    /**
+     * Enable the buttons in the UI
+     */
+    public void enableButtons(boolean enabled) {
         this.btnJudgeMainMenu.setEnabled(enabled);
         this.btnView.setEnabled(enabled);
         this.btnQuit.setEnabled(enabled);
         this.btnNext.setEnabled(enabled);
         this.btnPrevious.setEnabled(enabled);
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -234,12 +242,14 @@ public class JudgeViewUI extends javax.swing.JFrame {
         partyNameLabel.setText("Party Name:");
         partyNameLabel.setToolTipText("Party Name:");
 
+        partyNameTextField.setEditable(false);
         partyNameTextField.setToolTipText("Party Name Field");
 
         courtSystemLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         courtSystemLabel.setText("Court System:");
         courtSystemLabel.setToolTipText("Court System:");
 
+        courtSystemTextField.setEditable(false);
         courtSystemTextField.setToolTipText("Court System Text Field");
         courtSystemTextField.setName("caseNumberTextField"); // NOI18N
 
@@ -247,6 +257,7 @@ public class JudgeViewUI extends javax.swing.JFrame {
         locationLabel.setText("Location:");
         locationLabel.setToolTipText("Location:");
 
+        locationTextField.setEditable(false);
         locationTextField.setToolTipText("Location Text Field");
         locationTextField.setName("caseNumberTextField"); // NOI18N
 
@@ -273,12 +284,14 @@ public class JudgeViewUI extends javax.swing.JFrame {
         plantiffLabel.setText("Plantiff:");
         plantiffLabel.setToolTipText("Plantiff:");
 
+        plantiffTextField.setEditable(false);
         plantiffTextField.setToolTipText("Plantiff Text Field");
 
         defendantLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         defendantLabel.setText("Defendant:");
         defendantLabel.setToolTipText("Defendant:");
 
+        defendantTextField.setEditable(false);
         defendantTextField.setToolTipText("Defendant Text Field");
 
         judgeInformationLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -289,6 +302,7 @@ public class JudgeViewUI extends javax.swing.JFrame {
         judgeCommentsLabel.setText("Judge Comments:");
         judgeCommentsLabel.setToolTipText("Judge Comments:");
 
+        judgeCommentsTextArea.setEditable(false);
         judgeCommentsTextArea.setColumns(20);
         judgeCommentsTextArea.setRows(5);
         judgeCommentsTextArea.setToolTipText("Judge Comments Text Area");
@@ -302,17 +316,21 @@ public class JudgeViewUI extends javax.swing.JFrame {
         lawyerCommentsLabel.setText("Lawyer Comments:");
         lawyerCommentsLabel.setToolTipText("Lawyer Comments:");
 
+        lawyerCommentsTextArea.setEditable(false);
         lawyerCommentsTextArea.setColumns(20);
         lawyerCommentsTextArea.setRows(5);
         lawyerCommentsTextArea.setToolTipText("Lawyer Comments Text Field");
         lawyerScrollPane.setViewportView(lawyerCommentsTextArea);
 
+        caseTypeTextField.setEditable(false);
         caseTypeTextField.setToolTipText("Case Type Text Field");
         caseTypeTextField.setName("caseNumberTextField"); // NOI18N
 
+        filingDateTextField.setEditable(false);
         filingDateTextField.setToolTipText("Court System Text Field");
         filingDateTextField.setName("caseNumberTextField"); // NOI18N
 
+        caseStatusTextField.setEditable(false);
         caseStatusTextField.setToolTipText("Case Status Text Field");
         caseStatusTextField.setName("caseNumberTextField"); // NOI18N
 

@@ -2,74 +2,94 @@ package ccms_mvc.view.Lawyer;
 
 import ccms_mvc.controller.Lawyer.LawyerSearchCntl;
 import ccms_mvc.model.CourtCases;
-import ccms_mvc.model.Person;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
+ * This class sets up the is LawyerSearchUI Form.
  *
  * @author Tiffany Dove
  */
 public class LawyerSearchUI extends javax.swing.JFrame {
 
-    //Reference to Person Controller
+    //Reference to LawyerSearchCntl Controller
     private LawyerSearchCntl lawyerSearchCntl;
-    //An arrayList of Person
-    private ArrayList<Person> arrayListPerson;
-    //An arrayList of Person
-    private ArrayList<CourtCases> arrayListCourtCases;
-    //Counter of the current Person
-    private int indexOfCurrentPerson = 0;
-    //Reference to Person class
-    private Person person;
 
-    public int getIndexOfCurrentPerson() {
-        return indexOfCurrentPerson;
+    //Array List of Court Cases
+    private List<CourtCases> listCourtCases;
+
+    //Counter of the current Court Case
+    private int indexOfCurrentCourtCase = 0;
+
+    //Reference to CourtCases class
+    private CourtCases courtCases;
+
+    //Boolean variable to check if this is the first execution
+    private boolean blnFirstTime = true;
+
+    //Get the index of the current court case
+    public int getIndexOfCurrentCourtCase() {
+        return indexOfCurrentCourtCase;
+    }
+
+    //Set the index of the current court case
+    public void setIndexOfCurrentCourtCase(int indexOfCurrentCourtCase) {
+        this.indexOfCurrentCourtCase = indexOfCurrentCourtCase;
     }
 
     /**
-     * Creates new form PersonUI
+     * Creates new form LawyerSearchUI
      */
     public LawyerSearchUI(LawyerSearchCntl lawyerSearchCntl) {
         this.lawyerSearchCntl = lawyerSearchCntl;
         initComponents();
-        arrayListPerson = lawyerSearchCntl.getListOfPerson();
-        arrayListCourtCases = lawyerSearchCntl.getListOfCourtCases();
-        //Get a Person occurrence from the arrayList using the current position.
-        //namely current person.
-        person = arrayListPerson.get(indexOfCurrentPerson);
-        //Using the Person (person) class, take the values and populate
-        //the UI.
 
-//        parsePerson(person);
+        //Retrieve a list of all of the court cases
+        listCourtCases = lawyerSearchCntl.getListCourtCases();
+
+        if (blnFirstTime) {
+            clearTheFieldsInCourtCasesUI();
+            blnFirstTime = false;
+        } else {
+            //Retreive a specific court case from the list of court cases.
+            courtCases = listCourtCases.get(indexOfCurrentCourtCase);
+
+            //Using the CourtCase class, take the values and populate
+            //the UI.
+            parseCourtCases(courtCases);
+        }
     }
 
-//    public void parsePerson(Person person) {
-//        //set the UI's id num text field with the id num from Person
-//        idNumTextField.setText(String.valueOf(person.getIdNum()));
-//        //set the UI's name text field with the name from Person
-//        nameTextField.setText(person.getName());
-//        //set the UI's address text field with the address from Person
-//        addressTextField.setText(person.getAddress());
-//        //set the UI's city text field with the city from Person
-//        cityTextField.setText(person.getCity());
-//        //set the UI's state text field with the state from Person
-//        stateTextField.setText(person.getState());
-//        //set the UI's zip code text field with the zip code from Person
-//        zipCodeTextField.setText(String.valueOf(person.getZipCode()));
-//    }
-    public void clearTheFieldsInPersonUI() {
-        //set the UI's id num text field with the id num from Person
-        caseNumberTextField.setText("");
+    /**
+     * Parse the Court Cases
+     */
+    public void parseCourtCases(CourtCases courtCases) {
+        //Set the Case Number field
+        this.caseNumberTextField.setText(courtCases.getCaseNumber());
+
     }
 
+    /**
+     * Clear the Fields in the Court Case UI
+     */
+    public void clearTheFieldsInCourtCasesUI() {
+        //Set the Case Number field
+        this.caseNumberTextField.setText("");
+
+    }
+
+    //Get the Case Number field
     public String getCaseNumberTextField() {
         return caseNumberTextField.getText();
     }
 
+    //Set the Case Number field
     public void setCaseNumberTextField(String caseNumberTextFieldString) {
         this.caseNumberTextField.setText(caseNumberTextFieldString);
     }
 
+    /**
+     * Enable the buttons in the UI
+     */
     public void enableButtons(boolean enabled) {
         this.btnLawyerMainMenu.setEnabled(enabled);
         this.btnSearch.setEnabled(enabled);

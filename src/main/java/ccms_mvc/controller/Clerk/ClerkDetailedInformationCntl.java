@@ -81,11 +81,6 @@ public class ClerkDetailedInformationCntl implements ActionListener {
         Object obj = e.getSource();
 
         //TODO Convert references of arrayCourtCases to listCourtCases
-
-        
-        
-        
-        
         //The QUIT button was pressed
         if (obj.equals(clerkDetailedInformationUI.btnQuit)) {
             System.exit(0);
@@ -176,7 +171,7 @@ public class ClerkDetailedInformationCntl implements ActionListener {
             //Set the Case Type field
             court.setCaseType(CaseType.valueOf(clerkDetailedInformationUI.getCaseTypeTextField().getText()));
             //Set the Filing Data field
-            court.setFillingDate(clerkDetailedInformationUI.getFilingDateTextField().getText());
+            court.setFilingDate(clerkDetailedInformationUI.getFilingDateTextField().getText());
             //Set the Case Status 
             court.setCaseStatus(CaseStatus.valueOf(clerkDetailedInformationUI.getCaseStatusTextField().getText()));
             //Set the Plantiff
@@ -219,7 +214,7 @@ public class ClerkDetailedInformationCntl implements ActionListener {
             getListCourtCases().get(indexOfCurrentCourtCase).setCaseNumber(clerkDetailedInformationUI.getCaseNumberTextField());
             getListCourtCases().get(indexOfCurrentCourtCase).setPartyName(clerkDetailedInformationUI.getPartyNameTextField().getText());
             getListCourtCases().get(indexOfCurrentCourtCase).setCaseType(CaseType.valueOf(clerkDetailedInformationUI.getCaseTypeTextField().getText()));
-            getListCourtCases().get(indexOfCurrentCourtCase).setFillingDate(clerkDetailedInformationUI.getFilingDateTextField().getText());
+            getListCourtCases().get(indexOfCurrentCourtCase).setFilingDate(clerkDetailedInformationUI.getFilingDateTextField().getText());
             getListCourtCases().get(indexOfCurrentCourtCase).setCaseStatus(CaseStatus.valueOf(clerkDetailedInformationUI.getCaseStatusTextField().getText()));
             getListCourtCases().get(indexOfCurrentCourtCase).setPlantiff(clerkDetailedInformationUI.getPlantiffTextField().getText());
             getListCourtCases().get(indexOfCurrentCourtCase).setDefendant(clerkDetailedInformationUI.getDefendantTextField().getText());
