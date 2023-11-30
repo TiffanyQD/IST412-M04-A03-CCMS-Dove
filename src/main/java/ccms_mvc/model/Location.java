@@ -9,10 +9,10 @@ package ccms_mvc.model;
  * @author tiffa
  */
 public enum Location {
-    
+
     BALTIMORE,
     BALTIMORE_CITY,
     PRINCE_GEORGE,
     MONTGOMERY
-    
+
 }

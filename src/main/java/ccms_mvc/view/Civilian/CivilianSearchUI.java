@@ -44,7 +44,7 @@ public class CivilianSearchUI extends javax.swing.JFrame {
         initComponents();
 
         //Retrieve a list of all of the court cases
-        listCourtCases = civilianSearchCntl.getListCourtCases();
+        listCourtCases = civilianSearchCntl.getArrayListCourtCases();
 
         if (blnFirstTime) {
             clearTheFieldsInCourtCasesUI();

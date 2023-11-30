@@ -9,10 +9,10 @@ package ccms_mvc.model;
  * @author tiffa
  */
 public enum CaseType {
-    
-        CIVIL,
-        CRIMINAL,
-        TRAFFIC,
-        CIVIL_ACTION
-    
+
+    CIVIL,
+    CRIMINAL,
+    TRAFFIC,
+    CIVIL_ACTION
+
 }

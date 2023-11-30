@@ -44,7 +44,7 @@ public class ClerkSearchUI extends javax.swing.JFrame {
         initComponents();
 
         //Retrieve a list of all of the court cases
-        listCourtCases = clerkSearchCntl.getListCourtCases();
+        listCourtCases = clerkSearchCntl.getArrayListCourtCases();
 
         if (blnFirstTime) {
             clearTheFieldsInCourtCasesUI();

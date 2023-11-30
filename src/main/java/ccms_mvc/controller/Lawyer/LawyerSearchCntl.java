@@ -7,15 +7,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import lombok.Getter;
+import lombok.Setter;
 
 /**
  * This is the controller class that is used in conjunction with the
  * LawyerSearchUI to search Court Case details.
  */
 @Getter
+@Setter
 public class LawyerSearchCntl implements ActionListener {
 
     //Create an Array of CourtCases
@@ -27,26 +30,35 @@ public class LawyerSearchCntl implements ActionListener {
     //Create an ArrayList of CourtCases
     private List<CourtCases> listCourtCases;
 
-    //Create a reference to the LawyerSearchUI object
-    private LawyerSearchUI lawyerSearchUI;
+    //Create an ArrayList of CourtCases
+    private List<CourtCases> arrayListCourtCases;
 
     //Index of the Current Court Case
     private int indexOfCurrentCourtCase;
+
+    //Reference to ObjectMapper
+    private ObjectMapper mapper;
+
+    //Create a reference to the LawyerSearchUI object
+    private LawyerSearchUI lawyerSearchUI;
 
     /**
      * LawyerSearchCntl Constructor
      */
     public LawyerSearchCntl() {
 
-        //Call ObjectMapper which will be used to retrieve json of court cases.
-        ObjectMapper mapper = new ObjectMapper();
+        //Instantiate ObjectMapper to read json from a file.
+        mapper = new ObjectMapper();
 
         try {
-            //Read the courtCases.json file and place the contents into arrayCourtCases
+            //Read the court case information into an array (arrayCourtCases)
             arrayCourtCases = mapper.readValue(new File("src/resources/courtCases.json"), CourtCases[].class);
 
             //Create an arraylist (listCourtCases) from the array (arrayCourtCases)
             listCourtCases = Arrays.asList(arrayCourtCases);
+
+            //Create a modifiable ArrayList from listCourtCases
+            arrayListCourtCases = new ArrayList<>(listCourtCases);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -87,19 +99,10 @@ public class LawyerSearchCntl implements ActionListener {
             //Enable all of the buttons except for Save button
             lawyerSearchUI.enableButtons(true);
 
-//            ArrayList<CourtCases> courtCasesArrayList = courtCasesList.getCourtCasesArrayList();
-//            boolean caseNumberFound = false;
-//            for (CourtCases courtCases : courtCasesArrayList) {
-//                if (courtCases.getCaseNumber().equals(lawyerSearchUI.getCaseNumberTextField())) {
-//                    caseNumberFound = true;
-//                    break;
-//                }
-//            }
-            //TODO Would prefer if the following code used the listCourtCases instead of arrayCourtCases
             boolean caseNumberFound = false;
-            for (int i = 0; i < arrayCourtCases.length; i++) {
-                if (arrayCourtCases[i].getCaseNumber().equals(lawyerSearchUI.getCaseNumberTextField())) {
-                    courtCases = arrayCourtCases[i];
+            for (int i = 0; i < arrayListCourtCases.size(); i++) {
+                if (arrayListCourtCases.get(i).getCaseNumber().equals(lawyerSearchUI.getCaseNumberTextField())) {
+                    courtCases = arrayListCourtCases.get(i);
                     indexOfCurrentCourtCase = i;
                     caseNumberFound = true;
                     break;

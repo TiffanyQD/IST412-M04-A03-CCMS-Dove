@@ -23,7 +23,7 @@ public class TempCourtCasesMain {
 
     public static void main(String[] args) {
         ObjectMapper mapper = new ObjectMapper();
-        
+
 //        ZonedDateTime filingDate = ZonedDateTime.of(2015, 11, 20, 23, 45, 59, 1234, ZoneId.of ("UTC"));
 //        ZonedDateTime filingDate = ZonedDateTime.now();
         String filingDate = "2023-11-22";
@@ -40,8 +40,7 @@ public class TempCourtCasesMain {
         courtCase1.setDefendant("Franklin");
         courtCase1.setJudgeInformation("This is a free-form field that the judge would enter information about the case.");
         courtCase1.setLawyerInformation("This is a free-form field that the lawyer would enter information about the case.");
-        
-        
+
         CourtCases courtCase2 = new CourtCases();
         courtCase2.setCourtSystem(CourtSystem.DISTRICT);
         courtCase2.setLocation(Location.BALTIMORE_CITY);
@@ -54,9 +53,7 @@ public class TempCourtCasesMain {
         courtCase2.setDefendant("Mosby et al");
         courtCase2.setJudgeInformation("Let the judge enter some information about the Mosby vs. Mosby case.");
         courtCase2.setLawyerInformation("Let the lawyer enter some information about the Mosby vs. Mosby case.");
-        
-        
-        
+
         CourtCases courtCase3 = new CourtCases();
         courtCase3.setCourtSystem(CourtSystem.CIRCUIT);
         courtCase3.setLocation(Location.MONTGOMERY);
@@ -69,8 +66,7 @@ public class TempCourtCasesMain {
         courtCase3.setDefendant("Bad");
         courtCase3.setJudgeInformation("This is a free-form field that the judge would enter information about the case concerning Good vs. Bad.");
         courtCase3.setLawyerInformation("This is a free-form field that the lawyer would enter information about the case concerning Good vs. Bad.");
-        
-        
+
         CourtCases courtCase4 = new CourtCases();
         courtCase4.setCourtSystem(CourtSystem.CIRCUIT);
         courtCase4.setLocation(Location.BALTIMORE);
@@ -83,8 +79,7 @@ public class TempCourtCasesMain {
         courtCase4.setDefendant("Browns");
         courtCase4.setJudgeInformation("The Judge had something to say about the Ravens vs. Browns cases.");
         courtCase4.setLawyerInformation("The Lawyer had something to say about the Ravens vs. Browns cases.");
-        
-        
+
         CourtCases courtCase5 = new CourtCases();
         courtCase5.setCourtSystem(CourtSystem.CIRCUIT);
         courtCase5.setLocation(Location.BALTIMORE);
@@ -97,7 +92,7 @@ public class TempCourtCasesMain {
         courtCase5.setDefendant("Watson");
         courtCase5.setJudgeInformation("The Judge had something to say about the Jackson vs. Watson cases.");
         courtCase5.setLawyerInformation("The Lawyer had something to say about the Jackson vs. Watson cases.");
-        
+
         List<CourtCases> asList = Arrays.asList(courtCase1, courtCase2, courtCase3, courtCase4, courtCase5);
 
         try {

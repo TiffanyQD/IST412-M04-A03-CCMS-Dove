@@ -43,7 +43,7 @@ public class JudgeDetailedInformationUI extends javax.swing.JFrame {
         initComponents();
 
         //Retrieve a list of all of the court cases
-        listCourtCases = judgeDetailedInformationCntl.getListCourtCases();
+        listCourtCases = judgeDetailedInformationCntl.getArrayListCourtCases();
 
         //Retreive a specific court case from the list of court cases.
         courtCases = listCourtCases.get(indexOfCurrentCourtCase);

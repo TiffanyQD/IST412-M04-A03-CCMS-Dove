@@ -16,10 +16,10 @@ import lombok.ToString;
 @Setter
 @ToString
 public class LoginInformation {
-    
+
     private String loginId;
     private String password;
-    private String firstName; 
+    private String firstName;
     private String lastName;
-    
+
 }

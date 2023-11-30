@@ -11,23 +11,44 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * This class will allow the lawyer to view, add, delete, update, and save
  * detailed court case information.
  */
+@Getter
+@Setter
 public class LawyerDetailedInformationCntl implements ActionListener {
 
+    //Create an Array of CourtCases
     private CourtCases[] arrayCourtCases;
-    private CourtCases courtCases;
-    private List<CourtCases> listCourtCases;
-    ObjectMapper mapper;
 
-    private LawyerDetailedInformationUI lawyerDetailedInformationUI;
+    //Create a reference to the CourtCases object
+    private CourtCases courtCases;
+
+    //Create an ArrayList of CourtCases
+    private List<CourtCases> listCourtCases;
+
+    //Create an ArrayList of CourtCases
+    private List<CourtCases> arrayListCourtCases;
+
+    //Index of the Current Court Case
     private int indexOfCurrentCourtCase;
 
+    //Reference to ObjectMapper
+    private ObjectMapper mapper;
+
+    //Create a refernce to LawyerDetailedInformationUI
+    private LawyerDetailedInformationUI lawyerDetailedInformationUI;
+
+    /**
+     * LawyerDetailedInformationCntl Constructor
+     */
     public LawyerDetailedInformationCntl() {
 
         //Instantiate ObjectMapper to read json from a file.
@@ -36,8 +57,12 @@ public class LawyerDetailedInformationCntl implements ActionListener {
         try {
             //Read the court case information into an array (arrayCourtCases)
             arrayCourtCases = mapper.readValue(new File("src/resources/courtCases.json"), CourtCases[].class);
-            //Convert array(arrayCourtCases) to an ArrayList(listCourtCases)
+
+            //Create an arraylist (listCourtCases) from the array (arrayCourtCases)
             listCourtCases = Arrays.asList(arrayCourtCases);
+
+            //Create a modifiable ArrayList from listCourtCases
+            arrayListCourtCases = new ArrayList<>(listCourtCases);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -51,6 +76,8 @@ public class LawyerDetailedInformationCntl implements ActionListener {
 
         //set the LawyerDetailedInformationUI to be visible (true)
         lawyerDetailedInformationUI.setVisible(true);
+        //Enable all of the buttons except for Save button
+        lawyerDetailedInformationUI.enableButtons(true);
     }
 
     /**
@@ -67,34 +94,25 @@ public class LawyerDetailedInformationCntl implements ActionListener {
 
     }
 
-    /**
-     * Method to retrieve an ArrayList of CourtCases
-     */
-    public List<CourtCases> getListCourtCases() {
-        return listCourtCases;
-
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         //e.source will let you know what button was pushed. 
         Object obj = e.getSource();
 
-        //TODO Convert references of arrayCourtCases to listCourtCases
         //The QUIT button was pressed
         if (obj.equals(lawyerDetailedInformationUI.btnQuit)) {
             System.exit(0);
         }
 
-        //The ADD button was pressed
+        //The VIEW button was pressed
         if (obj.equals(lawyerDetailedInformationUI.btnView)) {
             //Enable all of the buttons except for Save button
             lawyerDetailedInformationUI.enableButtons(true);
 
             boolean caseNumberFound = false;
-            for (int i = 0; i < arrayCourtCases.length; i++) {
-                if (arrayCourtCases[i].getCaseNumber().equals(lawyerDetailedInformationUI.getCaseNumberTextField())) {
-                    courtCases = arrayCourtCases[i];
+            for (int i = 0; i < arrayListCourtCases.size(); i++) {
+                if (arrayListCourtCases.get(i).getCaseNumber().equals(lawyerDetailedInformationUI.getCaseNumberTextField())) {
+                    courtCases = arrayListCourtCases.get(i);
                     indexOfCurrentCourtCase = i;
                     caseNumberFound = true;
                     break;
@@ -119,22 +137,24 @@ public class LawyerDetailedInformationCntl implements ActionListener {
 
         //The DELETE button was pressed
         if (obj.equals(lawyerDetailedInformationUI.btnDelete)) {
-            if (!getListCourtCases().isEmpty()) {
+            //Enable all of the buttons except for Save button
+            lawyerDetailedInformationUI.enableButtons(true);
+
+            if (!arrayListCourtCases.isEmpty()) {
                 indexOfCurrentCourtCase = lawyerDetailedInformationUI.getIndexOfCurrentCourtCase();
-                getListCourtCases().remove(indexOfCurrentCourtCase);
-                if (getListCourtCases().isEmpty()) {
+                arrayListCourtCases.remove(indexOfCurrentCourtCase);
+                if (arrayListCourtCases.isEmpty()) {
                     lawyerDetailedInformationUI.errorMessage.setText("There are no more records to delete.");
                     lawyerDetailedInformationUI.clearTheFieldsInCourtCasesUI();
                 } else {
-                    lawyerDetailedInformationUI.parseCourtCases(getListCourtCases().get(0));
+                    lawyerDetailedInformationUI.parseCourtCases(arrayListCourtCases.get(0));
                     lawyerDetailedInformationUI.setIndexOfCurrentCourtCase(0);
                 }
 
                 mapper = new ObjectMapper();
 
                 try {
-                    List<CourtCases> listCourtCases1 = getListCourtCases();
-                    mapper.writeValue(new File("src/resources/courtCases.json"), listCourtCases1);
+                    mapper.writeValue(new File("src/resources/courtCases.json"), arrayListCourtCases);
                 } catch (IOException ioe) {
                     ioe.printStackTrace();
                 }
@@ -155,82 +175,92 @@ public class LawyerDetailedInformationCntl implements ActionListener {
 
         //The SAVE button was pressed
         if (obj.equals(lawyerDetailedInformationUI.btnSave)) {
-            //Instantiate a CourtCase class
-            CourtCases court = new CourtCases();
-            //Set the various fields in CourtCases to the corresponding values
-            //in the LawyerDetailedInformationUI. 
-
-            //Set the Court System field
-            court.setCourtSystem(CourtSystem.valueOf(lawyerDetailedInformationUI.getCourtSystemTextField().getText()));
-            //Set the Location field
-            court.setLocation(Location.valueOf(lawyerDetailedInformationUI.getLocationTextField().getText()));
-            //Set the Case Number field
-            court.setCaseNumber(lawyerDetailedInformationUI.getCaseNumberTextField());
-            //Set the Party Name field
-            court.setPartyName(lawyerDetailedInformationUI.getPartyNameTextField().getText());
-            //Set the Case Type field
-            court.setCaseType(CaseType.valueOf(lawyerDetailedInformationUI.getCaseTypeTextField().getText()));
-            //Set the Filing Data field
-            court.setFilingDate(lawyerDetailedInformationUI.getFilingDateTextField().getText());
-            //Set the Case Status 
-            court.setCaseStatus(CaseStatus.valueOf(lawyerDetailedInformationUI.getCaseStatusTextField().getText()));
-            //Set the Plantiff
-            court.setPlantiff(lawyerDetailedInformationUI.getPlantiffTextField().getText());
-            //Set the Defendant
-            court.setDefendant(lawyerDetailedInformationUI.getDefendantTextField().getText());
-            //Set the Judge Comments
-            court.setJudgeInformation(lawyerDetailedInformationUI.getJudgeCommentsTextArea().getText());
-            //Set the Lawyer Comments
-            court.setLawyerInformation(lawyerDetailedInformationUI.getLawyerCommentsTextArea().getText());
-
-            //Add the CourtCases to the CourtCases Array List
-            getListCourtCases().add(court);
-
-            //Set index of the current court case
-            indexOfCurrentCourtCase = getListCourtCases().size() - 1;
-            lawyerDetailedInformationUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
-            //Even though the element was added, redraw the screen with the element.
-            lawyerDetailedInformationUI.parseCourtCases(getListCourtCases().get(indexOfCurrentCourtCase));
             //Enable all of the buttons except for Save button
             lawyerDetailedInformationUI.enableButtons(true);
+            //Instantiate a CourtCase class
+            CourtCases court = new CourtCases();
 
+            //Set the various fields in CourtCases to the corresponding values
+            //in the LawyerDetailedInformationUI. 
             try {
-                List<CourtCases> listCourtCases1 = getListCourtCases();
-                mapper.writeValue(new File("src/resources/courtCases.json"), listCourtCases1);
-            } catch (IOException ioe) {
-                ioe.printStackTrace();
+                //Set the Court System field
+                court.setCourtSystem(CourtSystem.valueOf(lawyerDetailedInformationUI.getCourtSystemTextField().getText()));
+                //Set the Location field
+                court.setLocation(Location.valueOf(lawyerDetailedInformationUI.getLocationTextField().getText()));
+                //Set the Case Number field
+                court.setCaseNumber(lawyerDetailedInformationUI.getCaseNumberTextField());
+                //Set the Party Name field
+                court.setPartyName(lawyerDetailedInformationUI.getPartyNameTextField().getText());
+                //Set the Case Type field
+                court.setCaseType(CaseType.valueOf(lawyerDetailedInformationUI.getCaseTypeTextField().getText()));
+                //Set the Filing Data field
+                court.setFilingDate(lawyerDetailedInformationUI.getFilingDateTextField().getText());
+                //Set the Case Status 
+                court.setCaseStatus(CaseStatus.valueOf(lawyerDetailedInformationUI.getCaseStatusTextField().getText()));
+                //Set the Plantiff
+                court.setPlantiff(lawyerDetailedInformationUI.getPlantiffTextField().getText());
+                //Set the Defendant
+                court.setDefendant(lawyerDetailedInformationUI.getDefendantTextField().getText());
+                //Set the Judge Comments
+                court.setJudgeInformation(lawyerDetailedInformationUI.getJudgeCommentsTextArea().getText());
+                //Set the Lawyer Comments
+                court.setLawyerInformation(lawyerDetailedInformationUI.getLawyerCommentsTextArea().getText());
+
+                //Add the CourtCases to the CourtCases Array List
+                arrayListCourtCases.add(court);
+
+                //Set index of the current court case
+                indexOfCurrentCourtCase = arrayListCourtCases.size() - 1;
+                lawyerDetailedInformationUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
+                //Even though the element was added, redraw the screen with the element.
+                lawyerDetailedInformationUI.parseCourtCases(arrayListCourtCases.get(indexOfCurrentCourtCase));
+                //Enable all of the buttons except for Save button
+                lawyerDetailedInformationUI.enableButtons(true);
+
+                try {
+                    mapper.writeValue(new File("src/resources/courtCases.json"), arrayListCourtCases);
+                } catch (IOException ioe) {
+                    ioe.printStackTrace();
+                }
+            } catch (Exception ex) {
+                lawyerDetailedInformationUI.errorMessage.setText("Problem with the data that was entered. Please correct the data that was entered.");
             }
 
         }
 
         //The Update button was pressed
         if (obj.equals(lawyerDetailedInformationUI.btnUpdate)) {
+            //Enable all of the buttons except for Save button
+            lawyerDetailedInformationUI.enableButtons(true);
+
             indexOfCurrentCourtCase = lawyerDetailedInformationUI.getIndexOfCurrentCourtCase();
-            CourtCases cc = getListCourtCases().get(indexOfCurrentCourtCase);
-
-            //Update the record with the various fields from the PersonUI. 
-            getListCourtCases().get(indexOfCurrentCourtCase).setCourtSystem(CourtSystem.valueOf(lawyerDetailedInformationUI.getCourtSystemTextField().getText()));
-            getListCourtCases().get(indexOfCurrentCourtCase).setLocation(Location.valueOf(lawyerDetailedInformationUI.getLocationTextField().getText()));
-            getListCourtCases().get(indexOfCurrentCourtCase).setCaseNumber(lawyerDetailedInformationUI.getCaseNumberTextField());
-            getListCourtCases().get(indexOfCurrentCourtCase).setPartyName(lawyerDetailedInformationUI.getPartyNameTextField().getText());
-            getListCourtCases().get(indexOfCurrentCourtCase).setCaseType(CaseType.valueOf(lawyerDetailedInformationUI.getCaseTypeTextField().getText()));
-            getListCourtCases().get(indexOfCurrentCourtCase).setFilingDate(lawyerDetailedInformationUI.getFilingDateTextField().getText());
-            getListCourtCases().get(indexOfCurrentCourtCase).setCaseStatus(CaseStatus.valueOf(lawyerDetailedInformationUI.getCaseStatusTextField().getText()));
-            getListCourtCases().get(indexOfCurrentCourtCase).setPlantiff(lawyerDetailedInformationUI.getPlantiffTextField().getText());
-            getListCourtCases().get(indexOfCurrentCourtCase).setDefendant(lawyerDetailedInformationUI.getDefendantTextField().getText());
-            getListCourtCases().get(indexOfCurrentCourtCase).setJudgeInformation(lawyerDetailedInformationUI.getJudgeCommentsTextArea().getText());
-            getListCourtCases().get(indexOfCurrentCourtCase).setLawyerInformation(lawyerDetailedInformationUI.getLawyerCommentsTextArea().getText());
-
-            //Set index of the current person
-            lawyerDetailedInformationUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
-            //Even though the element was added, redraw the screen with the element.
-            lawyerDetailedInformationUI.parseCourtCases(getListCourtCases().get(indexOfCurrentCourtCase));
 
             try {
-                List<CourtCases> listCourtCases1 = getListCourtCases();
-                mapper.writeValue(new File("src/resources/courtCases.json"), listCourtCases1);
-            } catch (IOException ioe) {
-                ioe.printStackTrace();
+                //Update the record with the various fields from the PersonUI. 
+                arrayListCourtCases.get(indexOfCurrentCourtCase).setCourtSystem(CourtSystem.valueOf(lawyerDetailedInformationUI.getCourtSystemTextField().getText()));
+                arrayListCourtCases.get(indexOfCurrentCourtCase).setLocation(Location.valueOf(lawyerDetailedInformationUI.getLocationTextField().getText()));
+                arrayListCourtCases.get(indexOfCurrentCourtCase).setCaseNumber(lawyerDetailedInformationUI.getCaseNumberTextField());
+                arrayListCourtCases.get(indexOfCurrentCourtCase).setPartyName(lawyerDetailedInformationUI.getPartyNameTextField().getText());
+                arrayListCourtCases.get(indexOfCurrentCourtCase).setCaseType(CaseType.valueOf(lawyerDetailedInformationUI.getCaseTypeTextField().getText()));
+                arrayListCourtCases.get(indexOfCurrentCourtCase).setFilingDate(lawyerDetailedInformationUI.getFilingDateTextField().getText());
+                arrayListCourtCases.get(indexOfCurrentCourtCase).setCaseStatus(CaseStatus.valueOf(lawyerDetailedInformationUI.getCaseStatusTextField().getText()));
+                arrayListCourtCases.get(indexOfCurrentCourtCase).setPlantiff(lawyerDetailedInformationUI.getPlantiffTextField().getText());
+                arrayListCourtCases.get(indexOfCurrentCourtCase).setDefendant(lawyerDetailedInformationUI.getDefendantTextField().getText());
+                arrayListCourtCases.get(indexOfCurrentCourtCase).setJudgeInformation(lawyerDetailedInformationUI.getJudgeCommentsTextArea().getText());
+                arrayListCourtCases.get(indexOfCurrentCourtCase).setLawyerInformation(lawyerDetailedInformationUI.getLawyerCommentsTextArea().getText());
+
+                //Set index of the current person
+                lawyerDetailedInformationUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
+                //Even though the element was added, redraw the screen with the element.
+                lawyerDetailedInformationUI.parseCourtCases(arrayListCourtCases.get(indexOfCurrentCourtCase));
+
+                try {
+                    mapper.writeValue(new File("src/resources/courtCases.json"), arrayListCourtCases);
+                } catch (IOException ioe) {
+                    ioe.printStackTrace();
+                }
+            } catch (Exception ex) {
+                lawyerDetailedInformationUI.errorMessage.setText("Problem with the data that was entered. Please correct the data that was entered.");
             }
 
         }

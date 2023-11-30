@@ -41,7 +41,7 @@ public class ClerkViewUI extends javax.swing.JFrame {
         initComponents();
 
         //Retrieve a list of all of the court cases
-        listCourtCases = clerkViewCntl.getListCourtCases();
+        listCourtCases = clerkViewCntl.getArrayListCourtCases();
 
         //Retreive a specific court case from the list of court cases.
         courtCases = listCourtCases.get(indexOfCurrentCourtCase);

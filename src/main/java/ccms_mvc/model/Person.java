@@ -3,7 +3,6 @@
  * @author  Tiffany Dove
  * @version Jan 29, 2023
  */
-
 package ccms_mvc.model;
 
 import lombok.Getter;
@@ -14,6 +13,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Person {
+
     public int idNum;
     public String name;
     public String address;

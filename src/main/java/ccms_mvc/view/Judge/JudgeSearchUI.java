@@ -44,7 +44,7 @@ public class JudgeSearchUI extends javax.swing.JFrame {
         initComponents();
 
         //Retrieve a list of all of the court cases
-        listCourtCases = judgeSearchCntl.getListCourtCases();
+        listCourtCases = judgeSearchCntl.getArrayListCourtCases();
 
         if (blnFirstTime) {
             clearTheFieldsInCourtCasesUI();

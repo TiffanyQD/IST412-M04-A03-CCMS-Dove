@@ -7,44 +7,58 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * This controller class that is used in conjunction with the LawyerViewUI to
  * display/view Court Case details.
  */
+@Getter
+@Setter
 public class LawyerViewCntl implements ActionListener {
 
-    //Array of CourtCases
+    //Create an Array of CourtCases
     private CourtCases[] arrayCourtCases;
 
-    //Call CourCases object
+    //Create a reference to the CourtCases object
     private CourtCases courtCases;
 
-    //ArrayList of CourtCases
+    //Create an ArrayList of CourtCases
     private List<CourtCases> listCourtCases;
 
-    //Call to LawyerViewUI object
-    private LawyerViewUI lawyerViewUI;
+    //Create an ArrayList of CourtCases
+    private List<CourtCases> arrayListCourtCases;
 
     //Index of the Current Court Case
     private int indexOfCurrentCourtCase;
+
+    //Reference to ObjectMapper
+    private ObjectMapper mapper;
+
+    //Call to LawyerViewUI object
+    private LawyerViewUI lawyerViewUI;
 
     /**
      * Constructor for LawyerViewCntl
      */
     public LawyerViewCntl() {
 
-        //Call ObjectMapper which will be used to retrieve json of court cases.
-        ObjectMapper mapper = new ObjectMapper();
+        //Instantiate ObjectMapper to read json from a file.
+        mapper = new ObjectMapper();
 
         try {
-            //Read the courtCases.json file and place the contents into arrayCourtCases
+            //Read the court case information into an array (arrayCourtCases)
             arrayCourtCases = mapper.readValue(new File("src/resources/courtCases.json"), CourtCases[].class);
 
             //Create an arraylist (listCourtCases) from the array (arrayCourtCases)
             listCourtCases = Arrays.asList(arrayCourtCases);
+
+            //Create a modifiable ArrayList from listCourtCases
+            arrayListCourtCases = new ArrayList<>(listCourtCases);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -79,7 +93,6 @@ public class LawyerViewCntl implements ActionListener {
         //e.source will let you know what button was pushed.
         Object obj = e.getSource();
 
-        //TODO Would prefer if the following code used the listCourtCases instead of arrayCourtCases
         //The PREVIOUS button was pressed
         if (obj.equals(lawyerViewUI.btnPrevious)) {
             /*
@@ -123,15 +136,15 @@ public class LawyerViewCntl implements ActionListener {
             System.exit(0);
         }
 
-        //The View button was pressed
+        //The VIEW button was pressed
         if (obj.equals(lawyerViewUI.btnView)) {
             //Enable all of the buttons except for Save button
             lawyerViewUI.enableButtons(true);
 
             boolean caseNumberFound = false;
-            for (int i = 0; i < arrayCourtCases.length; i++) {
-                if (arrayCourtCases[i].getCaseNumber().equals(lawyerViewUI.getCaseNumberTextField())) {
-                    courtCases = arrayCourtCases[i];
+            for (int i = 0; i < arrayListCourtCases.size(); i++) {
+                if (arrayListCourtCases.get(i).getCaseNumber().equals(lawyerViewUI.getCaseNumberTextField())) {
+                    courtCases = arrayListCourtCases.get(i);
                     indexOfCurrentCourtCase = i;
                     caseNumberFound = true;
                     break;

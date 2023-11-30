@@ -9,8 +9,8 @@ package ccms_mvc.model;
  * @author tiffa
  */
 public enum CourtSystem {
-    
+
     CIRCUIT,
     DISTRICT
-    
+
 }
