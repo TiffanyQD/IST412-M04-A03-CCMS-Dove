@@ -19,7 +19,7 @@ import java.util.List;
  *
  * @author tiffa
  */
-public class TempCourtCasesMain {
+public class ReloadCourtCases {
 
     public static void main(String[] args) {
         ObjectMapper mapper = new ObjectMapper();

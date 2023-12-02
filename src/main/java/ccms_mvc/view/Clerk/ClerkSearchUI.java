@@ -206,7 +206,7 @@ public class ClerkSearchUI extends javax.swing.JFrame {
 
         btnSearch.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnSearch.setText("Search");
-        btnSearch.setToolTipText("Search Judge for Specifiic Case");
+        btnSearch.setToolTipText("Search for Specifiic Case");
 
         btnClerkMainMenu.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnClerkMainMenu.setText("Clerk Main Menu");
@@ -241,7 +241,6 @@ public class ClerkSearchUI extends javax.swing.JFrame {
         locationTextField.setName("caseNumberTextField"); // NOI18N
 
         caseNumberLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        caseNumberLabel.setForeground(new java.awt.Color(255, 0, 0));
         caseNumberLabel.setText("Case Number:");
         caseNumberLabel.setToolTipText("Case Number:");
 

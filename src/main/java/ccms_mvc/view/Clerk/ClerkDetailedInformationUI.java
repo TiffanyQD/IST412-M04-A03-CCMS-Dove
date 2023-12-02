@@ -221,7 +221,6 @@ public class ClerkDetailedInformationUI extends javax.swing.JFrame {
         ccmsLabel.setToolTipText("Court Case Managment System");
 
         caseNumberLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        caseNumberLabel.setForeground(new java.awt.Color(255, 0, 0));
         caseNumberLabel.setText("Case Number:");
         caseNumberLabel.setToolTipText("Case Number:");
 

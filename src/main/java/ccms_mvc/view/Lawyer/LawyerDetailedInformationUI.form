@@ -24,21 +24,21 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="civilianViewCaseDetailsPanel" min="-2" max="-2" attributes="0"/>
+              <Component id="viewCaseDetailsPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="civilianViewCaseDetailsPanel" alignment="1" max="32767" attributes="0"/>
+          <Component id="viewCaseDetailsPanel" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="civilianViewCaseDetailsPanel">
+    <Container class="javax.swing.JPanel" name="viewCaseDetailsPanel">
       <Properties>
-        <Property name="toolTipText" type="java.lang.String" value="Civilian View Case Details Panel"/>
+        <Property name="toolTipText" type="java.lang.String" value="View Case Details Panel"/>
       </Properties>
 
       <Layout>
@@ -50,65 +50,9 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="caseInformationSeparator" alignment="0" min="-2" pref="702" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="partyNameLabel" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="caseNumberLabel" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="courtSystemLabel" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="locationLabel" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="caseInformationLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="courtSystemTextField" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="partyNameTextField" alignment="0" min="-2" pref="207" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="locationTextField" min="-2" pref="207" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="caseNumberTextField" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="caseStatusLabel" min="-2" pref="93" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="caseStatusTextField" min="-2" pref="207" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="filingDateLabel" min="-2" pref="93" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="filingDateTextField" min="-2" pref="207" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="caseTypeLabel" min="-2" pref="93" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="caseTypeTextField" min="-2" pref="207" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
                               <Component id="errorMessage" alignment="0" min="-2" pref="634" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="btnView" min="-2" pref="90" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnAdd" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnUpdate" min="-2" pref="98" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btnDelete" min="-2" pref="98" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnSave" min="-2" pref="98" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnLawyerMainMenu" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnQuit" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -145,13 +89,74 @@
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="caseNumberLabel" min="-2" pref="120" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="courtSystemLabel" max="32767" attributes="0"/>
+                                                  <Component id="locationLabel" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="caseInformationLabel" min="-2" max="-2" attributes="0"/>
+                                              <Component id="partyNameLabel" min="-2" pref="120" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="partyNameTextField" min="-2" pref="207" max="-2" attributes="0"/>
+                                              <Component id="courtSystemTextField" min="-2" pref="207" max="-2" attributes="0"/>
+                                              <Component id="locationTextField" min="-2" pref="207" max="-2" attributes="0"/>
+                                              <Component id="caseNumberTextField" min="-2" pref="207" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="caseTypeLabel" min="-2" pref="120" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="caseTypeTextField" min="-2" pref="207" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="caseStatusLabel" min="-2" pref="120" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="caseStatusTextField" min="-2" pref="207" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="filingDateLabel" min="-2" pref="120" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="filingDateTextField" min="-2" pref="207" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="btnView" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="btnAdd" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="btnUpdate" min="-2" pref="98" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="btnDelete" min="-2" pref="98" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnSave" min="-2" pref="98" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                                  <Component id="btnLawyerMainMenu" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnQuit" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="ccmsLabel" alignment="1" min="-2" pref="404" max="-2" attributes="0"/>
-                      <Component id="lawyerModifyCaseInformationLabel" min="-2" pref="404" max="-2" attributes="0"/>
+                      <Component id="detailedCaseInformationLabel" min="-2" pref="404" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
@@ -163,51 +168,56 @@
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Component id="ccmsLabel" min="-2" pref="39" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="lawyerModifyCaseInformationLabel" min="-2" pref="39" max="-2" attributes="0"/>
+                  <Component id="detailedCaseInformationLabel" min="-2" pref="39" max="-2" attributes="0"/>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Component id="caseInformationSeparator" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Component id="caseInformationLabel" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="courtSystemLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="courtSystemTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="caseTypeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="caseTypeTextField" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="locationLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="locationTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="filingDateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="filingDateTextField" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="caseNumberLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="caseNumberTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="partyNameLabel" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                              <Component id="partyNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="caseStatusLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="caseStatusTextField" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="caseTypeLabel" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                              <Component id="caseTypeTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                                  <Component id="courtSystemTextField" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="caseNumberLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="partyNameTextField" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="courtSystemLabel" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="filingDateLabel" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                              <Component id="filingDateTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="caseStatusLabel" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                              <Component id="caseStatusTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="locationLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="locationTextField" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="partyNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="caseNumberTextField" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                   <Component id="involvedPartiesSeparator" min="-2" pref="10" max="-2" attributes="0"/>
@@ -243,14 +253,14 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnView" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnLawyerMainMenu" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnQuit" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnAdd" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnDelete" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnSave" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnLawyerMainMenu" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="181" max="32767" attributes="0"/>
+                  <EmptySpace pref="100" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -270,9 +280,6 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="13" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Case Number:"/>
             <Property name="toolTipText" type="java.lang.String" value="Case Number:"/>
@@ -299,6 +306,21 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
+        <Component class="javax.swing.JButton" name="btnLawyerMainMenu">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="13" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Lawyer Main Menu"/>
+            <Property name="toolTipText" type="java.lang.String" value="Return to Lawyer Main Menu"/>
+          </Properties>
+          <AccessibilityProperties>
+            <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
+          </AccessibilityProperties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
         <Component class="javax.swing.JButton" name="btnQuit">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -311,14 +333,14 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="lawyerModifyCaseInformationLabel">
+        <Component class="javax.swing.JLabel" name="detailedCaseInformationLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Lawyer - Detailed Case Information"/>
-            <Property name="toolTipText" type="java.lang.String" value="Clerk - Detailed Case Information"/>
+            <Property name="toolTipText" type="java.lang.String" value="Detailed Case Information"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="errorMessage">
@@ -378,7 +400,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="locationTextField">
           <Properties>
-            <Property name="toolTipText" type="java.lang.String" value="Location TePlease enter one of the following: BALTIMORE, BALTIMORE_CITY, PRINCE_GEORGE, MONTGOMERYxt Field"/>
+            <Property name="toolTipText" type="java.lang.String" value="Please enter one of the following: BALTIMORE, BALTIMORE_CITY, PRINCE_GEORGE, MONTGOMERY"/>
             <Property name="name" type="java.lang.String" value="caseNumberTextField" noResource="true"/>
           </Properties>
         </Component>
@@ -616,18 +638,6 @@
               <Font name="Tahoma" size="12" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Save"/>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnLawyerMainMenu">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="13" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Lawyer Main Menu"/>
-            <Property name="toolTipText" type="java.lang.String" value="Return to Lawyer Main Menu"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

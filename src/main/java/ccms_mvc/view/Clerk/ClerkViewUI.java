@@ -214,7 +214,6 @@ public class ClerkViewUI extends javax.swing.JFrame {
         ccmsLabel.setToolTipText("Court Case Managment System");
 
         caseNumberLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        caseNumberLabel.setForeground(new java.awt.Color(255, 0, 0));
         caseNumberLabel.setText("Case Number:");
         caseNumberLabel.setToolTipText("Case Number:");
 
@@ -471,7 +470,7 @@ public class ClerkViewUI extends javax.swing.JFrame {
                             .addComponent(caseNumberLabel)
                             .addComponent(caseNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(filingDateLabel)
                             .addComponent(filingDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)

@@ -51,6 +51,9 @@ public class LawyerViewUI extends javax.swing.JFrame {
         parseCourtCases(courtCases);
     }
 
+    /**
+     * Parse the Court Cases
+     */
     public void parseCourtCases(CourtCases courtCases) {
 
         //Set the Court System field
@@ -87,6 +90,9 @@ public class LawyerViewUI extends javax.swing.JFrame {
         this.lawyerCommentsTextArea.setText(courtCases.getLawyerInformation());
     }
 
+    /**
+     * Clear the Fields in the Court Case UI
+     */
     public void clearTheFieldsInCourtCasesUI() {
         //Set the Court System field
         this.courtSystemTextField.setText("");
@@ -126,14 +132,19 @@ public class LawyerViewUI extends javax.swing.JFrame {
         return caseNumberTextField.getText();
     }
 
+    //Set the Case Number field
     public void setCaseNumberTextField(String caseNumberTextFieldString) {
         this.caseNumberTextField.setText(caseNumberTextFieldString);
     }
 
+    //Set the Party Name field
     public void setPartyName(String partyNameTextFieldString) {
         this.partyNameTextField.setText(partyNameTextFieldString);
     }
 
+    /**
+     * Enable the buttons in the UI
+     */
     public void enableButtons(boolean enabled) {
         this.btnLawyerMainMenu.setEnabled(enabled);
         this.btnView.setEnabled(enabled);
@@ -151,13 +162,13 @@ public class LawyerViewUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        civilianViewCaseDetailsPanel = new javax.swing.JPanel();
+        viewCaseDetailsPanel = new javax.swing.JPanel();
         ccmsLabel = new javax.swing.JLabel();
         caseNumberLabel = new javax.swing.JLabel();
         caseNumberTextField = new javax.swing.JTextField();
         btnView = new javax.swing.JButton();
         btnQuit = new javax.swing.JButton();
-        lawyerViewCaseDetailsLabel = new javax.swing.JLabel();
+        viewCaseDetailsLabel = new javax.swing.JLabel();
         errorMessage = new javax.swing.JLabel();
         partyNameLabel = new javax.swing.JLabel();
         partyNameTextField = new javax.swing.JTextField();
@@ -195,7 +206,7 @@ public class LawyerViewUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        civilianViewCaseDetailsPanel.setToolTipText("Civilian View Case Details Panel");
+        viewCaseDetailsPanel.setToolTipText("Judge View Case Details Panel");
 
         ccmsLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ccmsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -203,7 +214,6 @@ public class LawyerViewUI extends javax.swing.JFrame {
         ccmsLabel.setToolTipText("Court Case Managment System");
 
         caseNumberLabel.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        caseNumberLabel.setForeground(new java.awt.Color(255, 0, 0));
         caseNumberLabel.setText("Case Number:");
         caseNumberLabel.setToolTipText("Case Number:");
 
@@ -218,10 +228,10 @@ public class LawyerViewUI extends javax.swing.JFrame {
         btnQuit.setText("Quit");
         btnQuit.setToolTipText("Exit the Application");
 
-        lawyerViewCaseDetailsLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lawyerViewCaseDetailsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lawyerViewCaseDetailsLabel.setText("Lawyer - View Case Details");
-        lawyerViewCaseDetailsLabel.setToolTipText("Lawyer - View Case Details");
+        viewCaseDetailsLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        viewCaseDetailsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        viewCaseDetailsLabel.setText("Lawyer - View Case Details");
+        viewCaseDetailsLabel.setToolTipText("");
 
         errorMessage.setForeground(new java.awt.Color(255, 0, 0));
         errorMessage.setToolTipText("");
@@ -333,24 +343,34 @@ public class LawyerViewUI extends javax.swing.JFrame {
         btnLawyerMainMenu.setText("Lawyer Main Menu");
         btnLawyerMainMenu.setToolTipText("Return to Lawyer Main Menu");
 
-        javax.swing.GroupLayout civilianViewCaseDetailsPanelLayout = new javax.swing.GroupLayout(civilianViewCaseDetailsPanel);
-        civilianViewCaseDetailsPanel.setLayout(civilianViewCaseDetailsPanelLayout);
-        civilianViewCaseDetailsPanelLayout.setHorizontalGroup(
-            civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout viewCaseDetailsPanelLayout = new javax.swing.GroupLayout(viewCaseDetailsPanel);
+        viewCaseDetailsPanel.setLayout(viewCaseDetailsPanelLayout);
+        viewCaseDetailsPanelLayout.setHorizontalGroup(
+            viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(viewCaseDetailsPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                        .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
+                .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(viewCaseDetailsPanelLayout.createSequentialGroup()
+                        .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(viewCaseDetailsPanelLayout.createSequentialGroup()
+                                .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnNext)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnPrevious, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(34, 34, 34)
+                                .addComponent(btnLawyerMainMenu)
+                                .addGap(33, 33, 33)
+                                .addComponent(btnQuit))
+                            .addGroup(viewCaseDetailsPanelLayout.createSequentialGroup()
                                 .addComponent(lawyerCommentsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lawyerScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(lawyerInformationLabel)
-                            .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
+                            .addGroup(viewCaseDetailsPanelLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
+                                .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(viewCaseDetailsPanelLayout.createSequentialGroup()
                                         .addComponent(plantiffLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(plantiffTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -360,120 +380,111 @@ public class LawyerViewUI extends javax.swing.JFrame {
                                         .addComponent(defendantTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(involvedPartiesLabel)
                                     .addComponent(judgeInformationLabel)
-                                    .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
+                                    .addGroup(viewCaseDetailsPanelLayout.createSequentialGroup()
                                         .addComponent(judgeCommentsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(judgeScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(judgeScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(caseInformationSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(errorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                        .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnNext)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnPrevious, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addComponent(btnLawyerMainMenu)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnQuit)
-                        .addGap(189, 189, 189))
-                    .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                        .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                                    .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(viewCaseDetailsPanelLayout.createSequentialGroup()
+                        .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewCaseDetailsPanelLayout.createSequentialGroup()
+                                    .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(ccmsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lawyerViewCaseDetailsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(viewCaseDetailsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGap(103, 103, 103))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, civilianViewCaseDetailsPanelLayout.createSequentialGroup()
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewCaseDetailsPanelLayout.createSequentialGroup()
                                     .addComponent(involvedPartiesSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(24, 24, 24))
-                                .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                                    .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(viewCaseDetailsPanelLayout.createSequentialGroup()
+                                    .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(judgeInformationSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(lawyerInformationSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGap(24, 24, 24)))
-                            .addComponent(caseInformationSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                                .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(partyNameLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(caseNumberLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(courtSystemLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(locationLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(caseInformationLabel))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(courtSystemTextField)
-                                            .addComponent(partyNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(locationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(caseNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(49, 49, 49)
-                                .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                                        .addComponent(caseStatusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(viewCaseDetailsPanelLayout.createSequentialGroup()
+                                .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(viewCaseDetailsPanelLayout.createSequentialGroup()
+                                        .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(partyNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(caseInformationLabel))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(partyNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(viewCaseDetailsPanelLayout.createSequentialGroup()
+                                        .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(courtSystemLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                                            .addComponent(locationLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(courtSystemTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(locationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(viewCaseDetailsPanelLayout.createSequentialGroup()
+                                        .addComponent(caseNumberLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(caseNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(42, 42, 42)
+                                .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(viewCaseDetailsPanelLayout.createSequentialGroup()
+                                        .addComponent(caseStatusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(caseStatusTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                                        .addComponent(filingDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(viewCaseDetailsPanelLayout.createSequentialGroup()
+                                        .addComponent(filingDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(50, 50, 50)
                                         .addComponent(filingDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                                        .addComponent(caseTypeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(caseTypeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(errorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 50, Short.MAX_VALUE))))
+                                    .addGroup(viewCaseDetailsPanelLayout.createSequentialGroup()
+                                        .addComponent(caseTypeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(49, 49, 49)
+                                        .addComponent(caseTypeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 10, Short.MAX_VALUE))))
         );
-        civilianViewCaseDetailsPanelLayout.setVerticalGroup(
-            civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
+        viewCaseDetailsPanelLayout.setVerticalGroup(
+            viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(viewCaseDetailsPanelLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(ccmsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lawyerViewCaseDetailsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(viewCaseDetailsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(caseInformationSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(caseInformationLabel)
-                .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(viewCaseDetailsPanelLayout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(courtSystemLabel)
                             .addComponent(courtSystemTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(locationLabel)
                             .addComponent(locationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(partyNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(partyNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(viewCaseDetailsPanelLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(caseTypeLabel)
+                            .addComponent(caseTypeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(caseNumberLabel)
                             .addComponent(caseNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(partyNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(partyNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(civilianViewCaseDetailsPanelLayout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(caseTypeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(caseTypeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(filingDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(filingDateLabel)
                             .addComponent(filingDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(caseStatusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(caseStatusLabel)
                             .addComponent(caseStatusTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(involvedPartiesSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(involvedPartiesLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(plantiffLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(plantiffTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(defendantLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -483,7 +494,7 @@ public class LawyerViewUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(judgeInformationLabel)
                 .addGap(18, 18, 18)
-                .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(judgeCommentsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(judgeScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -491,19 +502,19 @@ public class LawyerViewUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lawyerInformationLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lawyerCommentsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lawyerScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(errorMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(civilianViewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(viewCaseDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnView)
                     .addComponent(btnQuit)
                     .addComponent(btnPrevious)
                     .addComponent(btnNext)
                     .addComponent(btnLawyerMainMenu))
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         btnView.getAccessibleContext().setAccessibleDescription("");
@@ -513,12 +524,12 @@ public class LawyerViewUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(civilianViewCaseDetailsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(viewCaseDetailsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(civilianViewCaseDetailsPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(viewCaseDetailsPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -539,7 +550,6 @@ public class LawyerViewUI extends javax.swing.JFrame {
     public javax.swing.JLabel caseTypeLabel;
     private javax.swing.JTextField caseTypeTextField;
     private javax.swing.JLabel ccmsLabel;
-    private javax.swing.JPanel civilianViewCaseDetailsPanel;
     private javax.swing.JLabel courtSystemLabel;
     private javax.swing.JTextField courtSystemTextField;
     public javax.swing.JLabel defendantLabel;
@@ -559,13 +569,14 @@ public class LawyerViewUI extends javax.swing.JFrame {
     private javax.swing.JLabel lawyerInformationLabel;
     private javax.swing.JSeparator lawyerInformationSeparator1;
     private javax.swing.JScrollPane lawyerScrollPane;
-    private javax.swing.JLabel lawyerViewCaseDetailsLabel;
     private javax.swing.JLabel locationLabel;
     private javax.swing.JTextField locationTextField;
     public javax.swing.JLabel partyNameLabel;
     public javax.swing.JTextField partyNameTextField;
     public javax.swing.JLabel plantiffLabel;
     public javax.swing.JTextField plantiffTextField;
+    private javax.swing.JLabel viewCaseDetailsLabel;
+    private javax.swing.JPanel viewCaseDetailsPanel;
     // End of variables declaration//GEN-END:variables
 
 }

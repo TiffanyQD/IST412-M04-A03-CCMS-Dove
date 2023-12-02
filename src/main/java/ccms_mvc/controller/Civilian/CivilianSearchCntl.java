@@ -110,9 +110,12 @@ public class CivilianSearchCntl implements ActionListener {
             }
 
             if (caseNumberFound) {
+                civilianSearchUI.parseCourtCases(courtCases);
+                civilianSearchUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
                 civilianSearchUI.errorMessage.setText("Case Number: " + civilianSearchUI.getCaseNumberTextField() + " was found. !!!");
             } else {
                 civilianSearchUI.errorMessage.setText("Case Number: " + civilianSearchUI.getCaseNumberTextField() + " was NOT found. !!!");
+                civilianSearchUI.clearTheFieldsInCourtCasesUI();
             }
 
         }

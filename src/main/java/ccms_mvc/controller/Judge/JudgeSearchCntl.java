@@ -110,9 +110,12 @@ public class JudgeSearchCntl implements ActionListener {
             }
 
             if (caseNumberFound) {
+                judgeSearchUI.parseCourtCases(courtCases);
+                judgeSearchUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
                 judgeSearchUI.errorMessage.setText("Case Number: " + judgeSearchUI.getCaseNumberTextField() + " was found. !!!");
             } else {
                 judgeSearchUI.errorMessage.setText("Case Number: " + judgeSearchUI.getCaseNumberTextField() + " was NOT found. !!!");
+                judgeSearchUI.clearTheFieldsInCourtCasesUI();
             }
 
         }
