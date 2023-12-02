@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ccms_mvc.Main;
 
 import ccms_mvc.model.CaseStatus;
@@ -16,8 +12,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- *
- * @author tiffa
+ * This class is used to reload the court cases.
+ * @author Tiffany Dove
  */
 public class ReloadCourtCases {
 

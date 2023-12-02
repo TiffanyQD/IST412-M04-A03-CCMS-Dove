@@ -80,8 +80,8 @@ public class LoginIdCntl implements ActionListener {
 
             boolean blnFound = false;
             for (LoginInformation loginInfo : listLoginInformation) {
-                if (loginInfo.getLoginId().contains(loginUI.getLoginIdTextField())
-                        && loginInfo.getPassword().contains(loginUI.getPasswordTextField())) {
+                if (loginInfo.getLoginId().equals(loginUI.getLoginIdTextField())
+                        && loginInfo.getPassword().equals(loginUI.getPasswordTextField())) {
                     blnFound = true;
                     break;
                 }

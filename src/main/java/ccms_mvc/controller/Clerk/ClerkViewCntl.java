@@ -108,6 +108,7 @@ public class ClerkViewCntl implements ActionListener {
 
             clerkViewUI.errorMessage.setText("");
             clerkViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
+            clerkViewUI.clearTheFieldsInCourtCasesUI();
             clerkViewUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
         }
 
@@ -127,6 +128,7 @@ public class ClerkViewCntl implements ActionListener {
 
             clerkViewUI.errorMessage.setText("");
             clerkViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
+            clerkViewUI.clearTheFieldsInCourtCasesUI();
             clerkViewUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
         }
 
@@ -151,6 +153,7 @@ public class ClerkViewCntl implements ActionListener {
             }
 
             if (caseNumberFound) {
+                clerkViewUI.clearTheFieldsInCourtCasesUI();
                 clerkViewUI.parseCourtCases(courtCases);
                 clerkViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
                 clerkViewUI.errorMessage.setText("Case Number: " + clerkViewUI.getCaseNumberTextField() + " was found. !!!");

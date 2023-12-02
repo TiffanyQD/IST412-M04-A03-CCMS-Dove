@@ -120,6 +120,7 @@ public class LawyerDetailedInformationCntl implements ActionListener {
             }
 
             if (caseNumberFound) {
+                lawyerDetailedInformationUI.clearTheFieldsInCourtCasesUI();
                 lawyerDetailedInformationUI.parseCourtCases(courtCases);
                 lawyerDetailedInformationUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
                 lawyerDetailedInformationUI.errorMessage.setText("Case Number: " + lawyerDetailedInformationUI.getCaseNumberTextField() + " was found. !!!");
@@ -148,6 +149,7 @@ public class LawyerDetailedInformationCntl implements ActionListener {
                     lawyerDetailedInformationUI.errorMessage.setText("There are no more records to delete.");
                     lawyerDetailedInformationUI.clearTheFieldsInCourtCasesUI();
                 } else {
+                    lawyerDetailedInformationUI.clearTheFieldsInCourtCasesUI();
                     lawyerDetailedInformationUI.parseCourtCases(arrayListCourtCases.get(0));
                     lawyerDetailedInformationUI.setIndexOfCurrentCourtCase(0);
                 }
@@ -213,6 +215,8 @@ public class LawyerDetailedInformationCntl implements ActionListener {
                 //Set index of the current court case
                 indexOfCurrentCourtCase = arrayListCourtCases.size() - 1;
                 lawyerDetailedInformationUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
+                //Clear the fields in the Court Case UI
+                lawyerDetailedInformationUI.clearTheFieldsInCourtCasesUI();
                 //Even though the element was added, redraw the screen with the element.
                 lawyerDetailedInformationUI.parseCourtCases(arrayListCourtCases.get(indexOfCurrentCourtCase));
                 //Enable all of the buttons except for Save button
@@ -251,6 +255,8 @@ public class LawyerDetailedInformationCntl implements ActionListener {
 
                 //Set index of the current person
                 lawyerDetailedInformationUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
+                //Clear the fields in the Court Case UI
+                lawyerDetailedInformationUI.clearTheFieldsInCourtCasesUI();
                 //Even though the element was added, redraw the screen with the element.
                 lawyerDetailedInformationUI.parseCourtCases(arrayListCourtCases.get(indexOfCurrentCourtCase));
 

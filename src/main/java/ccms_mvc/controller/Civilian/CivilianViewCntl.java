@@ -108,6 +108,7 @@ public class CivilianViewCntl implements ActionListener {
 
             civilianViewUI.errorMessage.setText("");
             civilianViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
+            civilianViewUI.clearTheFieldsInCourtCasesUI();
             civilianViewUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
         }
 
@@ -127,6 +128,7 @@ public class CivilianViewCntl implements ActionListener {
 
             civilianViewUI.errorMessage.setText("");
             civilianViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
+            civilianViewUI.clearTheFieldsInCourtCasesUI();
             civilianViewUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
         }
 
@@ -151,6 +153,7 @@ public class CivilianViewCntl implements ActionListener {
             }
 
             if (caseNumberFound) {
+                civilianViewUI.clearTheFieldsInCourtCasesUI();
                 civilianViewUI.parseCourtCases(courtCases);
                 civilianViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
                 civilianViewUI.errorMessage.setText("Case Number: " + civilianViewUI.getCaseNumberTextField() + " was found. !!!");

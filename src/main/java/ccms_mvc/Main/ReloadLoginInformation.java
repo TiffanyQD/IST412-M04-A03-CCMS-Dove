@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ccms_mvc.Main;
 
 import ccms_mvc.model.LoginInformation;
@@ -12,10 +8,10 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- *
- * @author tiffa
+ * This class is used to reload the login information. 
+ * @author Tiffany Dove
  */
-public class RenameLoginInformation {
+public class ReloadLoginInformation {
 
     public static void main(String[] args) {
         ObjectMapper mapper = new ObjectMapper();

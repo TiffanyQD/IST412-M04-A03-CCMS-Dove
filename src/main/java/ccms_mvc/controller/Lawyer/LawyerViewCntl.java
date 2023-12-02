@@ -108,6 +108,7 @@ public class LawyerViewCntl implements ActionListener {
 
             lawyerViewUI.errorMessage.setText("");
             lawyerViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
+            lawyerViewUI.clearTheFieldsInCourtCasesUI();
             lawyerViewUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
         }
 
@@ -127,6 +128,7 @@ public class LawyerViewCntl implements ActionListener {
 
             lawyerViewUI.errorMessage.setText("");
             lawyerViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
+            lawyerViewUI.clearTheFieldsInCourtCasesUI();
             lawyerViewUI.parseCourtCases(arrayCourtCases[indexOfCurrentCourtCase]);
         }
 
@@ -151,6 +153,7 @@ public class LawyerViewCntl implements ActionListener {
             }
 
             if (caseNumberFound) {
+                lawyerViewUI.clearTheFieldsInCourtCasesUI();
                 lawyerViewUI.parseCourtCases(courtCases);
                 lawyerViewUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
                 lawyerViewUI.errorMessage.setText("Case Number: " + lawyerViewUI.getCaseNumberTextField() + " was found. !!!");

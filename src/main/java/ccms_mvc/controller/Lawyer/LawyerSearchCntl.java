@@ -110,6 +110,7 @@ public class LawyerSearchCntl implements ActionListener {
             }
 
             if (caseNumberFound) {
+                lawyerSearchUI.clearTheFieldsInCourtCasesUI();
                 lawyerSearchUI.parseCourtCases(courtCases);
                 lawyerSearchUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
                 lawyerSearchUI.errorMessage.setText("Case Number: " + lawyerSearchUI.getCaseNumberTextField() + " was found. !!!");

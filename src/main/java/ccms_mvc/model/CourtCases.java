@@ -1,5 +1,5 @@
 /*
- * Filename: Person.java
+ * Filename: CourtCases.java
  * @author  Tiffany Dove
  * @version Jan 29, 2023
  */
@@ -12,6 +12,9 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+/**
+ * This is the POJO for the Court Cases.
+ */
 public class CourtCases {
 
     public CourtSystem courtSystem;

@@ -92,8 +92,27 @@ public class LawyerSearchUI extends javax.swing.JFrame {
      * Clear the Fields in the Court Case UI
      */
     public void clearTheFieldsInCourtCasesUI() {
+
+        //Set the Court System field
+        this.courtSystemTextField.setText("");
+
+        //Set the CourtLocation field
+        this.locationTextField.setText("");
+
         //Set the Case Number field
         this.caseNumberTextField.setText("");
+
+        //Set the Party Name field
+        this.partyNameTextField.setText("");
+
+        //Set the Case Type field
+        this.caseTypeTextField.setText("");
+
+        //Set the Filing Data field
+        this.filingDateTextField.setText("");
+
+        //Set the Case Status 
+        this.caseStatusTextField.setText("");
 
     }
 

@@ -120,6 +120,7 @@ public class JudgeDetailedInformationCntl implements ActionListener {
             }
 
             if (caseNumberFound) {
+                judgeDetailedInformationUI.clearTheFieldsInCourtCasesUI();
                 judgeDetailedInformationUI.parseCourtCases(courtCases);
                 judgeDetailedInformationUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
                 judgeDetailedInformationUI.errorMessage.setText("Case Number: " + judgeDetailedInformationUI.getCaseNumberTextField() + " was found. !!!");
@@ -213,6 +214,8 @@ public class JudgeDetailedInformationCntl implements ActionListener {
                 //Set index of the current court case
                 indexOfCurrentCourtCase = arrayListCourtCases.size() - 1;
                 judgeDetailedInformationUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
+                //Clear the fields in the Court Case UI
+                judgeDetailedInformationUI.clearTheFieldsInCourtCasesUI();
                 //Even though the element was added, redraw the screen with the element.
                 judgeDetailedInformationUI.parseCourtCases(arrayListCourtCases.get(indexOfCurrentCourtCase));
                 //Enable all of the buttons except for Save button
@@ -251,6 +254,8 @@ public class JudgeDetailedInformationCntl implements ActionListener {
 
                 //Set index of the current person
                 judgeDetailedInformationUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
+                //Clear the fields in the Court Case UI
+                judgeDetailedInformationUI.clearTheFieldsInCourtCasesUI();
                 //Even though the element was added, redraw the screen with the element.
                 judgeDetailedInformationUI.parseCourtCases(arrayListCourtCases.get(indexOfCurrentCourtCase));
 

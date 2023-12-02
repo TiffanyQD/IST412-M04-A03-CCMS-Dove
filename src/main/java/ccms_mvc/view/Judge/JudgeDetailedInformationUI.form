@@ -68,7 +68,14 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
+                                      <Component id="involvedPartiesLabel" min="-2" max="-2" attributes="0"/>
+                                      <Component id="judgeInformationLabel" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="judgeCommentsLabel" min="-2" pref="127" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="judgeScrollPane" min="-2" pref="501" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
                                           <Component id="plantiffLabel" min="-2" pref="93" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="plantiffTextField" min="-2" pref="207" max="-2" attributes="0"/>
@@ -76,13 +83,6 @@
                                           <Component id="defendantLabel" min="-2" pref="93" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="defendantTextField" min="-2" pref="207" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="involvedPartiesLabel" min="-2" max="-2" attributes="0"/>
-                                      <Component id="judgeInformationLabel" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="judgeCommentsLabel" min="-2" pref="127" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="judgeScrollPane" min="-2" pref="501" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -93,41 +93,44 @@
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="caseNumberLabel" min="-2" pref="120" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="courtSystemLabel" max="32767" attributes="0"/>
-                                                  <Component id="locationLabel" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="caseInformationLabel" min="-2" max="-2" attributes="0"/>
-                                              <Component id="partyNameLabel" min="-2" pref="120" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="partyNameTextField" min="-2" pref="207" max="-2" attributes="0"/>
-                                              <Component id="courtSystemTextField" min="-2" pref="207" max="-2" attributes="0"/>
-                                              <Component id="locationTextField" min="-2" pref="207" max="-2" attributes="0"/>
-                                              <Component id="caseNumberTextField" min="-2" pref="207" max="-2" attributes="0"/>
-                                          </Group>
+                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="courtSystemLabel" max="32767" attributes="0"/>
+                                          <Component id="locationLabel" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
                                       </Group>
+                                      <Component id="caseInformationLabel" min="-2" max="-2" attributes="0"/>
+                                      <Component id="partyNameLabel" min="-2" pref="120" max="-2" attributes="0"/>
+                                      <Component id="caseNumberLabel" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Component id="caseTypeLabel" min="-2" pref="120" max="-2" attributes="0"/>
-                                          <EmptySpace pref="32" max="32767" attributes="0"/>
-                                          <Component id="caseTypeTextField" min="-2" pref="207" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="caseNumberTextField" min="-2" pref="207" max="-2" attributes="0"/>
+                                              <Component id="courtSystemTextField" min="-2" pref="207" max="-2" attributes="0"/>
+                                              <Component id="locationTextField" min="-2" pref="207" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Component id="caseTypeLabel" min="-2" pref="120" max="-2" attributes="0"/>
+                                                  <EmptySpace pref="32" max="32767" attributes="0"/>
+                                                  <Component id="caseTypeTextField" min="-2" pref="207" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="caseStatusLabel" min="-2" pref="120" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="caseStatusTextField" min="-2" pref="207" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="filingDateLabel" min="-2" pref="120" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="filingDateTextField" min="-2" pref="207" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
                                       </Group>
                                       <Group type="102" attributes="0">
-                                          <Component id="caseStatusLabel" min="-2" pref="120" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="caseStatusTextField" min="-2" pref="207" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="filingDateLabel" min="-2" pref="120" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="filingDateTextField" min="-2" pref="207" max="-2" attributes="0"/>
+                                          <Component id="partyNameTextField" min="-2" pref="207" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -199,9 +202,9 @@
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="caseNumberLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="partyNameTextField" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="caseNumberLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="caseNumberTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="courtSystemLabel" min="-2" max="-2" attributes="0"/>
@@ -214,12 +217,12 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="partyNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="caseNumberTextField" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="partyNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="partyNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   <Component id="involvedPartiesSeparator" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                   <Component id="involvedPartiesLabel" min="-2" max="-2" attributes="0"/>
@@ -260,7 +263,7 @@
                       <Component id="btnDelete" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnSave" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="100" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
