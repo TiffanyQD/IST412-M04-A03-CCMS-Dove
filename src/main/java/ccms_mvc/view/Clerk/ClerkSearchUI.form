@@ -68,8 +68,8 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="caseNumberLabel" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                                          <Component id="caseNumberTextField" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
+                                          <Component id="caseNumberTextField" min="-2" pref="207" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                                           <Component id="caseTypeLabel" min="-2" pref="93" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
@@ -110,7 +110,7 @@
                           <Component id="btnQuit" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="94" max="32767" attributes="0"/>
+                  <EmptySpace pref="49" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -130,12 +130,14 @@
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Component id="clerkSearchSpecificCasesLabel" min="-2" pref="39" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="caseTypeLabel" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="caseTypeTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                           <Component id="caseNumberLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="caseNumberTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="caseTypeLabel" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="caseTypeTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
