@@ -231,10 +231,9 @@ public class JudgeDetailedInformationCntl implements ActionListener {
 
         //The Update button was pressed
         if (obj.equals(judgeDetailedInformationUI.btnUpdate)) {
+            indexOfCurrentCourtCase = judgeDetailedInformationUI.getIndexOfCurrentCourtCase();
             //Enable all of the buttons except for Save button
             judgeDetailedInformationUI.enableButtons(true);
-
-            indexOfCurrentCourtCase = judgeDetailedInformationUI.getIndexOfCurrentCourtCase();
 
             try {
                 //Update the record with the various fields from the PersonUI. 

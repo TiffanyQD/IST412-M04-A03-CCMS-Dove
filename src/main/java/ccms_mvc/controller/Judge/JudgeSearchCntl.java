@@ -74,6 +74,9 @@ public class JudgeSearchCntl implements ActionListener {
         judgeSearchUI.setVisible(true);
     }
 
+    /**
+     * Add ActionListener for all of the buttons on the CivilianSearchUI
+     */
     public void addActionListenersButtons() {
         judgeSearchUI.btnQuit.addActionListener(this);
         judgeSearchUI.btnJudgeMainMenu.addActionListener(this);
@@ -114,6 +117,7 @@ public class JudgeSearchCntl implements ActionListener {
 
         }
 
+        //The Judge Main Menu button was pressed.	
         if (obj.equals(judgeSearchUI.btnJudgeMainMenu)) {
             JudgeMainMenuCntl judgeMainMenuCntl = new JudgeMainMenuCntl();
             judgeSearchUI.dispose();

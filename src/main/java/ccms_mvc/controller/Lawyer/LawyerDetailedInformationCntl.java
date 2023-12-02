@@ -130,6 +130,7 @@ public class LawyerDetailedInformationCntl implements ActionListener {
 
         }
 
+        //The Lawyer Main Menu button was pressed
         if (obj.equals(lawyerDetailedInformationUI.btnLawyerMainMenu)) {
             LawyerMainMenuCntl lawyerMainMenuCntl = new LawyerMainMenuCntl();
             lawyerDetailedInformationUI.dispose();
@@ -230,10 +231,9 @@ public class LawyerDetailedInformationCntl implements ActionListener {
 
         //The Update button was pressed
         if (obj.equals(lawyerDetailedInformationUI.btnUpdate)) {
+            indexOfCurrentCourtCase = lawyerDetailedInformationUI.getIndexOfCurrentCourtCase();
             //Enable all of the buttons except for Save button
             lawyerDetailedInformationUI.enableButtons(true);
-
-            indexOfCurrentCourtCase = lawyerDetailedInformationUI.getIndexOfCurrentCourtCase();
 
             try {
                 //Update the record with the various fields from the PersonUI. 

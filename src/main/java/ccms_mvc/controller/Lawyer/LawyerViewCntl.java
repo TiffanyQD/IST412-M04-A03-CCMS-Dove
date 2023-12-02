@@ -74,17 +74,16 @@ public class LawyerViewCntl implements ActionListener {
         lawyerViewUI.setVisible(true);
     }
 
+    /**
+     * Call to addActionListener method to activate listener for various
+     * buttons.
+     */
     public void addActionListenersButtons() {
         lawyerViewUI.btnQuit.addActionListener(this);
         lawyerViewUI.btnLawyerMainMenu.addActionListener(this);
         lawyerViewUI.btnView.addActionListener(this);
         lawyerViewUI.btnNext.addActionListener(this);
         lawyerViewUI.btnPrevious.addActionListener(this);
-
-    }
-
-    public List<CourtCases> getListCourtCases() {
-        return listCourtCases;
 
     }
 
