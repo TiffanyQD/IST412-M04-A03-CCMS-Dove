@@ -8,7 +8,7 @@ import ccms_mvc.model.CaseStatus;
 import ccms_mvc.model.CaseType;
 import ccms_mvc.model.CourtCases;
 import ccms_mvc.model.CourtSystem;
-import ccms_mvc.model.Location;
+import ccms_mvc.model.CourtLocation;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
@@ -30,7 +30,7 @@ public class TempCourtCasesMain {
 
         CourtCases courtCase1 = new CourtCases();
         courtCase1.setCourtSystem(CourtSystem.CIRCUIT);
-        courtCase1.setLocation(Location.BALTIMORE);
+        courtCase1.setLocation(CourtLocation.BALTIMORE);
         courtCase1.setCaseNumber("11111");
         courtCase1.setPartyName("Benjamin vs. Franklin");
         courtCase1.setCaseType(CaseType.CIVIL);
@@ -43,7 +43,7 @@ public class TempCourtCasesMain {
 
         CourtCases courtCase2 = new CourtCases();
         courtCase2.setCourtSystem(CourtSystem.DISTRICT);
-        courtCase2.setLocation(Location.BALTIMORE_CITY);
+        courtCase2.setLocation(CourtLocation.BALTIMORE_CITY);
         courtCase2.setCaseNumber("22222");
         courtCase2.setPartyName("Mosby vs. Mosby et al");
         courtCase2.setCaseType(CaseType.CIVIL_ACTION);
@@ -56,7 +56,7 @@ public class TempCourtCasesMain {
 
         CourtCases courtCase3 = new CourtCases();
         courtCase3.setCourtSystem(CourtSystem.CIRCUIT);
-        courtCase3.setLocation(Location.MONTGOMERY);
+        courtCase3.setLocation(CourtLocation.MONTGOMERY);
         courtCase3.setCaseNumber("33333");
         courtCase3.setPartyName("Good vs. Bad");
         courtCase3.setCaseType(CaseType.CRIMINAL);
@@ -69,7 +69,7 @@ public class TempCourtCasesMain {
 
         CourtCases courtCase4 = new CourtCases();
         courtCase4.setCourtSystem(CourtSystem.CIRCUIT);
-        courtCase4.setLocation(Location.BALTIMORE);
+        courtCase4.setLocation(CourtLocation.BALTIMORE);
         courtCase4.setCaseNumber("44444");
         courtCase4.setPartyName("Ravens vs. Browns");
         courtCase4.setCaseType(CaseType.TRAFFIC);
@@ -82,7 +82,7 @@ public class TempCourtCasesMain {
 
         CourtCases courtCase5 = new CourtCases();
         courtCase5.setCourtSystem(CourtSystem.CIRCUIT);
-        courtCase5.setLocation(Location.BALTIMORE);
+        courtCase5.setLocation(CourtLocation.BALTIMORE);
         courtCase5.setCaseNumber("55555");
         courtCase5.setPartyName("Jackson vs. Watson");
         courtCase5.setCaseType(CaseType.CIVIL);

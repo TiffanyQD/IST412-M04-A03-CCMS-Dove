@@ -4,7 +4,7 @@ import ccms_mvc.model.CaseStatus;
 import ccms_mvc.model.CaseType;
 import ccms_mvc.model.CourtCases;
 import ccms_mvc.model.CourtSystem;
-import ccms_mvc.model.Location;
+import ccms_mvc.model.CourtLocation;
 import ccms_mvc.view.Lawyer.LawyerDetailedInformationUI;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.awt.event.ActionEvent;
@@ -186,8 +186,8 @@ public class LawyerDetailedInformationCntl implements ActionListener {
             try {
                 //Set the Court System field
                 court.setCourtSystem(CourtSystem.valueOf(lawyerDetailedInformationUI.getCourtSystemTextField().getText()));
-                //Set the Location field
-                court.setLocation(Location.valueOf(lawyerDetailedInformationUI.getLocationTextField().getText()));
+                //Set the CourtLocation field
+                court.setLocation(CourtLocation.valueOf(lawyerDetailedInformationUI.getLocationTextField().getText()));
                 //Set the Case Number field
                 court.setCaseNumber(lawyerDetailedInformationUI.getCaseNumberTextField());
                 //Set the Party Name field
@@ -238,7 +238,7 @@ public class LawyerDetailedInformationCntl implements ActionListener {
             try {
                 //Update the record with the various fields from the PersonUI. 
                 arrayListCourtCases.get(indexOfCurrentCourtCase).setCourtSystem(CourtSystem.valueOf(lawyerDetailedInformationUI.getCourtSystemTextField().getText()));
-                arrayListCourtCases.get(indexOfCurrentCourtCase).setLocation(Location.valueOf(lawyerDetailedInformationUI.getLocationTextField().getText()));
+                arrayListCourtCases.get(indexOfCurrentCourtCase).setLocation(CourtLocation.valueOf(lawyerDetailedInformationUI.getLocationTextField().getText()));
                 arrayListCourtCases.get(indexOfCurrentCourtCase).setCaseNumber(lawyerDetailedInformationUI.getCaseNumberTextField());
                 arrayListCourtCases.get(indexOfCurrentCourtCase).setPartyName(lawyerDetailedInformationUI.getPartyNameTextField().getText());
                 arrayListCourtCases.get(indexOfCurrentCourtCase).setCaseType(CaseType.valueOf(lawyerDetailedInformationUI.getCaseTypeTextField().getText()));

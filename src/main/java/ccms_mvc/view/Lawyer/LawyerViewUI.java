@@ -56,7 +56,7 @@ public class LawyerViewUI extends javax.swing.JFrame {
         //Set the Court System field
         this.courtSystemTextField.setText(courtCases.getCourtSystem().name());
 
-        //Set the Location field
+        //Set the CourtLocation field
         this.locationTextField.setText(courtCases.getLocation().name());
 
         //Set the Case Number field
@@ -91,7 +91,7 @@ public class LawyerViewUI extends javax.swing.JFrame {
         //Set the Court System field
         this.courtSystemTextField.setText("");
 
-        //Set the Location field
+        //Set the CourtLocation field
         this.locationTextField.setText("");
 
         //Set the Case Number field

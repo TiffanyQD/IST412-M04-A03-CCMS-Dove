@@ -15,7 +15,7 @@ import lombok.ToString;
 public class CourtCases {
 
     public CourtSystem courtSystem;
-    public Location location;
+    public CourtLocation location;
     public String caseNumber;
     public String partyName;
     public CaseType caseType;

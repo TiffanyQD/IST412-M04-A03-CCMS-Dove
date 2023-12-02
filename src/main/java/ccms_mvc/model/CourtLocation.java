@@ -8,7 +8,7 @@ package ccms_mvc.model;
  *
  * @author tiffa
  */
-public enum Location {
+public enum CourtLocation {
 
     BALTIMORE,
     BALTIMORE_CITY,
