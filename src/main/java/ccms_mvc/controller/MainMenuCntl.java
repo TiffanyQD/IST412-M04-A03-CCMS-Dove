@@ -16,9 +16,8 @@ public class MainMenuCntl implements ActionListener {
 
     //Call to the Main Menu UI
     private MainMenuUI mainMenuUI;
-
     //Index of the current court case
-    private int indexOfCurrentPerson;
+
 
     public MainMenuCntl() {
         //Create an instance of MainMenuUI

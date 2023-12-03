@@ -38,7 +38,7 @@
   <SubComponents>
     <Container class="javax.swing.JPanel" name="judgeMainMenuPanel">
       <Properties>
-        <Property name="toolTipText" type="java.lang.String" value="Person Panel"/>
+        <Property name="toolTipText" type="java.lang.String" value="Judge Main Menu Panel"/>
       </Properties>
 
       <Layout>

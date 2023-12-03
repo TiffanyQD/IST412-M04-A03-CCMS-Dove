@@ -38,7 +38,7 @@
   <SubComponents>
     <Container class="javax.swing.JPanel" name="courtCaseManagementPanel">
       <Properties>
-        <Property name="toolTipText" type="java.lang.String" value="Person Panel"/>
+        <Property name="toolTipText" type="java.lang.String" value="Court Case Management System Panel"/>
       </Properties>
 
       <Layout>

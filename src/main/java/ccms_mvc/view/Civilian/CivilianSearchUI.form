@@ -43,7 +43,7 @@
   <SubComponents>
     <Container class="javax.swing.JPanel" name="searchSpecificCasesPanel">
       <Properties>
-        <Property name="toolTipText" type="java.lang.String" value="Person Panel"/>
+        <Property name="toolTipText" type="java.lang.String" value="CIvilian Search Specific Cases Panel"/>
       </Properties>
 
       <Layout>

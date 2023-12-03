@@ -19,7 +19,7 @@ public class JudgeDetailedInformationUI extends javax.swing.JFrame {
     //Array List of Court Cases
     private List<CourtCases> listCourtCases;
 
-    //Counter of the current Person
+    //Counter of the current Court Case
     private int indexOfCurrentCourtCase = 0;
 
     //Reference to CourtCases class
@@ -31,8 +31,8 @@ public class JudgeDetailedInformationUI extends javax.swing.JFrame {
     }
 
     //Set the index of the current court case
-    public void setIndexOfCurrentCourtCase(int indexOfCurrentPerson) {
-        this.indexOfCurrentCourtCase = indexOfCurrentPerson;
+    public void setIndexOfCurrentCourtCase(int indexOfCurrentCourtCase) {
+        this.indexOfCurrentCourtCase = indexOfCurrentCourtCase;
     }
 
     /**

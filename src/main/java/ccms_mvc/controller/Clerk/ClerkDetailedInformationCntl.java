@@ -239,7 +239,7 @@ public class ClerkDetailedInformationCntl implements ActionListener {
             clerkDetailedInformationUI.enableButtons(true);
 
             try {
-                //Update the record with the various fields from the PersonUI. 
+                //Update the record with the various fields from the ClerkDetailedInformationUI. 
                 arrayListCourtCases.get(indexOfCurrentCourtCase).setCourtSystem(CourtSystem.valueOf(clerkDetailedInformationUI.getCourtSystemTextField().getText()));
                 arrayListCourtCases.get(indexOfCurrentCourtCase).setLocation(CourtLocation.valueOf(clerkDetailedInformationUI.getLocationTextField().getText()));
                 arrayListCourtCases.get(indexOfCurrentCourtCase).setCaseNumber(clerkDetailedInformationUI.getCaseNumberTextField());
@@ -252,7 +252,7 @@ public class ClerkDetailedInformationCntl implements ActionListener {
                 arrayListCourtCases.get(indexOfCurrentCourtCase).setJudgeInformation(clerkDetailedInformationUI.getJudgeCommentsTextArea().getText());
                 arrayListCourtCases.get(indexOfCurrentCourtCase).setLawyerInformation(clerkDetailedInformationUI.getLawyerCommentsTextArea().getText());
 
-                //Set index of the current person
+                //Set index of the current Court Case
                 clerkDetailedInformationUI.setIndexOfCurrentCourtCase(indexOfCurrentCourtCase);
                 //Clear the fields in the Court Case UI
                 clerkDetailedInformationUI.clearTheFieldsInCourtCasesUI();

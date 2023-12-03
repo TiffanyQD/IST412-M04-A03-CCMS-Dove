@@ -70,7 +70,7 @@ public class LawyerSearchCntl implements ActionListener {
         //buttons.
         addActionListenersButtons();
 
-        //set the Person UI to be visible (true)
+        //set the LawyerSearchUI to be visible (true)
         lawyerSearchUI.setVisible(true);
     }
 

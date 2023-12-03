@@ -59,7 +59,7 @@ public class JudgeMainMenuUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        judgeMainMenuPanel.setToolTipText("Person Panel");
+        judgeMainMenuPanel.setToolTipText("Judge Main Menu Panel");
 
         ccmsMainMenuLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ccmsMainMenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

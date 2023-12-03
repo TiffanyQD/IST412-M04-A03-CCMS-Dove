@@ -70,7 +70,7 @@ public class ClerkSearchCntl implements ActionListener {
         //buttons.
         addActionListenersButtons();
 
-        //set the Person UI to be visible (true)
+        //set the ClerkSearchUI to be visible (true)
         clerkSearchUI.setVisible(true);
     }
 

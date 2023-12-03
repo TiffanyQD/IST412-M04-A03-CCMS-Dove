@@ -78,7 +78,7 @@ public class CivilianMainMenuUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        civilianMainMenuPanel.setToolTipText("Person Panel");
+        civilianMainMenuPanel.setToolTipText("Civilian Main Menu Panel");
 
         ccmsMainMenuLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ccmsMainMenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

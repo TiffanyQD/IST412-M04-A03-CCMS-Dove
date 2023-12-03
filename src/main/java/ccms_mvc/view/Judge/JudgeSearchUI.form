@@ -25,7 +25,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="clerkSearchSpecificCasesPanel" min="-2" max="-2" attributes="0"/>
+              <Component id="searchSpecificCasesPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="57" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -34,16 +34,16 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="clerkSearchSpecificCasesPanel" max="32767" attributes="0"/>
+              <Component id="searchSpecificCasesPanel" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="clerkSearchSpecificCasesPanel">
+    <Container class="javax.swing.JPanel" name="searchSpecificCasesPanel">
       <Properties>
-        <Property name="toolTipText" type="java.lang.String" value="Person Panel"/>
+        <Property name="toolTipText" type="java.lang.String" value="Judge Search Specific Cases Panel"/>
       </Properties>
 
       <Layout>

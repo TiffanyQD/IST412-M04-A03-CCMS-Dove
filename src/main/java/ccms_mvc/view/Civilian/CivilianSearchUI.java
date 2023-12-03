@@ -216,7 +216,7 @@ public class CivilianSearchUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        searchSpecificCasesPanel.setToolTipText("Person Panel");
+        searchSpecificCasesPanel.setToolTipText("CIvilian Search Specific Cases Panel");
 
         ccmsLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ccmsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

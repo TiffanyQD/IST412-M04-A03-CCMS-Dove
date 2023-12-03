@@ -58,7 +58,7 @@ public class ClerkMainMenuUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        clerkMainMenuPanel.setToolTipText("Person Panel");
+        clerkMainMenuPanel.setToolTipText("Clerk Main Menu Panel");
 
         ccmsMainMenuLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ccmsMainMenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

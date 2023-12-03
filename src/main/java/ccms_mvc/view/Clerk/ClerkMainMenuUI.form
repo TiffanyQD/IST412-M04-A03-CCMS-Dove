@@ -38,7 +38,7 @@
   <SubComponents>
     <Container class="javax.swing.JPanel" name="clerkMainMenuPanel">
       <Properties>
-        <Property name="toolTipText" type="java.lang.String" value="Person Panel"/>
+        <Property name="toolTipText" type="java.lang.String" value="Clerk Main Menu Panel"/>
       </Properties>
 
       <Layout>

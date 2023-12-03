@@ -48,11 +48,11 @@ public class LoginUI extends javax.swing.JFrame {
 //        return loginIdTextField.getText();
 //    }
     public void clearTheFieldsInLoginUI() {
-        //set the UI's id num text field with the id num from Person
+        //Reset the UI's login ID text field to an empty string
         loginIdTextField.setText("");
-        //set the UI's name text field with the name from Person
+        //Reset the UI's password text field to an empty string
         passwordTextField.setText("");
-        //set the UI's address text field with the address from Person
+
     }
 
     public String getLoginIdTextField() {
@@ -103,7 +103,7 @@ public class LoginUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        courtCaseManagementPanel.setToolTipText("Person Panel");
+        courtCaseManagementPanel.setToolTipText("Court Case Management System Panel");
 
         courtCaseManagementLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         courtCaseManagementLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
