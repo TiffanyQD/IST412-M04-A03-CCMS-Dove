@@ -156,6 +156,7 @@ public class JudgeDetailedInformationCntl implements ActionListener {
                 mapper = new ObjectMapper();
 
                 try {
+                    judgeDetailedInformationUI.errorMessage.setText("Case Number: " + judgeDetailedInformationUI.getCaseNumberTextField() + "has been added.");
                     mapper.writeValue(new File("src/resources/courtCases.json"), arrayListCourtCases);
                 } catch (IOException ioe) {
                     ioe.printStackTrace();
@@ -222,6 +223,7 @@ public class JudgeDetailedInformationCntl implements ActionListener {
                 judgeDetailedInformationUI.enableButtons(true);
 
                 try {
+                    judgeDetailedInformationUI.errorMessage.setText("Case Number: " + judgeDetailedInformationUI.getCaseNumberTextField() + "has been added.");
                     mapper.writeValue(new File("src/resources/courtCases.json"), arrayListCourtCases);
                 } catch (IOException ioe) {
                     ioe.printStackTrace();
