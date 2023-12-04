@@ -223,7 +223,7 @@ public class LawyerDetailedInformationCntl implements ActionListener {
                 lawyerDetailedInformationUI.enableButtons(true);
 
                 try {
-                    lawyerDetailedInformationUI.errorMessage.setText("Case Number: " + lawyerDetailedInformationUI.getCaseNumberTextField() + "has been added.");
+                    lawyerDetailedInformationUI.errorMessage.setText("Case Number: " + lawyerDetailedInformationUI.getCaseNumberTextField() + " has been added.");
                     mapper.writeValue(new File("src/resources/courtCases.json"), arrayListCourtCases);
                 } catch (IOException ioe) {
                     ioe.printStackTrace();
@@ -262,7 +262,7 @@ public class LawyerDetailedInformationCntl implements ActionListener {
                 lawyerDetailedInformationUI.parseCourtCases(arrayListCourtCases.get(indexOfCurrentCourtCase));
 
                 try {
-                    lawyerDetailedInformationUI.errorMessage.setText("Case Number: " + lawyerDetailedInformationUI.getCaseNumberTextField() + "has been added.");
+                    lawyerDetailedInformationUI.errorMessage.setText("Case Number: " + lawyerDetailedInformationUI.getCaseNumberTextField() + " has been added.");
                     mapper.writeValue(new File("src/resources/courtCases.json"), arrayListCourtCases);
                 } catch (IOException ioe) {
                     ioe.printStackTrace();
